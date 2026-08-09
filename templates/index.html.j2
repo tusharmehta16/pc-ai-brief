@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI &amp; P&amp;C Insurance Brief · Archive</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0E1A26;--muted:#5B6B77;--rule:#DDE2E0;--wash:#F1F3F2;--marine:#1B4A6B;--ochre:#9A6B12}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:"Inter",sans-serif}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh;padding:40px}
+  @media(max-width:640px){.sheet{padding:24px 20px}}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:"Newsreader",serif;font-weight:400;font-size:clamp(30px,6vw,42px);
+     margin:10px 0 26px;padding-bottom:18px;border-bottom:3px double var(--ink)}
+  a.ed{display:block;text-decoration:none;color:inherit;padding:16px 0;border-bottom:1px solid var(--rule)}
+  a.ed:hover .t{border-bottom:1px solid var(--ochre)}
+  .d{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:1px}
+  .t{font-family:"Newsreader",serif;font-size:20px;line-height:1.35;display:inline;font-weight:600}
+  p.empty{color:var(--muted)}
+</style>
+</head>
+<body><div class="sheet">
+  <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+  <h1>Every edition</h1>
+  {% if editions %}
+    {% for ed in editions %}
+    <a class="ed" href="./{{ ed.file }}">
+      <div class="d">{{ ed.date_long }}</div>
+      <span class="t">{{ ed.verdict }}</span>
+    </a>
+    {% endfor %}
+  {% else %}
+    <p class="empty">No editions yet. The first run will fill this page.</p>
+  {% endif %}
+</div></body>
+</html>

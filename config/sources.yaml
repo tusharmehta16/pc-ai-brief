@@ -1,0 +1,90 @@
+# Sources for the daily AI x P&C insurance brief.
+# weight: 0.0 to 3.0. Trade press that covers carrier operations scores higher
+# than general tech press, because general tech rarely names an insurer.
+# Any feed that fails is logged and skipped, so a dead URL never breaks a run.
+
+feeds:
+  # ---- P&C trade press, global ----
+  - name: Insurance Journal (National)
+    url: https://www.insurancejournal.com/rss/news/national.xml
+    weight: 2.5
+    region: US
+  - name: Insurance Journal (International)
+    url: https://www.insurancejournal.com/rss/news/international.xml
+    weight: 2.5
+    region: Global
+  - name: Carrier Management
+    url: https://www.carriermanagement.com/rss/news/
+    weight: 3.0
+    region: US
+  - name: Reinsurance News
+    url: https://www.reinsurancene.ws/feed/
+    weight: 2.2
+    region: Global
+  - name: Artemis
+    url: https://www.artemis.bm/feed/
+    weight: 1.8
+    region: Global
+  - name: Canadian Underwriter
+    url: https://www.canadianunderwriter.ca/feed/
+    weight: 2.8
+    region: Canada
+  - name: Insurance Business Canada
+    url: https://www.insurancebusinessmag.com/ca/rss/
+    weight: 2.2
+    region: Canada
+  - name: Digital Insurance
+    url: https://www.dig-in.com/feed
+    weight: 2.8
+    region: US
+  - name: Insurance Post
+    url: https://www.postonline.co.uk/feeds/rss/news
+    weight: 2.2
+    region: UK
+  - name: Insurance Times
+    url: https://www.insurancetimes.co.uk/XmlServers/navsectionRSS.aspx?navsectioncode=1000
+    weight: 2.0
+    region: UK
+
+  # ---- Insurtech and vendor landscape ----
+  - name: Coverager
+    url: https://coverager.com/feed/
+    weight: 2.5
+    region: Global
+  - name: Insurtech Insights
+    url: https://www.insurtechinsights.com/feed/
+    weight: 1.8
+    region: Global
+  - name: FinTech Futures
+    url: https://www.fintechfutures.com/feed/
+    weight: 1.2
+    region: Global
+
+  # ---- General AI press, filtered hard by the scorer ----
+  - name: VentureBeat AI
+    url: https://venturebeat.com/category/ai/feed/
+    weight: 0.8
+    region: Global
+  - name: MIT Technology Review AI
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+    weight: 0.8
+    region: Global
+
+# Google News RSS queries. These are the workhorse for global coverage,
+# because they reach outlets that do not publish a usable feed.
+google_news:
+  edition: "hl=en-CA&gl=CA&ceid=CA:en"
+  weight: 1.6
+  queries:
+    - '"property and casualty" insurance artificial intelligence'
+    - 'insurance underwriting "artificial intelligence" OR "generative AI"'
+    - 'insurance claims automation AI adjuster'
+    - 'insurer "AI agent" OR "agentic AI" deployment'
+    - 'insurtech funding round AI underwriting'
+    - 'reinsurance "artificial intelligence" pricing model'
+    - 'insurance AI regulation NAIC OR EIOPA OR OSFI OR "model risk"'
+    - 'Chubb OR AIG OR Travelers OR Progressive OR "Liberty Mutual" artificial intelligence'
+    - 'Allianz OR Zurich OR AXA OR Generali OR "Munich Re" OR "Swiss Re" artificial intelligence'
+    - 'Intact OR Definity OR Aviva OR "Co-operators" OR Wawanesa artificial intelligence'
+    - '"Tokio Marine" OR Sompo OR QBE OR IAG insurance artificial intelligence'
+    - "Lloyd's of London artificial intelligence underwriting syndicate"

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ subject }}</title>
+</head>
+{%- set ink = "#0E1A26" -%}
+{%- set muted = "#5B6B77" -%}
+{%- set rule = "#DDE2E0" -%}
+{%- set marine = "#1B4A6B" -%}
+{%- set ochre = "#9A6B12" -%}
+{%- set oxblood = "#6E2436" -%}
+{%- set wash = "#F1F3F2" -%}
+{%- set mono = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" -%}
+{%- set serif = "Georgia, 'Iowan Old Style', 'Times New Roman', serif" -%}
+{%- set sans = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" -%}
+<body style="margin:0;padding:0;background:{{ wash }};">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{{ brief.verdict|striptags }}</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{{ wash }};">
+<tr><td align="center" style="padding:18px 12px 40px 12px;">
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:620px;background:#FFFFFF;border:1px solid {{ rule }};">
+
+  <!-- masthead -->
+  <tr><td style="padding:24px 26px 14px 26px;border-bottom:3px double {{ ink }};">
+    <div style="font-family:{{ mono }};font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:{{ marine }};">
+      AI &amp; P&amp;C Insurance &nbsp;/&nbsp; Daily Brief
+    </div>
+    <div style="font-family:{{ serif }};font-size:25px;line-height:1.2;color:{{ ink }};padding-top:6px;">
+      {{ date_long }}
+    </div>
+    <div style="font-family:{{ mono }};font-size:10px;color:{{ muted }};padding-top:6px;">
+      {{ stats.sources }} sources scanned &nbsp;·&nbsp; {{ stats.qualified }} qualified &nbsp;·&nbsp; {{ brief.movers|length }} movers
+    </div>
+  </td></tr>
+
+  <!-- verdict -->
+  <tr><td style="padding:22px 26px 20px 26px;background:#FBFCFB;border-bottom:1px solid {{ rule }};">
+    <div style="font-family:{{ mono }};font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:{{ ochre }};padding-bottom:8px;">
+      The verdict
+    </div>
+    <div style="font-family:{{ serif }};font-size:19px;line-height:1.45;color:{{ ink }};">
+      {{ brief.verdict }}
+    </div>
+  </td></tr>
+
+  {% if brief.movers %}
+  <!-- movers -->
+  {% for item in brief.movers %}
+  <tr><td style="padding:22px 26px 6px 26px;{% if not loop.first %}border-top:1px solid {{ rule }};{% endif %}">
+
+    <table role="presentation" cellpadding="0" cellspacing="0" style="padding-bottom:8px;">
+      <tr>
+        <td style="font-family:{{ mono }};font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:{{ marine }};padding-right:10px;">
+          {{ item.segment|default('Signal') }}
+        </td>
+        <td>
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          {% for n in range(1, 6) %}
+            <td width="9" height="9" style="width:9px;height:9px;background:{{ ochre if n <= (item.severity|default(3)) else '#E3E6E4' }};font-size:0;line-height:0;">&nbsp;</td>
+            <td width="3" style="width:3px;font-size:0;line-height:0;">&nbsp;</td>
+          {% endfor %}
+          </tr></table>
+        </td>
+        <td style="font-family:{{ mono }};font-size:10px;color:{{ muted }};padding-left:10px;">
+          {{ item.source|truncate(28, true, '') }}
+        </td>
+      </tr>
+    </table>
+
+    <div style="font-family:{{ serif }};font-size:20px;line-height:1.3;color:{{ ink }};padding-bottom:8px;">
+      {{ item.headline }}
+    </div>
+
+    <div style="font-family:{{ sans }};font-size:15px;line-height:1.55;color:{{ ink }};padding-bottom:8px;">
+      {{ item.what_happened }}
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-left:3px solid {{ marine }};">
+      <tr><td style="padding:2px 0 2px 12px;font-family:{{ sans }};font-size:15px;line-height:1.55;color:{{ marine }};">
+        <strong style="font-family:{{ mono }};font-size:10px;letter-spacing:1.2px;text-transform:uppercase;">So what</strong><br>
+        {{ item.so_what }}
+      </td></tr>
+    </table>
+
+    <div style="padding:12px 0 4px 0;font-family:{{ mono }};font-size:11px;">
+      <a href="{{ item.deep_link }}" style="color:{{ ink }};text-decoration:none;border-bottom:1px solid {{ ochre }};">Go deeper</a>
+      &nbsp;·&nbsp;
+      <a href="{{ item.url }}" style="color:{{ muted }};text-decoration:none;border-bottom:1px solid {{ rule }};">Source</a>
+      &nbsp;·&nbsp;
+      <a href="{{ item.ask_link }}" style="color:{{ muted }};text-decoration:none;border-bottom:1px solid {{ rule }};">Ask Claude</a>
+    </div>
+  </td></tr>
+  {% endfor %}
+  {% endif %}
+
+  {% if brief.regulatory %}
+  <tr><td style="padding:22px 26px 18px 26px;border-top:1px solid {{ rule }};background:#FCFAFA;">
+    <div style="font-family:{{ mono }};font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:{{ oxblood }};padding-bottom:10px;">
+      Supervisory watch
+    </div>
+    {% for item in brief.regulatory %}
+    <div style="font-family:{{ sans }};font-size:14px;line-height:1.5;color:{{ ink }};padding-bottom:8px;">
+      {{ item.line }}
+      <a href="{{ item.url }}" style="color:{{ oxblood }};font-family:{{ mono }};font-size:10px;text-decoration:none;">&nbsp;[{{ item.source|truncate(20, true, '') }}]</a>
+    </div>
+    {% endfor %}
+  </td></tr>
+  {% endif %}
+
+  {% if brief.radar %}
+  <tr><td style="padding:22px 26px 18px 26px;border-top:1px solid {{ rule }};">
+    <div style="font-family:{{ mono }};font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:{{ muted }};padding-bottom:10px;">
+      On the radar
+    </div>
+    {% for item in brief.radar %}
+    <div style="font-family:{{ sans }};font-size:14px;line-height:1.5;color:{{ ink }};padding-bottom:7px;">
+      <span style="color:{{ muted }};">›</span> {{ item.line }}
+      <a href="{{ item.url }}" style="color:{{ muted }};font-family:{{ mono }};font-size:10px;text-decoration:none;">&nbsp;[{{ item.source|truncate(20, true, '') }}]</a>
+    </div>
+    {% endfor %}
+  </td></tr>
+  {% endif %}
+
+  {% if brief.boardroom_question %}
+  <tr><td style="padding:20px 26px;border-top:1px solid {{ rule }};background:{{ ink }};">
+    <div style="font-family:{{ mono }};font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#8FA9BC;padding-bottom:8px;">
+      Ask your own shop today
+    </div>
+    <div style="font-family:{{ serif }};font-size:17px;line-height:1.45;color:#FFFFFF;">
+      {{ brief.boardroom_question }}
+    </div>
+  </td></tr>
+  {% endif %}
+
+  <tr><td style="padding:18px 26px 26px 26px;background:#FFFFFF;">
+    <a href="{{ archive_url }}" style="font-family:{{ mono }};font-size:11px;color:{{ marine }};text-decoration:none;border-bottom:1px solid {{ marine }};">Open the full edition with every deep dive</a>
+    <div style="font-family:{{ mono }};font-size:10px;color:{{ muted }};padding-top:14px;line-height:1.6;">
+      Built and sent by your own pipeline. Edit config/sources.yaml to change what it watches.<br>
+      Generated {{ generated_at }}.{% if brief.degraded %} Analysis was degraded on this run.{% endif %}
+    </div>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

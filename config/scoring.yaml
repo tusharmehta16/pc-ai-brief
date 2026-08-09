@@ -1,0 +1,132 @@
+# A story only qualifies if it hits at least one AI term AND one insurance term.
+# That single rule removes almost all of the noise from general tech feeds.
+
+ai_terms:
+  "artificial intelligence": 3
+  "generative ai": 4
+  "agentic ai": 5
+  "ai agent": 4
+  "large language model": 4
+  "machine learning": 2
+  "foundation model": 3
+  "copilot": 2
+  "automation": 1
+  "gpt": 2
+  "claude": 3
+  "gemini": 2
+  "llm": 3
+  "predictive model": 2
+  "computer vision": 3
+
+insurance_terms:
+  "property and casualty": 5
+  "p&c": 5
+  "underwriting": 4
+  "underwriter": 4
+  "claims": 4
+  "adjuster": 4
+  "actuarial": 3
+  "reinsurance": 3
+  "reinsurer": 3
+  "insurer": 4
+  "insurance": 3
+  "insurtech": 4
+  "broker": 2
+  "policyholder": 3
+  "premium": 2
+  "loss ratio": 4
+  "catastrophe": 3
+  "specialty lines": 4
+  "commercial lines": 4
+  "personal lines": 4
+  "syndicate": 2
+  "mga": 3
+
+# Named entities that matter to a carrier operator. A hit here is a strong signal.
+carriers:
+  - chubb
+  - aig
+  - travelers
+  - progressive
+  - "liberty mutual"
+  - "state farm"
+  - allstate
+  - "berkshire hathaway"
+  - allianz
+  - zurich
+  - axa
+  - generali
+  - "munich re"
+  - "swiss re"
+  - "hannover re"
+  - intact
+  - definity
+  - aviva
+  - "co-operators"
+  - wawanesa
+  - "economical"
+  - "tokio marine"
+  - sompo
+  - "ms&ad"
+  - qbe
+  - iag
+  - "lloyd's"
+  - beazley
+  - hiscox
+  - markel
+  - "wr berkley"
+  - "the hartford"
+  - cna
+  - "arch capital"
+  - everest
+  - "manulife"
+  - "sun life"
+
+# Vendors and platforms that show up in carrier build vs buy decisions.
+vendors:
+  - guidewire
+  - duckcreek
+  - "duck creek"
+  - sapiens
+  - majesco
+  - verisk
+  - "lexisnexis risk"
+  - shift technology
+  - tractable
+  - "cape analytics"
+  - "ccc intelligent"
+  - "salesforce"
+  - "microsoft"
+  - "google cloud"
+  - "aws"
+  - "anthropic"
+  - "openai"
+  - "palantir"
+  - accenture
+  - "ey"
+  - "deloitte"
+
+# Signals that a story is about governance rather than a product launch.
+regulatory_terms:
+  - naic
+  - eiopa
+  - osfi
+  - "e-23"
+  - fca
+  - "eu ai act"
+  - "model risk"
+  - "bias audit"
+  - "colorado division of insurance"
+  - "unfair discrimination"
+  - "circular letter"
+  - "supervisory"
+  - "consultation paper"
+
+# Down-rank the recurring noise that trade feeds produce.
+negative_terms:
+  - "webinar"
+  - "sponsored content"
+  - "podcast episode"
+  - "appoints" 
+  - "names new"
+  - "obituary"
