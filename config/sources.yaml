@@ -26,7 +26,7 @@ feeds:
     weight: 1.8
     region: Global
   - name: Canadian Underwriter
-    url: https://news.google.com/rss/search?q=site:canadianunderwriter.ca+AI+OR+%22artificial+intelligence%22&hl=en-CA&gl=CA&ceid=CA:en
+    url: https://news.google.com/rss/search?q=site:canadianunderwriter.ca+AI+OR+%22artificial+intelligence%22+when%3A3d&hl=en-CA&gl=CA&ceid=CA:en
     weight: 2.8
     region: Canada
   - name: Insurance Business Canada
@@ -38,7 +38,7 @@ feeds:
     weight: 2.8
     region: US
   - name: Insurance Post
-    url: https://news.google.com/rss/search?q=site:postonline.co.uk+AI+OR+%22artificial+intelligence%22&hl=en-GB&gl=GB&ceid=GB:en
+    url: https://news.google.com/rss/search?q=site:postonline.co.uk+AI+OR+%22artificial+intelligence%22+when%3A3d&hl=en-GB&gl=GB&ceid=GB:en
     weight: 2.2
     region: UK
   - name: Insurance Times
@@ -56,7 +56,7 @@ feeds:
     weight: 1.8
     region: Global
   - name: FinTech Futures
-    url: https://news.google.com/rss/search?q=site:fintechfutures.com+AI+insurance&hl=en-CA&gl=CA&ceid=CA:en
+    url: https://news.google.com/rss/search?q=site:fintechfutures.com+AI+insurance+when%3A3d&hl=en-CA&gl=CA&ceid=CA:en
     weight: 1.2
     region: Global
 
@@ -67,13 +67,44 @@ feeds:
     region: Global
   - name: MIT Technology Review AI
     url: https://www.technologyreview.com/topic/artificial-intelligence/feed
-    weight: 0.8
+    weight: 1.0
+    region: Global
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    weight: 1.0
+    region: Global
+  - name: Ars Technica AI
+    url: https://arstechnica.com/ai/feed/
+    weight: 1.0
+    region: Global
+  - name: The Verge AI
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    weight: 0.9
+    region: Global
+  - name: Anthropic News
+    url: https://www.anthropic.com/news/rss.xml
+    weight: 1.4
+    region: Global
+  - name: "Google News: frontier model releases"
+    url: https://news.google.com/rss/search?q=OpenAI+OR+Anthropic+OR+%22Google+DeepMind%22+model+release&hl=en-CA&gl=CA&ceid=CA:en
+    weight: 1.2
+    region: Global
+  - name: "Google News: AI regulation"
+    url: https://news.google.com/rss/search?q=%22AI+regulation%22+OR+%22EU+AI+Act%22+enforcement&hl=en-CA&gl=CA&ceid=CA:en
+    weight: 1.2
+    region: Global
+  - name: "Google News: enterprise AI adoption"
+    url: https://news.google.com/rss/search?q=enterprise+AI+deployment+results+OR+rollout+bank+OR+insurer&hl=en-CA&gl=CA&ceid=CA:en
+    weight: 1.2
     region: Global
 
 # Google News RSS queries. These are the workhorse for global coverage,
 # because they reach outlets that do not publish a usable feed.
 google_news:
   edition: "hl=en-CA&gl=CA&ceid=CA:en"
+  # Google News honours a when: operator. Three days is enough slack for a
+  # Monday run to catch the weekend without dragging in archive pages.
+  recency: "when:3d"
   weight: 1.6
   queries:
     - '"property and casualty" insurance artificial intelligence'
