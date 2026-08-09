@@ -8,6 +8,7 @@ import os
 import re
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
+from functools import lru_cache
 
 import yaml
 
@@ -24,17 +25,40 @@ def load_scoring(path: str) -> dict:
         return yaml.safe_load(fh)
 
 
+def broad_scope() -> bool:
+    """BRIEF_SCOPE=broad widens the brief beyond insurance to general AI news."""
+    return os.getenv("BRIEF_SCOPE", "pc").lower() in ("broad", "all", "wide")
+
+
+def reg_score_hint(blob: str, rules: dict) -> bool:
+    hits, _ = count_hits(blob, rules.get("regulatory_terms", []))
+    return hits > 0
+
+
 def normalize(text: str) -> str:
     text = text.lower()
     text = re.sub(r"[^a-z0-9 ]+", " ", text)
     return re.sub(r"\s+", " ", text).strip()
 
 
+@lru_cache(maxsize=2048)
+def term_pattern(term: str) -> re.Pattern:
+    """Match a term as a whole word, allowing a trailing plural s.
+
+    Substring matching was the original approach and it was wrong in both
+    directions. "ai" matched inside "said", "claim", and "available", while
+    "claim" failed to match "claims". Boundaries are defined against letters
+    and digits only, so "AI-enabled" and "(AI)" both count as a hit.
+    """
+    return re.compile(
+        r"(?<![a-z0-9])" + re.escape(term) + r"s?(?![a-z0-9])")
+
+
 def count_hits(haystack: str, terms) -> tuple[float, list[str]]:
     total, hit = 0.0, []
     items = terms.items() if isinstance(terms, dict) else ((t, 1) for t in terms)
     for term, weight in items:
-        if term in haystack:
+        if term_pattern(term).search(haystack):
             total += float(weight)
             hit.append(term)
     return total, hit
@@ -46,13 +70,28 @@ def score_story(story: Story, rules: dict) -> Story:
     ai_score, ai_hits = count_hits(blob, rules["ai_terms"])
     ins_score, ins_hits = count_hits(blob, rules["insurance_terms"])
     carrier_score, carriers = count_hits(blob, rules.get("carriers", []))
+    major_score, majors = count_hits(blob, rules.get("ai_majors", []))
 
-    # Hard gate. Both worlds must be present or it is not our story.
-    # A named carrier counts as the insurance side, because headlines often
-    # read "Allianz partners with OpenAI" with no generic insurance word in them.
-    if not ai_hits or not (ins_hits or carriers):
+    # Every story needs a real AI signal. "automation" on its own is not one.
+    if not ai_hits or ai_score < 2:
         story.score = 0.0
         return story
+
+    # Tier 1, the core beat. A named carrier counts as the insurance side,
+    # because headlines often read "Allianz partners with OpenAI" with no
+    # generic insurance word in them.
+    insurance_story = bool(ins_hits or carriers)
+
+    # Tier 2, the wider AI beat. Only reachable when BRIEF_SCOPE is broad, and
+    # only for substantive AI news, not every product blog with "AI" in it.
+    wider_story = broad_scope() and ai_score >= 3 and (
+        majors or reg_score_hint(blob, rules) or story.source_weight >= 0.9)
+
+    if not insurance_story and not wider_story:
+        story.score = 0.0
+        return story
+
+    story.tier = "insurance" if insurance_story else "wider"
 
     vendor_score, vendors = count_hits(blob, rules.get("vendors", []))
     reg_score, regs = count_hits(blob, rules.get("regulatory_terms", []))
@@ -72,7 +111,11 @@ def score_story(story: Story, rules: dict) -> Story:
         - penalty * 4.0
     )
 
-    story.reasons = [t for t in (carriers + regs + vendors)][:6]
+    # A wider AI story is worth knowing but should never outrank the core beat.
+    if story.tier == "wider":
+        story.score *= 0.85
+
+    story.reasons = [t for t in (carriers + majors + regs + vendors)][:6]
     if negatives:
         story.reasons.append(f"downweighted: {negatives[0]}")
     return story
@@ -118,17 +161,27 @@ def deduplicate(stories: list[Story]) -> list[Story]:
 
 
 def shortlist(stories: list[Story], rules: dict, seen: dict,
-              limit: int = 45, min_score: float = 9.0) -> list[Story]:
+              limit: int = 45, min_score: float = 12.0) -> list[Story]:
     scored = [score_story(s, rules) for s in stories]
     qualified = [s for s in scored if s.score >= min_score]
 
     fresh = [s for s in qualified if normalize(s.title)[:90] not in seen]
     log.info("scored %d, qualified %d, unseen %d",
              len(scored), len(qualified), len(fresh))
-    for item in sorted(scored, key=lambda s: s.score, reverse=True)[:8]:
-        log.info("  %5.1f  %s", item.score, item.title[:80])
-    ranked = deduplicate(fresh)[:limit]
-    return ranked
+
+    ranked = deduplicate(fresh)
+
+    if broad_scope():
+        # Keep the wider AI beat to a minority of the shortlist so the core
+        # insurance stories always fill the top of the brief.
+        cap = max(3, int(limit * 0.35))
+        core = [s for s in ranked if getattr(s, "tier", "insurance") == "insurance"]
+        wider = [s for s in ranked if getattr(s, "tier", "insurance") == "wider"][:cap]
+        ranked = sorted(core + wider, key=lambda s: s.score, reverse=True)
+        log.info("shortlist: %d insurance, %d wider AI", len(core), len(wider))
+
+    return ranked[:limit]
+
 
 def mark_seen(seen: dict, stories: list[Story]) -> dict:
     now = datetime.now(timezone.utc).isoformat()
