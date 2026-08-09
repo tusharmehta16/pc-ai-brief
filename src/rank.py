@@ -168,6 +168,11 @@ def shortlist(stories: list[Story], rules: dict, seen: dict,
     fresh = [s for s in qualified if normalize(s.title)[:90] not in seen]
     log.info("scored %d, qualified %d, unseen %d",
              len(scored), len(qualified), len(fresh))
+    # Top scores every run, qualified or not. Without this a zero tells you
+    # nothing about whether the threshold is wrong or the day was just quiet.
+    for item in sorted(scored, key=lambda s: s.score, reverse=True)[:8]:
+        seen_flag = "" if normalize(item.title)[:90] not in seen else "  [already sent]"
+        log.info("  %5.1f  %s%s", item.score, item.title[:76], seen_flag)
 
     ranked = deduplicate(fresh)
 
