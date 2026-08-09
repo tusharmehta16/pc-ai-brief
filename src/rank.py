@@ -118,17 +118,17 @@ def deduplicate(stories: list[Story]) -> list[Story]:
 
 
 def shortlist(stories: list[Story], rules: dict, seen: dict,
-              limit: int = 45, min_score: float = 12.0) -> list[Story]:
+              limit: int = 45, min_score: float = 9.0) -> list[Story]:
     scored = [score_story(s, rules) for s in stories]
     qualified = [s for s in scored if s.score >= min_score]
 
     fresh = [s for s in qualified if normalize(s.title)[:90] not in seen]
     log.info("scored %d, qualified %d, unseen %d",
              len(scored), len(qualified), len(fresh))
-
+    for item in sorted(scored, key=lambda s: s.score, reverse=True)[:8]:
+        log.info("  %5.1f  %s", item.score, item.title[:80])
     ranked = deduplicate(fresh)[:limit]
     return ranked
-
 
 def mark_seen(seen: dict, stories: list[Story]) -> dict:
     now = datetime.now(timezone.utc).isoformat()
