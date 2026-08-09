@@ -2,6 +2,9 @@
 # That single rule removes almost all of the noise from general tech feeds.
 
 ai_terms:
+  "ai": 3
+  "ai-enabled": 4
+  "ai-powered": 4
   "artificial intelligence": 3
   "generative ai": 4
   "agentic ai": 5
@@ -23,7 +26,7 @@ insurance_terms:
   "p&c": 5
   "underwriting": 4
   "underwriter": 4
-  "claims": 4
+  "claim": 4
   "adjuster": 4
   "actuarial": 3
   "reinsurance": 3
@@ -130,3 +133,22 @@ negative_terms:
   - "appoints" 
   - "names new"
   - "obituary"
+
+# Named AI labs and chipmakers. Used only when BRIEF_SCOPE is broad, to let a
+# major model or infrastructure story through without an insurance angle.
+ai_majors:
+  - openai
+  - anthropic
+  - "google deepmind"
+  - deepmind
+  - "meta ai"
+  - mistral
+  - xai
+  - nvidia
+  - microsoft
+  - "amazon web services"
+  - cohere
+  - perplexity
+  - "hugging face"
+  - "eu ai act"
+  - "ai safety institute"
