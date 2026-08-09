@@ -26,7 +26,7 @@ feeds:
     weight: 1.8
     region: Global
   - name: Canadian Underwriter
-    url: https://www.canadianunderwriter.ca/feed/
+    url: https://news.google.com/rss/search?q=site:canadianunderwriter.ca+AI+OR+%22artificial+intelligence%22&hl=en-CA&gl=CA&ceid=CA:en
     weight: 2.8
     region: Canada
   - name: Insurance Business Canada
@@ -38,7 +38,7 @@ feeds:
     weight: 2.8
     region: US
   - name: Insurance Post
-    url: https://www.postonline.co.uk/feeds/rss/news
+    url: https://news.google.com/rss/search?q=site:postonline.co.uk+AI+OR+%22artificial+intelligence%22&hl=en-GB&gl=GB&ceid=GB:en
     weight: 2.2
     region: UK
   - name: Insurance Times
@@ -56,7 +56,7 @@ feeds:
     weight: 1.8
     region: Global
   - name: FinTech Futures
-    url: https://www.fintechfutures.com/feed/
+    url: https://news.google.com/rss/search?q=site:fintechfutures.com+AI+insurance&hl=en-CA&gl=CA&ceid=CA:en
     weight: 1.2
     region: Global
 
