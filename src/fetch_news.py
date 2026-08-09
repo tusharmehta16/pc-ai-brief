@@ -33,6 +33,7 @@ class Story:
     source_weight: float
     published: datetime
     summary: str = ""
+    body: str = ""
     score: float = 0.0
     reasons: list[str] = field(default_factory=list)
 
@@ -60,6 +61,19 @@ def clean_text(raw: str) -> str:
     text = re.sub(r"<[^>]+>", " ", raw)
     text = html.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+# Google News wraps every link in an encoded redirect, but the entry summary
+# still contains the publisher's own URL. That real URL gives better links in
+# the email and, more importantly, often carries a date we can check.
+PUBLISHER_LINK = re.compile(r'href="(https?://(?!news\.google\.)[^"]+)"')
+
+
+def real_link(entry, fallback: str) -> str:
+    if "news.google." not in fallback:
+        return fallback
+    match = PUBLISHER_LINK.search(getattr(entry, "summary", "") or "")
+    return match.group(1) if match else fallback
 
 
 def canonical_url(url: str) -> str:
@@ -115,7 +129,7 @@ def fetch_feed(name: str, url: str, weight: float, region: str,
     cutoff = datetime.now(timezone.utc) - timedelta(hours=window_hours)
     stale = 0
     for entry in parsed.entries:
-        link = getattr(entry, "link", "")
+        link = real_link(entry, getattr(entry, "link", ""))
         title = clean_text(getattr(entry, "title", ""))
         if not link or not title:
             continue
@@ -149,6 +163,86 @@ def fetch_feed(name: str, url: str, weight: float, region: str,
     log.info("%-38s %3d in window%s", name, len(stories),
              f", {stale} out of window or undated" if stale else "")
     return stories
+
+
+PAGE_DATE = re.compile(
+    r'(?:article:published_time"[^>]*content="|datePublished"\s*:\s*"'
+    r'|itemprop="datePublished"[^>]*content="|name="pubdate"[^>]*content=")'
+    r'(\d{4}-\d{2}-\d{2})', re.IGNORECASE)
+
+
+SCRIPTS = re.compile(r"<(script|style|nav|header|footer|aside)[^>]*>.*?</\1>",
+                     re.IGNORECASE | re.DOTALL)
+ARTICLE = re.compile(r"<article[^>]*>(.*?)</article>", re.IGNORECASE | re.DOTALL)
+PARAGRAPH = re.compile(r"<p[^>]*>(.*?)</p>", re.IGNORECASE | re.DOTALL)
+
+
+def article_text(html: str, limit: int = 4000) -> str:
+    """Pull readable body text out of a page.
+
+    Deliberately crude. A real parser would be better, but paragraph text from
+    inside <article> covers most publishers and never breaks the run.
+    """
+    html = SCRIPTS.sub(" ", html)
+    scope = ARTICLE.search(html)
+    region = scope.group(1) if scope else html
+    paragraphs = [clean_text(p) for p in PARAGRAPH.findall(region)]
+    paragraphs = [p for p in paragraphs if len(p) > 60]
+    return " ".join(paragraphs)[:limit]
+
+
+def fetch_page(url: str) -> tuple[datetime | None, str]:
+    """Return the publisher's own publication date and the article text.
+
+    Aggregators restamp old articles with a fresh crawl date, so the feed is
+    not a trustworthy source of truth. The publisher's own page usually is,
+    and while we are here the body text is far richer than a feed summary.
+    """
+    try:
+        response = requests.get(url, timeout=12, allow_redirects=True,
+                                headers={"User-Agent": USER_AGENT}, stream=True)
+        raw = response.raw.read(400_000, decode_content=True).decode(
+            "utf-8", errors="ignore")
+        response.close()
+    except Exception:  # noqa: BLE001
+        return None, ""
+
+    published = None
+    match = PAGE_DATE.search(raw)
+    if match:
+        try:
+            published = datetime.strptime(match.group(1), "%Y-%m-%d").replace(
+                tzinfo=timezone.utc)
+        except ValueError:
+            published = None
+    return published, article_text(raw)
+
+
+def enrich(stories: list, max_age_days: int = 21) -> list:
+    """Fetch each shortlisted story once: verify its date, keep its text.
+
+    Fails open on the date. An unreachable page or one with no date metadata
+    keeps the story, because dropping real news is worse than the occasional
+    old one. Text is a bonus, and its absence only costs depth.
+    """
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
+    kept, dropped, with_text = [], 0, 0
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        results = list(pool.map(lambda s: fetch_page(s.url), stories))
+    for story, (actual, text) in zip(stories, results):
+        if actual and actual < cutoff:
+            log.info("dropped as stale (%s): %s", actual.date(), story.title[:70])
+            dropped += 1
+            continue
+        if actual:
+            story.published = actual
+        if text:
+            story.body = text
+            with_text += 1
+        kept.append(story)
+    log.info("page check: %d kept, %d stale, %d with full text",
+             len(kept), dropped, with_text)
+    return kept
 
 
 def google_news_url(query: str, edition: str) -> str:

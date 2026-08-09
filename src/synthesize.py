@@ -92,7 +92,7 @@ Return JSON only, matching this shape exactly:
       "headline": "A short factual headline in your own words, under 12 words",
       "what_happened": "One sentence of fact.",
       "so_what": "One sentence naming the implication for a P&C carrier's operations, economics, or risk posture.",
-      "deeper": "Three to five sentences. The detail behind the story: mechanics, numbers, who is exposed, what is unproven, and how it connects to anything else in today's set.",
+      "deeper": "Five to eight sentences, and the most valuable part of the brief. Use the specifics in the supplied article text: name the actual figures, who said them, and what sits behind the headline number. Where the headline framing is misleading or incomplete, say so and give the more accurate reading. Cover the mechanics, who is exposed, what remains unproven, and how it connects to anything else in today's set. Never pad this with generalities. If the text is thin, say plainly what is not yet known rather than inventing depth.",
       "watch_next": "One short line naming the specific next signal to watch for."
     }
   ],
@@ -110,7 +110,11 @@ Rules:
 - Every id must come from the supplied stories. Never invent a story, a number,
   a company, or a quote. If a detail is not in the supplied text, leave it out.
 - If the source text is only a headline, keep "deeper" to what can be supported
-  and say what is still unknown.
+  and say what is still unknown. Where full article text is supplied, use it:
+  quote figures exactly as given, attribute statements to whoever made them,
+  and prefer the specific over the general in every sentence.
+- The headline number in a story is often not the interesting number. If the
+  text supports a sharper reading, lead the deeper section with that.
 - Do not repeat the same story across movers, radar, and regulatory.
 - No hyphens and no em dashes in any prose you write.
 
@@ -190,9 +194,9 @@ def write_brief(client: Anthropic, stories: list[Story],
             f"    segment hint: {item.get('segment', 'unclassified')} | "
             f"significance hint: {item.get('significance', 3)}\n"
             f"    source: {story.source} | url: {story.url}\n"
-            f"    text: {story.summary[:900] or 'headline only, no body text available'}"
+            f"    text: {story.body[:3500] or story.summary[:900] or 'headline only, no body text available'}"
         )
-    brief = _call(client, BRIEF_MODEL, BRIEF_PROMPT % "\n\n".join(lines), 4000)
+    brief = _call(client, BRIEF_MODEL, BRIEF_PROMPT % "\n\n".join(lines), 8000)
     return attach_sources(brief, stories)
 
 

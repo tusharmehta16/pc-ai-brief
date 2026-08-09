@@ -177,6 +177,11 @@ def main() -> int:
         shortlisted = rank.shortlist(raw, rules, seen,
                                      min_score=args.min_score)
 
+    if shortlisted and not args.sample:
+        # Verify against each publisher's own page before spending model
+        # tokens on something an aggregator restamped from 2017.
+        shortlisted = fetch_news.enrich(shortlisted)
+
     if not shortlisted:
         log.warning("nothing qualified today, no email sent")
         return 0
