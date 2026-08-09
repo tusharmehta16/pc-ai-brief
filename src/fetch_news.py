@@ -229,6 +229,7 @@ def enrich(stories: list, max_age_days: int = 21) -> list:
     kept, dropped, with_text = [], 0, 0
     with ThreadPoolExecutor(max_workers=6) as pool:
         results = list(pool.map(lambda s: fetch_page(s.url), stories))
+    unverified = []
     for story, (actual, text) in zip(stories, results):
         if actual and actual < cutoff:
             log.info("dropped as stale (%s): %s", actual.date(), story.title[:70])
@@ -236,16 +237,24 @@ def enrich(stories: list, max_age_days: int = 21) -> list:
             continue
         if actual:
             story.published = actual
+        else:
+            unverified.append(story.title[:60])
         if text:
             story.body = text
             with_text += 1
         kept.append(story)
     log.info("page check: %d kept, %d stale, %d with full text",
              len(kept), dropped, with_text)
+    for title in unverified:
+        log.info("  date unverified, page blocked or undated: %s", title)
     return kept
 
 
-def google_news_url(query: str, edition: str) -> str:
+def google_news_url(query: str, edition: str, recency: str = "when:3d") -> str:
+    """Google News supports a when: operator. Filtering at source is far more
+    reliable than filtering an archive page out afterwards."""
+    if recency and "when:" not in query:
+        query = f"{query} {recency}"
     return (f"https://news.google.com/rss/search?q="
             f"{urllib.parse.quote_plus(query)}&{edition}")
 
@@ -259,8 +268,10 @@ def collect(config: dict, window_hours: int = 30) -> list[Story]:
     gn = config.get("google_news") or {}
     edition = gn.get("edition", "hl=en-CA&gl=CA&ceid=CA:en")
     gn_weight = float(gn.get("weight", 1.5))
+    recency = gn.get("recency", "when:3d")
     for query in gn.get("queries", []):
-        jobs.append((f"Google News: {query[:40]}", google_news_url(query, edition),
+        jobs.append((f"Google News: {query[:40]}",
+                     google_news_url(query, edition, recency),
                      gn_weight, "Global"))
 
     stories: list[Story] = []
