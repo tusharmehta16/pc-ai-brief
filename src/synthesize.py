@@ -36,22 +36,42 @@ House style rules, follow them exactly:
 - No filler openers such as "In a significant development".
 - If something is vendor noise dressed as news, say so plainly."""
 
+JSON_ONLY = """
+
+Output format: reply with a single raw JSON object and nothing else. No
+preamble, no explanation, no markdown code fences. Start with the opening brace
+and end with the closing brace."""
+
 TRIAGE_PROMPT = """Below are candidate news items from the last day.
 
-Select the items that genuinely matter to a global property and casualty insurer.
-Prioritise, in this order:
+Each item is marked [core] for the insurance beat or [wider] for general AI news.
+
+Select the items that genuinely matter to a senior AI leader inside a global
+property and casualty insurer. Prioritise, in this order:
 1. A named carrier, reinsurer, broker or MGA doing something concrete with AI
    (deployment, results, spend, partnership, failure, litigation).
 2. Regulation and supervisory expectations touching AI in insurance.
 3. Core platform and vendor moves that change carrier build versus buy decisions.
 4. Capability shifts that plausibly reset what is possible in underwriting,
    claims, or distribution within 12 months.
+5. Wider AI news only where it would change how he plans, staffs, buys, or
+   governs: frontier model releases, enterprise deployment evidence, AI
+   regulation, and the economics of compute and vendors. Tag these "Wider AI".
+
+Never let wider items crowd out the insurance beat. At most 4 of your selections
+may be [wider], and only if they clear a higher bar than the core items.
+
+Reject stale items. Feeds sometimes resurface an article from years ago with a
+fresh timestamp. If a headline describes a product launch, funding round, or
+announcement that reads as old news rather than something from the last few
+days, reject it and do not select it.
 
 Reject: recruitment notices, webinars, sponsored posts, generic AI explainers,
-consumer gadget news, and anything with no insurance connection.
+consumer gadget news, incremental product updates, and stock movement with no
+underlying operational news.
 
 Return JSON only, no preamble:
-{"selected": [{"id": <int>, "segment": "<Underwriting|Claims|Distribution|Regulation|Capital|Platform|Talent>", "significance": <1-5>}]}
+{"selected": [{"id": <int>, "segment": "<Underwriting|Claims|Distribution|Regulation|Capital|Platform|Talent|Wider AI>", "significance": <1-5>}]}
 
 Select at most 12, ordered by significance descending. If fewer than 12 deserve
 selection, return fewer.
@@ -84,6 +104,9 @@ Return JSON only, matching this shape exactly:
 Rules:
 - Between 3 and 6 movers. Quality over quota. A thin news day should produce a
   short brief, not padding.
+- A story tagged "Wider AI" earns a mover slot only if it changes a decision a
+  carrier owns. Otherwise put it in radar with one clear line on why it matters.
+  The insurance beat always leads the brief.
 - Every id must come from the supplied stories. Never invent a story, a number,
   a company, or a quote. If a detail is not in the supplied text, leave it out.
 - If the source text is only a headline, keep "deeper" to what can be supported
@@ -103,10 +126,14 @@ def _client() -> Anthropic:
 
 
 def _extract_json(text: str) -> dict:
+    """Pull a JSON object out of a model response.
+
+    Assistant prefill would be tidier, but not every model accepts a
+    conversation that ends on an assistant turn, so we ask for bare JSON in
+    the prompt and parse defensively here instead.
+    """
     text = text.strip()
-    text = re.sub(r"^```(?:json)?|```$", "", text, flags=re.MULTILINE).strip()
-    if not text.startswith("{"):
-        text = "{" + text
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text, flags=re.MULTILINE).strip()
     try:
         return json.loads(text)
     except json.JSONDecodeError:
@@ -120,24 +147,22 @@ def _call(client: Anthropic, model: str, prompt: str, max_tokens: int) -> dict:
     response = client.messages.create(
         model=model,
         max_tokens=max_tokens,
-        system=READER_PROFILE,
-        messages=[
-            {"role": "user", "content": prompt},
-            {"role": "assistant", "content": "{"},  # prefill forces clean JSON
-        ],
+        system=READER_PROFILE + JSON_ONLY,
+        messages=[{"role": "user", "content": prompt}],
     )
     body = "".join(block.text for block in response.content
                    if getattr(block, "type", "") == "text")
     log.info("%s used %d in / %d out tokens", model,
              response.usage.input_tokens, response.usage.output_tokens)
-    return _extract_json("{" + body)
+    return _extract_json(body)
 
 
 def render_candidates(stories: list[Story]) -> str:
     lines = []
     for idx, story in enumerate(stories):
+        tier = "core" if getattr(story, "tier", "insurance") == "insurance" else "wider"
         lines.append(
-            f"[{idx}] {story.title}\n"
+            f"[{idx}] [{tier}] {story.title}\n"
             f"    source: {story.source} ({story.region}) | "
             f"{story.published:%Y-%m-%d %H:%M UTC}\n"
             f"    summary: {story.summary[:420] or 'not available'}"
