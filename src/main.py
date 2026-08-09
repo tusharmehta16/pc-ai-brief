@@ -158,7 +158,7 @@ def main() -> int:
                         help="skip Claude, emit the ranked list only")
     parser.add_argument("--window", type=int, default=30,
                         help="hours of news to consider")
-    parser.add_argument("--min-score", type=float, default=12.0)
+    parser.add_argument("--min-score", type=float, default=9.0)
     args = parser.parse_args()
 
     timezone_name = os.getenv("BRIEF_TZ", "America/Toronto")
