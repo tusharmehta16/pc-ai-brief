@@ -45,13 +45,15 @@ def score_story(story: Story, rules: dict) -> Story:
 
     ai_score, ai_hits = count_hits(blob, rules["ai_terms"])
     ins_score, ins_hits = count_hits(blob, rules["insurance_terms"])
+    carrier_score, carriers = count_hits(blob, rules.get("carriers", []))
 
     # Hard gate. Both worlds must be present or it is not our story.
-    if not ai_hits or not ins_hits:
+    # A named carrier counts as the insurance side, because headlines often
+    # read "Allianz partners with OpenAI" with no generic insurance word in them.
+    if not ai_hits or not (ins_hits or carriers):
         story.score = 0.0
         return story
 
-    carrier_score, carriers = count_hits(blob, rules.get("carriers", []))
     vendor_score, vendors = count_hits(blob, rules.get("vendors", []))
     reg_score, regs = count_hits(blob, rules.get("regulatory_terms", []))
     penalty, negatives = count_hits(blob, rules.get("negative_terms", []))
