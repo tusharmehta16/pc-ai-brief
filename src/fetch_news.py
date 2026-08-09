@@ -83,6 +83,22 @@ def entry_time(entry) -> datetime | None:
     return None
 
 
+# Most publishers put the publication date in the URL path. When a feed lies
+# about its dates, or omits them, this is the more trustworthy signal.
+URL_DATE = re.compile(r"/(20\d{2})/(\d{1,2})(?:/(\d{1,2}))?/")
+
+
+def url_time(url: str) -> datetime | None:
+    match = URL_DATE.search(url)
+    if not match:
+        return None
+    year, month, day = match.group(1), match.group(2), match.group(3) or "1"
+    try:
+        return datetime(int(year), int(month), int(day), tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
 def fetch_feed(name: str, url: str, weight: float, region: str,
                window_hours: int) -> list[Story]:
     """Fetch one feed. Never raises: a broken source must not kill the run."""
@@ -97,13 +113,29 @@ def fetch_feed(name: str, url: str, weight: float, region: str,
         return stories
 
     cutoff = datetime.now(timezone.utc) - timedelta(hours=window_hours)
+    stale = 0
     for entry in parsed.entries:
         link = getattr(entry, "link", "")
         title = clean_text(getattr(entry, "title", ""))
         if not link or not title:
             continue
-        published = entry_time(entry) or datetime.now(timezone.utc)
-        if published < cutoff:
+        # An undated entry used to default to "now", which meant Google News
+        # archive pages from years ago sailed straight into the brief. An item
+        # we cannot date is an item we do not trust.
+        published = entry_time(entry)
+        if published is None:
+            stale += 1
+            continue
+
+        # When the URL carries a date and the feed disagrees by more than a
+        # week, believe the URL. Re-crawled archive pages are the usual cause.
+        from_url = url_time(link)
+        if from_url and abs((from_url - published).days) > 7:
+            published = from_url
+
+        now = datetime.now(timezone.utc)
+        if published > now + timedelta(days=1) or published < cutoff:
+            stale += 1
             continue
         stories.append(Story(
             title=title,
@@ -114,7 +146,8 @@ def fetch_feed(name: str, url: str, weight: float, region: str,
             published=published,
             summary=clean_text(getattr(entry, "summary", ""))[:1200],
         ))
-    log.info("%-38s %3d in window", name, len(stories))
+    log.info("%-38s %3d in window%s", name, len(stories),
+             f", {stale} out of window or undated" if stale else "")
     return stories
 
 
