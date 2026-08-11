@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 11 August 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 11 August 2026</h1>
+      <div class="meta">34 sources scanned · 17 qualified · 3 movers · generated 10:44 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>The one thing that matters today is that AI agents are starting to sit between the customer and the carrier at the point of sale, and EverQuote's move into ChatGPT-native distribution is the clearest evidence yet. Everything else in today's set is either back-office automation or unverified vendor and trade-press noise.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Distribution</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">EverQuote buys into AI shopping distribution stack</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Platform</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Allstate builds proprietary agentic AI platform Allie</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Finance operations</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Vertafore adds AI agent for carrier statement reconciliation</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Distribution</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>EverQuote buys into AI shopping distribution stack</h2>
+      <p>EverQuote entered an exclusive commercial partnership and took a minority stake in Waniwani, a 13-person startup that builds AI distribution tools for ChatGPT, Claude, and Gemini, to integrate into its offerings for P&C carriers and agents.</p>
+      <div class="sowhat"><b>So what</b>Distribution is being redefined by agentic shopping, and carriers who have no presence inside AI assistants risk losing quote volume to whoever gets discoverability right first.</div>
+      <div class="deeper"><b>Deeper</b>The headline number is the stake itself, undisclosed in size, but the more telling figures sit in the background: EverQuote's web traffic has been cut in half over the past year according to Coverager's Monthly Innovation Report, even as Q2 revenue hit $195.1 million, up 25%, with adjusted EBITDA of $30.1 million, up 37%, mostly from auto at $172.1 million versus home at $23 million. That traffic collapse is the real driver behind this deal, not growth confidence. Waniwani raised an $8 million seed led by Seedcamp in June and already powers Tuio, a Lemonade-like MGA that is quoting home insurance directly inside ChatGPT. The irony is that EverQuote also runs ZestyQuote, which nominally routes to Lemonade, so it is now investing in the same infrastructure that could disintermediate its own funnel. CEO Jayme Mendal frames this as staying visible in agentic AI channels, but nothing here proves that being 'discoverable' inside an AI assistant preserves carrier pricing control or margin the way a branded search result does. What is unproven is whether consumers using ChatGPT to shop insurance behave anything like consumers using a comparison site, and whether carriers gain or lose leverage once an AI agent controls the comparison.</div>
+<div class="next">Watch next: Whether Lemonade or another direct carrier launches inside ChatGPT to test Tuio's early lead in agentic quoting.</div>      <div class="links">
+        <a href="https://coverager.com/everquote-takes-minority-stake-in-waniwani" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22EverQuote%20buys%20into%20AI%20shopping%20distribution%20stack%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Feverquote-takes-minority-stake-in-waniwani%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Platform</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Allstate builds proprietary agentic AI platform Allie</h2>
+      <p>Allstate is developing an in-house agentic AI platform called Allie to embed AI more deeply across its operations and customer interactions, per Insurtech Insights.</p>
+      <div class="sowhat"><b>So what</b>A top-tier US carrier choosing to build agentic infrastructure rather than buy it signals a bet that owning the orchestration layer is now a competitive asset, which raises the bar other carriers will be measured against.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is announcement-level only, with no architecture, model provider, timeline, use cases, or investment figures disclosed. What is not yet known is whether Allie touches underwriting, claims, or servicing, and what governance wraps around agent decisions and hand-offs to humans. That gap matters because everything else in today's set, from Vertafore's Reconciliation Agent to Sapiens leaning on Claude, is carriers and vendors buying or renting agentic capability rather than building it. Allstate diverging toward a build strategy is the notable signal, but it should be treated as a build-in-progress claim from trade press rather than a confirmed capability. The strategic question this raises for any carrier is whether proprietary agent orchestration becomes a durable moat or simply a slower, more expensive path to the same endpoint vendors already sell.</div>
+<div class="next">Watch next: Any disclosure of Allie's scope, underlying model, or first production use case.</div>      <div class="links">
+        <a href="https://www.insurtechinsights.com/allstate-develops-allie-platform-for-agentic-ai-strategy" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Allstate%20builds%20proprietary%20agentic%20AI%20platform%20Allie%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fallstate-develops-allie-platform-for-agentic-ai-strategy%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Finance operations</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Vertafore adds AI agent for carrier statement reconciliation</h2>
+      <p>Vertafore launched a Reconciliation Agent inside its Velocity AI Platform that automatically matches carrier statements against agency transactions across more than 200 carrier formats, following its earlier Insurance Expert Agent and Email Agent.</p>
+      <div class="sowhat"><b>So what</b>This targets a real cost center in commission and payables reconciliation, and if it performs as described it shortens month-end close without touching pricing, underwriting, or claims decisions, which makes it an easier governance approval than most agentic AI pitches.</div>
+      <div class="deeper"><b>Deeper</b>The agent analyzes transaction data, proposes matches, and surfaces exceptions such as expected commission discrepancies, rather than making autonomous decisions, which keeps it in the assistive rather than agentic-decisioning category despite the branding. Vertafore positions the value as freeing accounting teams from line-by-line manual matching as agency transaction volume grows. No accuracy rate, error rate, or named customer deployment is given in the text, so every efficiency claim here is vendor description rather than measured outcome. This sits well below the risk profile of underwriting or claims automation stories elsewhere in today's set, since a bad match in reconciliation is a finance control issue, not a pricing or coverage decision. The practical value for a carrier's governance team is that back-office reconciliation is a low-regret category to pilot precisely because errors are caught downstream in financial controls rather than surfaced to policyholders.</div>
+<div class="next">Watch next: First named carrier or agency deployment with a measured cycle-time or error-rate figure.</div>      <div class="links">
+        <a href="https://coverager.com/how-ai-is-changing-insurance-reconciliation-workflows" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Vertafore%20adds%20AI%20agent%20for%20carrier%20statement%20reconciliation%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fhow-ai-is-changing-insurance-reconciliation-workflows%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">FinTech Global reports French insurers are moving AI from pilots into production, but the supplied text names no carriers, use cases, or scale. <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOZ3FFaXE2SW02b2QtR25LS1EwSzNzZWJIWEZjN001VDlUMXRvVXc4akJlSzdUV2pCODFORXZzNDh1WUF6clRsaDIxa3RCZmlpRHAwUG5iUTNhN2ctM19zS1kzckhidUlJOXAtSE9fOEtxTXZFQkViZlBWTHNRWVZhUnRlVnpYSDVNZ3g5X2dROE4yZw?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Appian and Synechron announced an Open Underwriting Stack for AI-powered underwriting; this is a joint vendor press release with no performance detail supplied, treat as vendor noise until specifics emerge. <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxPWjBzSFZNb2M2RzNjT09NMlk0c3Z5MjdqQkNDZGVCckJfUWo2NEVMMDc5YTVsLWNvTm9ucW5iQVNJdEZpUFVvMWJDRTl0TU50ZWhSTGl1a2RGb1BYNHhuTW40SFlTQlJzNGJ5aWExczgwVGJPQUt4aU1LNDZQbUhTRDg5WlR0ZUI2bENlSDk1bFZ4cllBMWdQT2FaSjJQS3d2amctS25CNnQzd2tZeDE5YXllVzJLU2ZHR0pSNmgycGFtZHFmU0xyS28xTklpb01YX0VZUnozWVFuRnNnQjJKMXBzaEs?oc=5" rel="noopener">[PR Newswire UK]</a></div>
+      <div class="line">VERVE and EHVA.ai announced a partnership to automate policy and claims status calls with voice AI, another vendor pairing announced without operational detail. <a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxQQ01DanF2RFk5NC1IcVpTWHEtdkozelRLd1NabjVrNDRJWnRMVk80bE1oMHJLRG9lZ3pHLVEyY3JMclIxeGxiUEdLdmpTX19qaHczd0FEblVMQ3lDZEF3bDNiTE5sQnlfd1I4bk1GREVnamVfcXhqeUZkMmtiZnJ4Z3MwZ2VWSTBIS3BXc01KTmRub3VFNGhMeTJjN2g3Q3pkU0Z2Q3NyemlwbnYwZEJNSUhjel84UFRmNEhxejE2UURabHJVZlNKcTl4Zk85M0RhaUM1c1F2b3NmTnpOclBz?oc=5" rel="noopener">[PR Newswire]</a></div>
+      <div class="line">Exzeo launched an AI venture division aimed at new AI-native insurance businesses, a corporate structuring move with no products, use cases, or capital figures disclosed yet. <a href="https://www.insurtechinsights.com/exzeo-launches-ai-venture-division-focused-on-new-insurance-businesses" rel="noopener">[Insurtech Insights]</a></div>
+      <div class="line">Sapiens' Hannay told Insurance Post that Claude is accelerating the company's AI evolution, but no specific products or workflows were named. <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNV2JScXNsMXFFVV95RUU0Zm9CXzhsZTdRSmpoLWhjcktzV2pOSUJQd1FzU2xJeXN0eFY1MjlkQ3dMSV92SGs4V0s4TXJIeEd6YzRNYVUyX1FJXzVvRkU2VzNxdy1JWDloQjE2ekxBYWNKU19ZR21sRUctNnRfVG4wbnZrSWFjMmJfdWpuMG11a041ZEVJSDRxNFYtQXdIemVhWU5VOXQwTmM1Tms?oc=5" rel="noopener">[Insurance Post]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If a customer asks ChatGPT or Claude to shop for insurance today, do we know whether our products even appear, and who owns the decision to fix that if they do not.</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
