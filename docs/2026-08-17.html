@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monday, 17 August 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Monday, 17 August 2026</h1>
+      <div class="meta">34 sources scanned · 8 qualified · 6 movers · generated 07:55 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Avantia Launches Lyra; Agentic AI Orchestrator - - Insurance Edge</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">How insurers might cover risks AI agents create - dig-in.com</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Best’s Market Segment Report: Munich RE, Lloyd’s Land Atop AM Best’s “World’s 50 Largest Reinsurers” Rankings </span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Week in Review — August 10–14, 2026</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurers risk wasting AI investments as information gaps hinder adoption - Intelligent Insurer</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">RHB expects Malaysia’s technology sector momentum to remain intact into the second half on AI infrastructure s</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Edge</span>
+      </div>
+      <h2>Avantia Launches Lyra; Agentic AI Orchestrator - - Insurance Edge</h2>
+      <p>Avantia Launches Lyra; Agentic AI Orchestrator - Insurance Edge</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Avantia Launches Lyra; Agentic AI Orchestrator - Insurance Edge</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPMkNYckpmVE9zbTJLZGhNREh1OG8wSlVaZ2lSbDNHbzBJcmRPU2JNZlF1Rjk2WEtRTVQ5ODlEYjVPMjMydDZpbXlXZ042MlpMMktHMVotMnZxVGktUUZSY3QwcGJMb0tqSF9sS05sRGMyZF82VVJLSVBtRWowZ01OQ1F1blJWZTJQd1VMaw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Avantia%20Launches%20Lyra%3B%20Agentic%20AI%20Orchestrator%20-%20-%20Insurance%20Edge%22%0AInsurance%20Edge%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMijAFBVV95cUxPMkNYckpmVE9zbTJLZGhNREh1OG8wSlVaZ2lSbDNHbzBJcmRPU2JNZlF1Rjk2WEtRTVQ5ODlEYjVPMjMydDZpbXlXZ042MlpMMktHMVotMnZxVGktUUZSY3QwcGJMb0tqSF9sS05sRGMyZF82VVJLSVBtRWowZ01OQ1F1blJWZTJQd1VMaw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">dig-in.com</span>
+      </div>
+      <h2>How insurers might cover risks AI agents create - dig-in.com</h2>
+      <p>How insurers might cover risks AI agents create dig-in.com</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>How insurers might cover risks AI agents create dig-in.com</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOalFyS3g1UnA4UzIySGc1ZDZ1WGxoaDAzR1lYUHNlU3Naa01jcDRTWjR1djIyRFI4TjdOZGFBWFhqS0Z1dWs0XzFJRUFGSEJfOWFBdjJyU1kyaFU3TUJ4OWF4ZkV0azhUNXRrd1JPVnM2YW92YW9Gd0djNS16VFFqY3hQZkQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22How%20insurers%20might%20cover%20risks%20AI%20agents%20create%20-%20dig-in.com%22%0Adig-in.com%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMihAFBVV95cUxOalFyS3g1UnA4UzIySGc1ZDZ1WGxoaDAzR1lYUHNlU3Naa01jcDRTWjR1djIyRFI4TjdOZGFBWFhqS0Z1dWs0XzFJRUFGSEJfOWFBdjJyU1kyaFU3TUJ4OWF4ZkV0azhUNXRrd1JPVnM2YW92YW9Gd0djNS16VFFqY3hQZkQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">The AI Journal</span>
+      </div>
+      <h2>Best’s Market Segment Report: Munich RE, Lloyd’s Land Atop AM Best’s “World’s 50 Largest Reinsurers” Rankings </h2>
+      <p>Best’s Market Segment Report: Munich RE, Lloyd’s Land Atop AM Best’s “World’s 50 Largest Reinsurers” Rankings The AI Journal</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Best’s Market Segment Report: Munich RE, Lloyd’s Land Atop AM Best’s “World’s 50 Largest Reinsurers” Rankings The AI Journal</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOeXlUYjlOc1VOMGRPMF95cWh1ZlNtSFNpNU1yRS01bzV4RC05dmVBdnREM29BdTZrSmRsMVl2MkVhdjhmYkxkSHN0TzZqR1BzSGxtc3pNN0FPZVN5X2tURVBRNWRuRmdSRnRWdTBoclF1TGVCUVN0aFBScTlqUnA3UlloSzJna3lmeVVnbVlKUkFZdndVRnBVV09TbVVINVhGRjRGZlZYT0FPalY4ejZ2UGtyTHNDYWY4VlI1bXBHWnU0dw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Best%E2%80%99s%20Market%20Segment%20Report%3A%20Munich%20RE%2C%20Lloyd%E2%80%99s%20Land%20Atop%20AM%20Best%E2%80%99s%20%E2%80%9CWorld%E2%80%99s%2050%20Largest%20Reinsurers%E2%80%9D%20Rankings%20%22%0AThe%20AI%20Journal%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiwgFBVV95cUxOeXlUYjlOc1VOMGRPMF95cWh1ZlNtSFNpNU1yRS01bzV4RC05dmVBdnREM29BdTZrSmRsMVl2MkVhdjhmYkxkSHN0TzZqR1BzSGxtc3pNN0FPZVN5X2tURVBRNWRuRmdSRnRWdTBoclF1TGVCUVN0aFBScTlqUnA3UlloSzJna3lmeVVnbVlKUkFZdndVRnBVV09TbVVINVhGRjRGZlZYT0FPalY4ejZ2UGtyTHNDYWY4VlI1bXBHWnU0dw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Week in Review — August 10–14, 2026</h2>
+      <p>What started in July with insurers offering quotes inside AI chatbots has turned into a race to control how insurance is sold through them. The post Week in Review — August 10–14, 2026 appeared first on Coverager - Insur</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>What started in July with insurers offering quotes inside AI chatbots has turned into a race to control how insurance is sold through them. The post Week in Review — August 10–14, 2026 appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/week-in-review-august-10-14-2026" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Week%20in%20Review%20%E2%80%94%20August%2010%E2%80%9314%2C%202026%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fweek-in-review-august-10-14-2026%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Intelligent Insurer</span>
+      </div>
+      <h2>Insurers risk wasting AI investments as information gaps hinder adoption - Intelligent Insurer</h2>
+      <p>Insurers risk wasting AI investments as information gaps hinder adoption Intelligent Insurer</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurers risk wasting AI investments as information gaps hinder adoption Intelligent Insurer</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZnRCQmRtWm53SmpCNjFiNVc2U0pqSjMxQnFESWd4RHZPWmtzUU9UNkFteWtfQ05tWEY3UDFBR1hSa0UzSlpYWU5paGN2OHQyV1pQNVNNLVo1T0t0Wm5iTGxvNG1VWFdPckxNdkVlVFk2OHNtLVVjMWJvaGVTb2tjSHpSQ2tiek9rcGp0M3UxMGRLMEVPQVhOWjhEYjA5S2ZUd0oyRUR4N1Z0LXM?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurers%20risk%20wasting%20AI%20investments%20as%20information%20gaps%20hinder%20adoption%20-%20Intelligent%20Insurer%22%0AIntelligent%20Insurer%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiqwFBVV95cUxPZnRCQmRtWm53SmpCNjFiNVc2U0pqSjMxQnFESWd4RHZPWmtzUU9UNkFteWtfQ05tWEY3UDFBR1hSa0UzSlpYWU5paGN2OHQyV1pQNVNNLVo1T0t0Wm5iTGxvNG1VWFdPckxNdkVlVFk2OHNtLVVjMWJvaGVTb2tjSHpSQ2tiek9rcGp0M3UxMGRLMEVPQVhOWjhEYjA5S2ZUd0oyRUR4N1Z0LXM%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">TNGlobal</span>
+      </div>
+      <h2>RHB expects Malaysia’s technology sector momentum to remain intact into the second half on AI infrastructure s</h2>
+      <p>RHB expects Malaysia’s technology sector momentum to remain intact into the second half on AI infrastructure spending TNGlobal</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>RHB expects Malaysia’s technology sector momentum to remain intact into the second half on AI infrastructure spending TNGlobal</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxQVU1tcTlEYXlOeUs3dk1GU1FiNjNITGUyYm1HTzFYOVM4ckEzb3E3dS1HandzYVMycVJMZUFJWjdsR0Zuemk3M0hBT0xIeGRySWZlVGxIRGZDUTR0TFVPRW96VVQzb0g0SlhQYkh5bUlFdEZoRy1GaTlXeFJiUkJtRGkwc05NdnpNemZkYjAwOVlMZzEzUS1aQTZONDBST0lENThyaXF2U05JRmhqOXdTS3RhWVdOYW5fMXVRcXF5OW5Wbk1LLVVFSW9kekhaeloyNVg0bzlSbHJYeHFHWDVBckE3OEZJZm8?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22RHB%20expects%20Malaysia%E2%80%99s%20technology%20sector%20momentum%20to%20remain%20intact%20into%20the%20second%20half%20on%20AI%20infrastructure%20s%22%0ATNGlobal%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMi5wFBVV95cUxQVU1tcTlEYXlOeUs3dk1GU1FiNjNITGUyYm1HTzFYOVM4ckEzb3E3dS1HandzYVMycVJMZUFJWjdsR0Zuemk3M0hBT0xIeGRySWZlVGxIRGZDUTR0TFVPRW96VVQzb0g0SlhQYkh5bUlFdEZoRy1GaTlXeFJiUkJtRGkwc05NdnpNemZkYjAwOVlMZzEzUS1aQTZONDBST0lENThyaXF2U05JRmhqOXdTS3RhWVdOYW5fMXVRcXF5OW5Wbk1LLVVFSW9kekhaeloyNVg0bzlSbHJYeHFHWDVBckE3OEZJZm8%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Steve V. Sipos Presents "Dreaming AI" at SWISSARTEXPO 2026 in Zurich - openPR.com <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNVDg3SGl4Ty1nSnlsQzVwZEZib0xRY2t4ak1VQW42SElYWUFQck9nS2xBS05obl96NUh2ZzBMMXduVnUycmMyN0w5eVNNZjNsUWV1UVZNMGliRmQxeGZ2dVV3Sm5pTHN5ei1RQTB5czcyYTdvNnkwWUxxNWJaWDNrUk84TDh2OC01OEx4OE1wdVZvV2hhVWc?oc=5" rel="noopener">[openPR.com]</a></div>
+      <div class="line">AI could cut cost of running insurance by eliminating repetitive work - ET CIO <a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxQejVPcDlLU2NtejlUNXlXaWpHNGpQcks2cnRKNmhCeUdheWFZR1NNeUhncjFtb2NRYWpzclhVVzNtSlQwa2pLNkxVTGEzX2hNQW5RMk5WNHo0SXlZajB1M01pV0x2T243cTJBcExkdnE5ZnZ5LXhQY1ZXb3NNMGc5RUEybkx2RTVDUHRTczhmRVc1VGs3TDVxSVNGSVZkbTl4N3FrSmdOZXJtaE5STGxSV0RXUmZuR196MzlMLUkzMGlxelpsbzllNjBmUlM3djJGcEE4ZFpuTVJmbHFNbUVtZS1Xd9IB6AFBVV95cUxNbHFxNnM0dWFyYmNDeEI2d0tqQ1VwRTMtOWdfY01GdHd6MXl4U0ZJclNYeUVsQ0FnT3N4V250cFc3VjdaT3N6MDY5eFpybk5FQm1pRGpab1hkdEdCbGdYWVZvQ2FDVVRndWVKVnRGejl5YlN2Q0tndjd4TXJjNXQ2OWFhTV8yaUVtQ09GQTZYbWFQZXBNX2VYQlNHdTFMOGdBdDU5OFVqby1kakVnSDVvMmJvN0dpWF91QmhDUkpWUFVMdzdnSDJCTXMyUHRJMmV2TVNWelY3dUlyLWV2ZjFJRkNqSUI2ZWhp?oc=5" rel="noopener">[ET CIO]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
