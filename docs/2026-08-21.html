@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friday, 21 August 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Friday, 21 August 2026</h1>
+      <div class="meta">34 sources scanned · 14 qualified · 4 movers · generated 07:59 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Three unrelated stories today point at the same fault line: nobody has yet drawn a clean line around AI liability inside existing insurance and reinsurance contracts, and capital is starting to move before that line gets drawn. Gallagher Re standing up a dedicated Digital Risk Practice and the IUA flagging unintended AI cover inside cyber wordings both land on the same day, and that is the thing to brief upward, not any single product launch.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Reinsurance</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Gallagher Re builds dedicated AI and digital risk practice</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Cyber / Underwriting</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">IUA flags AI risk hiding inside existing cyber wordings</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Claims</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Co-operators elevates its claims AI architect to CIO</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Capital</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">$5 billion of fresh capacity targets data center AI risk</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Reinsurance</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Journal (International)</span>
+      </div>
+      <h2>Gallagher Re builds dedicated AI and digital risk practice</h2>
+      <p>Gallagher Re launched a Digital Risk Practice combining AI liability, data center, and cyber expertise, naming Ian Newman global head of Digital Risk, Freddie Scarratt AI liability lead, and Luca Drane Data Centers lead.</p>
+      <div class="sowhat"><b>So what</b>A major reinsurance broker is now formally structured to quantify AI and digital accumulation risk across property, casualty and specialty lines, which will shape how much capacity and at what price primary carriers can source for tech-driven exposure.</div>
+      <div class="deeper"><b>Deeper</b>This is an organizational move, not a new product or pricing model. Newman's own framing is instructive: he describes the goal as giving clients 'a clearer view of where digital exposure exists, how it accumulates,' language that admits nobody has that view today. The stated trigger is accumulation risk, the idea that a single technology failure can cascade losses across multiple insureds, portfolios and lines, which is exactly the mechanic behind silent cyber and now behind AI. Nothing in the announcement says whether this practice has already repriced a treaty or simply exists to advise on future ones. It connects directly to two other stories in this set: the IUA's warning that cyber wordings may already carry unintended AI cover is the precise ambiguity Scarratt's new role exists to address, and the reported $5 billion in new data center capacity is the capital-side counterpart to the same underlying exposure. What remains unproven is whether this translates into better terms or simply better paperwork for reinsurers managing their own accumulation.</div>
+<div class="next">Watch next: A named treaty, facility, or accumulation report that is explicitly priced or modeled through this new practice.</div>      <div class="links">
+        <a href="https://www.insurancejournal.com/news/international/2026/08/21/882404.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Gallagher%20Re%20builds%20dedicated%20AI%20and%20digital%20risk%20practice%22%0AInsurance%20Journal%20%28International%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Finternational%2F2026%2F08%2F21%2F882404.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Cyber / Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Times</span>
+      </div>
+      <h2>IUA flags AI risk hiding inside existing cyber wordings</h2>
+      <p>The International Underwriting Association said current cyber policy wordings have the potential to provide unintended AI cover.</p>
+      <div class="sowhat"><b>So what</b>Carriers writing cyber and tech E&O books may already be carrying unpriced, unquantified AI liability exposure, ahead of any dedicated AI exclusion or product existing to address it.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is headline only, so there is no detail yet on which wordings, which markets, or what scale of exposure the IUA is pointing at. This is structurally the same problem the market spent years fighting under 'silent cyber,' where affirmative and non-affirmative cover blurred until explicit exclusions caught up. Read against story 0, this is precisely why Gallagher Re just created a dedicated AI liability lead role, the ambiguity IUA is naming is the gap that role is meant to close. What is not known: whether any carrier has actually quantified potential loss from this gap, or whether a market-wide wording review is already underway versus this being an early warning shot.</div>
+<div class="next">Watch next: Any market body or major cyber line publishing an explicit AI exclusion or endorsement to close the gap.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQcjh2UjFIVWNXalZlVnpsNWdYNU5tWXVvR0VwRjhfYTkxa1hVM1l6T3RpWkpJNEtYR1NvRlNEQ1dUSHNlQmtsM2NhOUhuYXBqV2hTTmdvdnBvaFIzWWc5M1BHX244bG5LT3ZReUZOb0swMVdpNW1rMU9Yb2ZBQkl4NGd1TDBaRjdGeHBGU2tCQUEyMWNidWVTZTU1WUZhRGE1X1JLcDlrdXdBVXl5eTIxbENXR1Q5QjZkNWhFcng3dVluZW8?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22IUA%20flags%20AI%20risk%20hiding%20inside%20existing%20cyber%20wordings%22%0AInsurance%20Times%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiwwFBVV95cUxQcjh2UjFIVWNXalZlVnpsNWdYNU5tWXVvR0VwRjhfYTkxa1hVM1l6T3RpWkpJNEtYR1NvRlNEQ1dUSHNlQmtsM2NhOUhuYXBqV2hTTmdvdnBvaFIzWWc5M1BHX244bG5LT3ZReUZOb0swMVdpNW1rMU9Yb2ZBQkl4NGd1TDBaRjdGeHBGU2tCQUEyMWNidWVTZTU1WUZhRGE1X1JLcDlrdXdBVXl5eTIxbENXR1Q5QjZkNWhFcng3dVluZW8%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Claims</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Co-operators elevates its claims AI architect to CIO</h2>
+      <p>Co-operators named Craig Bran, who built AI and digital tools into its claims service model, as EVP and CIO reporting to CEO Rob Wesseling, replacing Aayaz Pira who had held the role less than a year.</p>
+      <div class="sowhat"><b>So what</b>A personal lines carrier that owns its own agent distribution can turn AI-enabled claims into a direct channel advantage over broker-distributed rivals, while its broker-dependent commercial arm stays structurally untouched.</div>
+      <div class="deeper"><b>Deeper</b>The company's own commercial and specialty subsidiary, Sovereign General, writes exclusively through independent brokers and still posted a 24.2% return on equity in Q2 2026, delivered almost entirely through the exclusive-agent parent channel, which suggests Bran's mandate will sharpen rather than erase that channel split. A separate industry study cited in the piece, covering more than 200 brokers and 18 insurers, found Canada's strongest claims operations for 2026 had built AI, automation and digital intake directly into triage, fraud review and settlement rather than layering it on top, meaning every carrier that closes this gap raises the bar a broker's own book gets measured against. What the announcement does not explain is why Pira left the CIO role after less than a year, a governance question worth having an answer to before it gets asked. This is a leadership and org-design signal more than a technology disclosure, no new capability or metric is revealed here, just its elevation to the executive table.</div>
+<div class="next">Watch next: Any published claims cycle-time or satisfaction metric tied to Bran's platform, or an explanation of the Pira transition.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/breaking-news/cooperators-names-craig-bran-cio--and-gives-him-the-ai-claims-platform-he-already-built-586989.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Co-operators%20elevates%20its%20claims%20AI%20architect%20to%20CIO%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fbreaking-news%2Fcooperators-names-craig-bran-cio--and-gives-him-the-ai-claims-platform-he-already-built-586989.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Capital</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">MarketScale</span>
+      </div>
+      <h2>$5 billion of fresh capacity targets data center AI risk</h2>
+      <p>Market commentary points to $5 billion in new data center insurance capacity as a signal that AI infrastructure buildouts are reshaping how risk is bought.</p>
+      <div class="sowhat"><b>So what</b>If accurate, this is a capital markets signal that AI-linked property and infrastructure risk is now large enough to draw dedicated capacity, which will feed into reinsurance treaty terms and accumulation modeling for any carrier with data center or tech-sector exposure.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is essentially the headline restated, with no source insurer or broker named, no breakdown of which perils or layers the $5 billion covers, and no confirmation of whether this is new capital or reallocated capacity. The framing as 'the clearest signal yet' is MarketScale's own promotional language, not a verified underwriting fact, and should be treated as such when repeating it upward. Taken alongside Gallagher Re's new Digital Risk Practice and the IUA's cyber wording warning, three separate signals landed the same day all pointing at AI infrastructure risk pricing and accumulation becoming a live market conversation, even though none of the three yet gives a hard number tied to a named counterparty.</div>
+<div class="next">Watch next: A named market or facility confirming the $5 billion figure with actual structure and peril detail.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMihgJBVV95cUxPbk1ram9lbk9DRVpqWFBCU0RUbnYwQUp5c1JHLUYtY2l5dmdMbmNJeXFTYXpSVktIQ1hEem95MVNsenpFaFpoMGdmOGhwMGZRcTNfd042YTFVSEU1cnFoQWdTWHc3alltS05zd1NoVmUtUWVyalFwT21TSGR2Y1VQSUt1RExMWXpqaWJ2ZE41TUFnbDRZMzJTSGcwRjlqdVZxNW1GZldhVGVGNXoxUW40bTdXemw0dThtN1NkbE1fNlZzWlFwUUc4cXU2WGlwYXU2c0VqVXpldDQ0Z2dCNnpmYnRoQmFMVVBhV0tqT25renVfdzBTXy1rbWg0d1ZBeFBFMHFVdUlB?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22%245%20billion%20of%20fresh%20capacity%20targets%20data%20center%20AI%20risk%22%0AMarketScale%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMihgJBVV95cUxPbk1ram9lbk9DRVpqWFBCU0RUbnYwQUp5c1JHLUYtY2l5dmdMbmNJeXFTYXpSVktIQ1hEem95MVNsenpFaFpoMGdmOGhwMGZRcTNfd042YTFVSEU1cnFoQWdTWHc3alltS05zd1NoVmUtUWVyalFwT21TSGR2Y1VQSUt1RExMWXpqaWJ2ZE41TUFnbDRZMzJTSGcwRjlqdVZxNW1GZldhVGVGNXoxUW40bTdXemw0dThtN1NkbE1fNlZzWlFwUUc4cXU2WGlwYXU2c0VqVXpldDQ0Z2dCNnpmYnRoQmFMVVBhV0tqT25renVfdzBTXy1rbWg0d1ZBeFBFMHFVdUlB%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">The Hartford is reported to say AI is cutting underwriting time, but no figures or mechanics are given in the available text. <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPNThiVS1SWjRPWk9jd09uVTF1ZEdYbEJnb0psQ1JDQm55dF95bXlsb3BOcDd1YVRpN19DLWpEZDJyV3JzNzNvOHRMZ3dRdkRPY1hybnVxZ1N1STNia25MbU1kcE1YYkxqTTVDYk1xSG5JWWR2Mkg1bEh6RkZRcmdDZmtNRHg?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">Star Health says it is expanding AI to tackle a 30% claims fraud rate, a striking figure with no supporting detail yet on the tooling or measurement. <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUlI1TXJpaU9uLWJZWlNLLXNYQnl5dTgwTTU4M2VVRlJqZWNxcmZsTXlaWGprb3Z2TkVxVWp6RzdWMjh5VDNUYlp5UVozR3dIMnlEX2JKZXNKaHJiSTZGeXFtenZpT0VvS005QWFkMVU4SHpIZ2p5NkVoNU5HbWY1TU54bjlDWU04Tk1Xd1drU1RIMVBIbkdQODJ2THBZZHJmWkc1ZXZqS2wyZzRHbkxoTlpCbmxaWTZLVExlaTFJam1Id3FRbW9Td01Hc3lRbkhXU3g4WmVEMm5Ddw?oc=5" rel="noopener">[Whalesbook]</a></div>
+      <div class="line">Sun Life's AI advisor tools have gone live, but the more material story is how Canadian carriers race to satisfy OSFI's E-23 governance guideline around them. <a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNVXMtYWhYODdueUdRZy1mOXJVa3JBNGpMQklBLUpsdEMtNGFJTlFiOXZiRlNsN3kxd0N6bUpOSElnYU1icnotZnFVeFNKSl9ZZ01JMjY3UFY2UFNjNmllMEhHNUEtTWZIdTdwVmpJRkN6OW9RTU8xaHhhU0xRM01BUEdGVWZlbFJXNHQ3SXhxdkdfVGJMbmJ0Vng0bWVzTnJvU3ZrXzhGd2lDcERBbmVFNXFLTFA1UlRIU1puMmM3TGtNZU5RMzU0ZU9tYWNSVkZ0Ylh4b25CeFVEb0N0UjBkYVdXM0Y2eEdVSkJXVg?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">A Pegasystems executive is quoted warning that cost pressure could temper AI personalization ambitions, a vendor-side caution worth noting but not yet backed by data in the supplied text. <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQYjVGekhxalVUak85bkNpSTNwbEhVSUxCUTJaZkJROE1zWXpEd2ZWTVlYS1R3R2xNMWlQSmM4U1JsUmpISTBOMGZmNnYyWFNyYW95TDJXdW5UcXl4d2ptc21NZTN6cGVVS1VGaE9LWFlnRU1ZVldGZXpYT2FnQTBaY1Vmd0xaUkppMC01cFpZb01Ld1phcEdZWTBUdUFUQXRQUkR2VUplQXF6LWlvQXkxUVJOWQ?oc=5" rel="noopener">[Insurance Post]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If our cyber and tech E&O wordings were reviewed today the way the IUA is describing, could we say with confidence how much AI liability we are already carrying unpriced?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
