@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 01 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 01 September 2026</h1>
+      <div class="meta">34 sources scanned · 28 qualified · 4 movers · generated 07:19 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Nothing today forces a plan change, but two threads deserve five minutes each: Microsoft's AI pricing is still opaque to a carrier that has presumably built a roadmap on it, and the FCA has again signaled it will not issue a dedicated AI rulebook, which means your compliance case rests on existing frameworks, not a future one. Everything else in today's set is opinion, survey, or funding noise dressed as insight.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Platform</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Hiscox CTO says Microsoft AI pricing still unclear</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Beazley shares hold steady despite new AI cyber risk exposure</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Capital</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Guardian Life risk chief calls AI the industry's biggest unknown</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">CFC underwriting chief argues AI cannot be excluded from cover</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Platform</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>Hiscox CTO says Microsoft AI pricing still unclear</h2>
+      <p>Hiscox's CTO stated that Microsoft's pricing model for its AI offerings remains unresolved.</p>
+      <div class="sowhat"><b>So what</b>Any carrier that has built a Copilot or Azure AI business case is exposed to a cost structure that is not yet fixed, which turns a technology decision into a budgeting risk.</div>
+      <div class="deeper"><b>Deeper</b>The reporting here is a single line, so there is no detail on whether this concerns Copilot per seat licensing, Azure OpenAI consumption pricing, or a broader enterprise agreement, and no figures are quoted. What is notable is that this comes from a carrier's own CTO rather than an analyst or vendor, which suggests it reflects a live internal budgeting problem rather than a general industry complaint. Unknown is whether Hiscox has paused or slowed any AI deployment as a result, or is simply flagging the risk publicly while proceeding. This matters beyond Hiscox because most carriers writing AI business cases into 2025 and 2026 budgets are assuming today's pricing holds for the life of the project, and Microsoft has moved pricing on Copilot before. It sits next to the CFC and Beazley stories today in a broader pattern of underwriting and technology leaders publicly airing unresolved AI questions rather than presenting settled answers.</div>
+<div class="next">Watch next: Any Microsoft announcement on Copilot or Azure AI enterprise pricing tiers, and whether other carrier CTOs echo the same concern.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQR1pQNGVWQW1NX1ZHNEhrTmRrY0pOSXV5VmtVME41MkFDdjFVQl9KSC1wUTVJakptVjlwNHQwUGw4ZmRzOFNBTnNyd1VuYUE5NzRQcWpPdXlDZDh5ZWhmOENqb0s3Y2FGanFpOGE5ckpCU0d0alFSR0l2Y0ZMcEwzY00wcTBWRExLaUtYVEdCWU5ZSVVyOE1ONFZvUmVpX2s?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Hiscox%20CTO%20says%20Microsoft%20AI%20pricing%20still%20unclear%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinwFBVV95cUxQR1pQNGVWQW1NX1ZHNEhrTmRrY0pOSXV5VmtVME41MkFDdjFVQl9KSC1wUTVJakptVjlwNHQwUGw4ZmRzOFNBTnNyd1VuYUE5NzRQcWpPdXlDZDh5ZWhmOENqb0s3Y2FGanFpOGE5ckpCU0d0alFSR0l2Y0ZMcEwzY00wcTBWRExLaUtYVEdCWU5ZSVVyOE1ONFZvUmVpX2s%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">AD HOC NEWS</span>
+      </div>
+      <h2>Beazley shares hold steady despite new AI cyber risk exposure</h2>
+      <p>Beazley's stock was reported as stable as the cyber insurer works to adapt its book to new AI related risks.</p>
+      <div class="sowhat"><b>So what</b>The market is not yet pricing AI as a material threat to cyber underwriting margins, which is either a sign the exposure is genuinely contained or a sign it has not been recognised yet.</div>
+      <div class="deeper"><b>Deeper</b>The text gives a headline claim with no detail on what the new AI risks actually are, whether they involve AI enabled attack techniques expanding the cyber threat surface, or AI liability and errors exposure creeping into policy wordings that were not designed for it, or both. There is no stock price, no analyst quote, and no description of what Beazley is changing in wording, pricing, or capacity. This is the same silent AI exposure question that has been building across the cyber and specialty market all year, where insurers must decide whether to explicitly exclude, explicitly rate, or leave ambiguous the AI component of claims. The CFC story in today's set argues the opposite of exclusion, which shows the market has not converged on an answer. Until claims data from actual AI enabled incidents starts flowing through, share price stability tells you more about investor patience than about underwriting adequacy.</div>
+<div class="next">Watch next: Beazley's next wording or exclusion language update on AI, and any loss data disclosure tied to AI enabled cyber incidents.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPVm9zTW9UTjdBaDhpQTZENlVQeURYNG84TmdsaFVWNFh2ZlRiOXh2dkFUa2JsVzlENlhjeHVpNXhkazhQOF8zS0tYWXVHOVJ5Q1NkZmh1NUVpX0VQYWhCd3NSemFLaXNyTTJlaGZXS0ZGc3d1MDdCaTRYb24tOHRuUVBQSDk0ZzVxM2dUU1hFc0lXckZEdEc1aHRoVTVaUnFRX2ZvS2piTUVleXhpbGtDa2pjWXlMMjZhUnJGUkNKMXJDR05jSEE?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Beazley%20shares%20hold%20steady%20despite%20new%20AI%20cyber%20risk%20exposure%22%0AAD%20HOC%20NEWS%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMixgFBVV95cUxPVm9zTW9UTjdBaDhpQTZENlVQeURYNG84TmdsaFVWNFh2ZlRiOXh2dkFUa2JsVzlENlhjeHVpNXhkazhQOF8zS0tYWXVHOVJ5Q1NkZmh1NUVpX0VQYWhCd3NSemFLaXNyTTJlaGZXS0ZGc3d1MDdCaTRYb24tOHRuUVBQSDk0ZzVxM2dUU1hFc0lXckZEdEc1aHRoVTVaUnFRX2ZvS2piTUVleXhpbGtDa2pjWXlMMjZhUnJGUkNKMXJDR05jSEE%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Capital</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">InsuranceERM</span>
+      </div>
+      <h2>Guardian Life risk chief calls AI the industry's biggest unknown</h2>
+      <p>Guardian Life's Sarah Williams described AI as the biggest unknown currently facing insurers.</p>
+      <div class="sowhat"><b>So what</b>A senior ERM voice framing AI this way strengthens the case for treating AI as its own risk category in capital and reserving frameworks rather than folding it into general operational risk.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is a headline quote with no elaboration on which dimension of AI she means, whether that is model risk in pricing and reserving, liability exposure written into policies, or systemic and correlated exposure across a book. This is a life insurer's ERM leader, but the framing transfers directly to P&C conversations about ORSA and capital stress testing, since the underlying question, how do you quantify an exposure with no loss history, is identical. It likely connects to the same week's Zurich, Chubb, Prudential and New York Life AI survey story in this set, both reading as part of a broader push by carriers and consultancies to publicly benchmark AI readiness. What remains unproven is whether any carrier, life or P&C, has actually built a working capital model for AI as a discrete risk category rather than discussing the need for one. Rating agencies and the NAIC have not yet signaled they will require this treatment.</div>
+<div class="next">Watch next: Whether any carrier publishes an actual AI risk capital methodology rather than a statement of concern.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOUFZPQmNRWmd3dklwSy14OVprYzFCbDNHUHZKZkNlQTRuc1ZGUEs5QW9wYmtzTERvby0ybVlzWnRucWp4WkhNT2FlVk9wT2Z1RFF6Z1Nvdy03V2poa2w2MVRjRUxWYnl2akhkNnJENy16ZDJzTFdiMHVZbmtBVjBnR0xiZ1NvVzRSX2cyc0RYYWRlZnF3YmVJbmZYVXdCa0Q5VHdQVGZvRnBOa0xSa3BkckVGN0VWczJkMHc?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Guardian%20Life%20risk%20chief%20calls%20AI%20the%20industry%27s%20biggest%20unknown%22%0AInsuranceERM%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiugFBVV95cUxOUFZPQmNRWmd3dklwSy14OVprYzFCbDNHUHZKZkNlQTRuc1ZGUEs5QW9wYmtzTERvby0ybVlzWnRucWp4WkhNT2FlVk9wT2Z1RFF6Z1Nvdy03V2poa2w2MVRjRUxWYnl2akhkNnJENy16ZDJzTFdiMHVZbmtBVjBnR0xiZ1NvVzRSX2cyc0RYYWRlZnF3YmVJbmZYVXdCa0Q5VHdQVGZvRnBOa0xSa3BkckVGN0VWczJkMHc%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>CFC underwriting chief argues AI cannot be excluded from cover</h2>
+      <p>CFC's Chief Underwriting Officer said excluding AI is not a viable option.</p>
+      <div class="sowhat"><b>So what</b>This pushes specialty underwriters toward explicit affirmative AI clauses and pricing rather than blanket exclusions, which changes how wordings and risk appetite get drafted.</div>
+      <div class="deeper"><b>Deeper</b>The headline is ambiguous on its own terms and the supplied text does not resolve it, since it could mean CFC will not exclude AI risk from its policies, or that CFC will not exclude AI tools from its own underwriting process, and these are different decisions with different implications. No class of business, no wording language, and no figures are given, so this is directional intent rather than a documented underwriting change. It sits directly opposite the exclusion question raised by the Beazley story today, both from specialty and cyber focused underwriters wrestling with the same unresolved problem from different angles. What is not known is whether CFC has actually implemented new wording, or whether this is a stated philosophy ahead of product changes. The practical read for a carrier is that the market is visibly split between excluding AI exposure and pricing it explicitly, and that split has not settled.</div>
+<div class="next">Watch next: Any CFC product or wording announcement that operationalises this stance.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOdndzX0V1aG81TWYtUTZFcGRfTXl5WEZURVFOWGdFZnRsVmxVSkpHRm05Z3hLNkotUkNqQ1BBOXFkT0Z0R0hNTVVwY1oyTDFPWFQxZVV4X3RaYXpoWV9aSGxXeS05UHZmbWxZaTdPZXBfdm1zTUlRcnlnSXp4VTJZLVlfZm9TajJHSVBRTTh1YlF4OWx4ZVBN?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22CFC%20underwriting%20chief%20argues%20AI%20cannot%20be%20excluded%20from%20cover%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMilwFBVV95cUxOdndzX0V1aG81TWYtUTZFcGRfTXl5WEZURVFOWGdFZnRsVmxVSkpHRm05Z3hLNkotUkNqQ1BBOXFkT0Z0R0hNTVVwY1oyTDFPWFQxZVV4X3RaYXpoWV9aSGxXeS05UHZmbWxZaTdPZXBfdm1zTUlRcnlnSXp4VTJZLVlfZm9TajJHSVBRTTh1YlF4OWx4ZVBN%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+    <section class="block reg"><b>Supervisory watch</b>
+      <div class="line">Commentary suggests the FCA is not moving toward a dedicated AI rulebook, meaning UK carriers should expect AI governance to continue being assessed under existing conduct and prudential rules rather than a new bespoke framework. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNaXBIb0xLMjJvLWVMbWlOenlmeW5oT3VBWVhtRGFNcGhJQVFoR1NVMlRLUWxwWTk0TFlXLVU5bE81UUpIM0o1c0liSW4zTy1yT0Q4dE5MUGIyZzZ5VU9aelVqOVo1ZjZ1UXg5NFNzTjFYVTAxb3RhRUFxc0JRZFp2WkpPQV9oYy1Ga01KWHRXRE14SGdpSUNwTWZYZw?oc=5" rel="noopener">[Insurance Post]</a></div>
+    </section>
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">A vendor CEO's commentary on agentic AI reshaping insurance distribution reads as promotional framing with no substantiating detail, treat as vendor noise rather than signal. <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOQjBBYktEakhLTnNPYU8tVGV6QnNYdlpHRlFJOXZ2ejRvazUzNnd4ZmZZQWxmQlR3VUV4MnR4QTdHcE1UMG5PNmhWdFJoOHlXSU9XMFVUMjN6dk80S1hpWlFLVFVweFNBRjFTTk1oZjF6eElDY19pZzk4aGw3Szl4MkJxaWtZUVlXTlhaWW9ZeTZBdmNQc0kxTER4endvYmtYdzZNaHZNWGtNVmY5RWFCX2pzTEM?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">A survey crediting Zurich, Chubb, Prudential and New York Life with AI readiness points is a benchmarking exercise with no methodology or figures given in the reporting, worth noting but not acting on. <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBfbDZkTUdnTUpPa3pfZmpMRVU5R3RBLU5ZZDVrYjBGNFBYS2ZoUG9ZNlhYWlhTYTY3ZFpRZkNPdlJ1YTEzRUNDcjNPRDVGcjU0elBFTmRzdDdjbmxjaGNtcmhoNGlKYnJMd3N4eDJhaFhoYmRuR2UzRGVFUVl1d9IBjgFBVV95cUxNbDc2U0htamV2WGwtalZnUjFNYzNXNzFlc1M4NkpiMTlsRUswYnpBVDlqUjVubGo1dEZyMVdVOWpMTmJhT1J0ZlNjbHg2aUtNUDlPWnhTbTRzZFhGbTB1NHV6OTZlWlVaalJONWdMWVVVUFlrZkxyN055YUlPWlNiTVNycGdfOTd1Mk5QbWZ3?oc=5" rel="noopener">[Insurance Nerds]</a></div>
+      <div class="line">AI native insurer Corgi raised $40.7m against a reported $2.6bn valuation, a funding data point on the competitive landscape rather than anything that changes an incumbent carrier's plans today. <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNX1pCZEtoTGJ2emcyVlEtTURlMjZHV1pCeVZjTnJGaUI5YkU1cjNRZzlYTW9CTXFQWmg5QkdxOXQwaWJ6eVpVNTY4UkJRRHh1VWRyV0RVYlFvQ1RGN2NRbndEekNLZ1F0cWNsYUw0RDdpcWNncjRhVGxRR1I5R0FtM2JIMlRXV1ZFbVJ1T2dsd2ROWGlFVTBaZA?oc=5" rel="noopener">[FinTech Global]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>Where in our AI business cases have we assumed today's Microsoft pricing holds for the full life of the project, and what is our fallback if it does not?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
