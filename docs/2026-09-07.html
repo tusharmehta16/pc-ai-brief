@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monday, 07 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Monday, 07 September 2026</h1>
+      <div class="meta">34 sources scanned · 19 qualified · 3 movers · generated 12:24 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Nothing here forces a plan change today, but the pattern is worth noting: reinsurers are starting to underwrite AI as a named catastrophe peril while their own leadership warns about AI liability exposure, and Moody's has now put AI in the same severity tier as cyber and physical catastrophe. Treat AI governance as a capital and reserving question this quarter, not a lingering IT compliance item.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Platform</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">SCOR expands AI use while flagging its own liability exposure</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Marsh Re builds named-peril cover tied to AI catastrophe risk</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Regulation</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Moody's ranks AI alongside cyber and physical risk as top threat</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Platform</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>SCOR expands AI use while flagging its own liability exposure</h2>
+      <p>SCOR is increasing its use of AI internally while its leadership publicly warned about governance and liability challenges the technology creates for the reinsurer.</p>
+      <div class="sowhat"><b>So what</b>When a top five reinsurer flags AI liability risk on its own book, primary carriers ceding to that paper should expect tighter treaty language and disclosure requirements around AI-assisted underwriting and claims decisions.</div>
+      <div class="deeper"><b>Deeper</b>The reporting is thin, essentially a single headline, so the specific use cases and the exact nature of the liability concern SCOR raised are not disclosed. What is notable is the juxtaposition itself: a reinsurer is simultaneously scaling AI adoption and warning about governance gaps, which typically precedes changes to treaty wording, capacity terms, or disclosure asks aimed at cedants. This connects directly to the Marsh Re and Moody's items below: three separate voices in the risk transfer chain are now treating AI as something that needs its own governance and pricing treatment rather than a generic efficiency tool. What remains unproven is whether SCOR's warning translates into concrete treaty changes or stays at the level of public commentary. A carrier with SCOR or peer reinsurance exposure should ask its reinsurance and actuarial teams whether any cedant-facing AI governance questions have already surfaced in renewal discussions. If they have not yet, they likely will at the next renewal cycle given how public this framing now is.</div>
+<div class="next">Watch next: Whether SCOR or peer reinsurers introduce AI-specific disclosure or governance clauses into treaty wording at the next renewal round.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcXpWd2JqbGtBZVVwdlBJbFUzcmZzcmJ6TS1LeHdjSkM1dnlyaEV0RFR5U1lfQWJhM194MExwam9NWEtZMTJGWVhZUGNOR2sxeTVUaE04a1pLbjJGXzJ2dEdhcEo4NHVHU1p3aWF1bG5sRUczdURRNEtseWYxNmZ0R1FnZXpHaFlBSjJ1bmlFUmlvTTBqcXNaNWxSZUhVVnIwZUMweGF1Slo1UQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22SCOR%20expands%20AI%20use%20while%20flagging%20its%20own%20liability%20exposure%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiqgFBVV95cUxQcXpWd2JqbGtBZVVwdlBJbFUzcmZzcmJ6TS1LeHdjSkM1dnlyaEV0RFR5U1lfQWJhM194MExwam9NWEtZMTJGWVhZUGNOR2sxeTVUaE04a1pLbjJGXzJ2dEdhcEo4NHVHU1p3aWF1bG5sRUczdURRNEtseWYxNmZ0R1FnZXpHaFlBSjJ1bmlFUmlvTTBqcXNaNWxSZUhVVnIwZUMweGF1Slo1UQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">theinsurer.com</span>
+      </div>
+      <h2>Marsh Re builds named-peril cover tied to AI catastrophe risk</h2>
+      <p>Marsh Re has developed a named-peril reinsurance cover connected to AI and catastrophe risk.</p>
+      <div class="sowhat"><b>So what</b>This signals the market moving from AI as an underwriting tool to AI itself, or AI-dependent infrastructure, becoming an insurable named peril class with its own capacity and pricing.</div>
+      <div class="deeper"><b>Deeper</b>The available text is headline-only, so the exact structure is not confirmed: it could be a cat cover that uses AI models to price named perils more precisely, or it could be a cover that treats AI-related catastrophic failure, such as a data center or algorithmic outage, as the insured peril itself. That distinction matters enormously for how a carrier should read this. If it is the former, it is a modeling upgrade with modest structural implications. If it is the latter, it is the first sign of a genuinely new peril class entering the reinsurance market, parallel to how cyber emerged as a standalone line two decades ago. Given the same week's Benzinga piece framing AI data center exposure as a potential 200 billion dollar market, the more consequential reading leans toward AI infrastructure risk being packaged as an insurable peril. What is not known yet is capacity size, pricing basis, or which primary carriers are cedants on this cover. This is worth flagging to the reinsurance purchasing team now, before terms firm up at the next renewal.</div>
+<div class="next">Watch next: Confirmation of whether this cover insures AI infrastructure failure directly or is simply an AI-enhanced cat model product, and which cedants are first movers.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOZzJ2a3ZWNVdpcE10VUV5dnlFWjZPV3dQaHY2M2p6ZXFJbHhmQW5Ld0t4RzkyTjdmdUVYZlk2V2NfZU1yQXVIbWtCeXRkeDQyQ21zeWdfT2xPaGY5MGVEZmZPcG5WY1FpOU03MnNfYkZBUVkwOXlXaEU1VVkweTRNLVdOMkV6ZzNXalVjZk9TeVBydnB5WWQwYTlBbEJ0OHcxeU9MbDQ0dnljU25wZk1mbGxPYjJrOWZsOFpoMzFn?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Marsh%20Re%20builds%20named-peril%20cover%20tied%20to%20AI%20catastrophe%20risk%22%0Atheinsurer.com%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMivgFBVV95cUxOZzJ2a3ZWNVdpcE10VUV5dnlFWjZPV3dQaHY2M2p6ZXFJbHhmQW5Ld0t4RzkyTjdmdUVYZlk2V2NfZU1yQXVIbWtCeXRkeDQyQ21zeWdfT2xPaGY5MGVEZmZPcG5WY1FpOU03MnNfYkZBUVkwOXlXaEU1VVkweTRNLVdOMkV6ZzNXalVjZk9TeVBydnB5WWQwYTlBbEJ0OHcxeU9MbDQ0dnljU25wZk1mbGxPYjJrOWZsOFpoMzFn%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Regulation</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">theinsurer.com</span>
+      </div>
+      <h2>Moody's ranks AI alongside cyber and physical risk as top threat</h2>
+      <p>Moody's assessment states that physical risk, cyber and AI are among the most severe emerging threats redefining the insurance industry.</p>
+      <div class="sowhat"><b>So what</b>A rating agency placing AI in the same severity tier as cyber and physical catastrophe means AI exposure will increasingly factor into how carriers are assessed on capital adequacy and risk management maturity, not just innovation scorecards.</div>
+      <div class="deeper"><b>Deeper</b>The source is a summary headline without the underlying report detail, so the specific mechanisms Moody's cites for AI as a severe threat, whether that is underwriting model risk, liability accumulation, operational dependency, or something else, are not given here. What can be read into the framing is the sequencing: Moody's is grouping AI with two risk categories, cyber and physical catastrophe, that already carry explicit capital charges and stress test requirements in most rating agency and regulatory capital frameworks. If AI follows that trajectory, boards and CROs should expect rating agencies to start asking pointed questions about AI governance frameworks during the next review cycle, similar to how cyber resilience questions became standard practice after cyber was elevated to a top tier risk. This is consistent with the SCOR governance warning above, both point toward AI graduating from a project-level concern to an enterprise risk category. What is unproven is whether Moody's has published or will publish a scoring methodology that carriers can act against, or whether this remains directional commentary for now.</div>
+<div class="next">Watch next: Whether Moody's or peer rating agencies publish a specific AI risk scoring methodology or capital treatment for insurers.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxPQ1hNUERXVlpJVHRibVU2NE05VnRXeWMzVzlGQWJvMXc2Zm93T3BTaUM0UTB1RGZlWkxUenZWQUNpMVAtZmpGMnpJckJKM1FKNWxmaXZMSnFHMGl1NURfT3lUTXhIRjhYdFhaanA1bzhiNDhCRzRvUHBxOVB4MHRuVGF4MkxrSUs2NTUtOTZ1MzEyLWgtWWpyaUZjSHhzUGFUUld0ZmprcGJ6Sm1SUmU4bEdGWnNOXzVTSlJ1ZWZNZmZDa1FtQ2NBSDRn?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Moody%27s%20ranks%20AI%20alongside%20cyber%20and%20physical%20risk%20as%20top%20threat%22%0Atheinsurer.com%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiygFBVV95cUxPQ1hNUERXVlpJVHRibVU2NE05VnRXeWMzVzlGQWJvMXc2Zm93T3BTaUM0UTB1RGZlWkxUenZWQUNpMVAtZmpGMnpJckJKM1FKNWxmaXZMSnFHMGl1NURfT3lUTXhIRjhYdFhaanA1bzhiNDhCRzRvUHBxOVB4MHRuVGF4MkxrSUs2NTUtOTZ1MzEyLWgtWWpyaUZjSHhzUGFUUld0ZmprcGJ6Sm1SUmU4bEdGWnNOXzVTSlJ1ZWZNZmZDa1FtQ2NBSDRn%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Insurance Day reports Scor is planning an AI-driven property catastrophe push, adding product-level detail to the same SCOR story covered above without changing the governance implication. <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPSUxjUF9yVS1JVFFJc3pocWtsRm5vMnFUQ3RTRFd6bDVIWGpCZmJBV0JNMFBzZ0NGb3BUcXloWWhiWWdkcDAyTE5ON1lkVnlZQ1JpRXAzVWpXcFBHanlKZXo5cmhOLTVXbFlyR21lMm9YMVJKNURxVnBGVTNIcVR6SWYwMA?oc=5" rel="noopener">[Insurance Day]</a></div>
+      <div class="line">Munich Re says cyber and AI are fundamentally changing the risk landscape and demand new solutions, a directional statement without specifics on product or governance changes. <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQRWhmWVJLREFyeVdiQWlCQzR6ZHFVUnJaRnJCUkl4S0pGY2g0bnBNckJZb2hnODdMVHRpRW9IZUZBQ3VXdFgzWE8zYURGaXBZUjU1TVhmUjZhZHg2T2RTVGs0S0k1LXF0N0RROWlBOUlYcHV2SlAwTF9LcFYxRUNfTGpyM2cxbTNXNTdtQWZORDZsMzZyaUdDQnF2MjNyMzB6QmdvUDhmY2NGZUN6c19rSA?oc=5" rel="noopener">[insuranceasianews.com]</a></div>
+      <div class="line">Benzinga frames the AI boom as potentially creating a 200 billion dollar insurance market tied to data centers and energy projects, a speculative market-sizing claim with vendor-style framing rather than confirmed demand. <a href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxPbHdudVdncUFmd1NfYThNZnpwWGJyMHhJa21PMTJhSlQwcDg1WFZYcXo5Q2w0ZDJRZ1hhMWlGUGNrQnVUUGdzY29mNVNGcXJBZVFHeVlOdHM3d0FUUHNaVHQxazNuMl9jaHoyNE8yRmJnLXZlYWdCVXFtRzdsd3BIWjgwdzlORElTaEJJT1E1blBLbTNjbVh2UTlXaDJPR2pQQ3JzMURoWHpqNmlRMXhqenIyOEVJMmZNM2IwdGFBc21LeWJqMHd6V3BNcFJYTXNKdXhWWmctZXZZelVGSGpCS1VTbERCVTVfbXlOWTk5M2I?oc=5" rel="noopener">[Benzinga]</a></div>
+      <div class="line">Global Reinsurance carries a vendor claim from Mea Platform that AI can cut reinsurance's operational drag, unverified and framed as a platform pitch rather than independent evidence. <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNZ1pOY1NKMFNYREctaVdaeG5EaTFVM1Q2T09WVTk0U3J0dGNiay1scXphdkJZMnpaQkdkbnlhOWgydk1TdEFmLU12WEJLTDRaQW9zNHRiVmp0ZTBtTDBLc2dZTHJGdnFNU0lNN1dJd3Jscm44U0JXZjFBdVdhMWRjb0dDQ2c1Ujh4LUU2N1NjVUVMcDY4N0VZb0FpZWdPcXVOMFlMSkhaaTk0b2g1?oc=5" rel="noopener">[Global Reinsurance]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If a major reinsurer is warning publicly about AI governance and liability while expanding its own AI use, can we show our board the equivalent sign off and liability review for every AI tool currently touching our underwriting and claims decisions?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
