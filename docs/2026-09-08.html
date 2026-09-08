@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 08 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 08 September 2026</h1>
+      <div class="meta">34 sources scanned · 18 qualified · 6 movers · generated 11:02 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Jencap Selects OIP Insurtech to Accelerate AI-Enabled Underwriting Operations - Insurance Journal</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AXA scales governed AI infrastructure across global operations</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">EigenRisk expands EigenPrism catastrophe risk management platform with GeoX integration</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AXA collaborates with Publicis Sapient</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Cyber premiums are falling as AI attacks accelerate - Moody's</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale</h2>
+      <p>AXA, the France-headquartered multinational insurance and asset management group, has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms a</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AXA, the France-headquartered multinational insurance and asset management group, has entered a strategic partnership with Publicis Sapient, a technology firm providing enterprise artificial intelligence (AI) platforms and services, to accelerate the next phase of its AI transformation. The insurer confirmed that the partnership focuses on further developing “Global AI Hub” to scale AI agents safely, […] The post AXA partners with Publicis Sapient to deploy standardised “Global AI Hub” at scale appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/axa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AXA%20partners%20with%20Publicis%20Sapient%20to%20deploy%20standardised%20%E2%80%9CGlobal%20AI%20Hub%E2%80%9D%20at%20scale%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Faxa-partners-with-publicis-sapient-to-deploy-standardised-global-ai-hub-at-scale%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal</span>
+      </div>
+      <h2>Jencap Selects OIP Insurtech to Accelerate AI-Enabled Underwriting Operations - Insurance Journal</h2>
+      <p>Jencap Selects OIP Insurtech to Accelerate AI-Enabled Underwriting Operations Insurance Journal</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Jencap Selects OIP Insurtech to Accelerate AI-Enabled Underwriting Operations Insurance Journal</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBtQlNzeDl3Mm1nSkMzbFpQM1pFMmgzNC1mdzlvU3NwWnY0YkpsWDVYbVNuR0R6YVU2ZlRJc2V2SWc5MWVkNzBkd0xxSVhUTEh1R3Qxbm50bDBTOWJpTmF6YnhCYzdFYmZoSFUxRFRnUTljQQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Jencap%20Selects%20OIP%20Insurtech%20to%20Accelerate%20AI-Enabled%20Underwriting%20Operations%20-%20Insurance%20Journal%22%0AInsurance%20Journal%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMickFVX3lxTFBtQlNzeDl3Mm1nSkMzbFpQM1pFMmgzNC1mdzlvU3NwWnY0YkpsWDVYbVNuR0R6YVU2ZlRJc2V2SWc5MWVkNzBkd0xxSVhUTEh1R3Qxbm50bDBTOWJpTmF6YnhCYzdFYmZoSFUxRFRnUTljQQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>AXA scales governed AI infrastructure across global operations</h2>
+      <p>The insurer's vendor-agnostic hub is already live in five entities, with AXA XL among those building claims and email applications</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>The insurer's vendor-agnostic hub is already live in five entities, with AXA XL among those building claims and email applications</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/technology/axa-scales-governed-ai-infrastructure-across-global-operations-588999.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AXA%20scales%20governed%20AI%20infrastructure%20across%20global%20operations%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Ftechnology%2Faxa-scales-governed-ai-infrastructure-across-global-operations-588999.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>EigenRisk expands EigenPrism catastrophe risk management platform with GeoX integration</h2>
+      <p>EigenRisk, a provider of catastrophe risk management technology, has entered into a new agreement with GeoX, an AI-powered property intelligence company, to expand the EigenPrism catastrophe risk management platform, all</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>EigenRisk, a provider of catastrophe risk management technology, has entered into a new agreement with GeoX, an AI-powered property intelligence company, to expand the EigenPrism catastrophe risk management platform, allowing clients access to granular, AI-derived property attributes across over 186 million US commercial and residential properties. The pair explained that GeoX’s comprehensive property intelligence dataset […] The post EigenRisk expands EigenPrism catastrophe risk management platform with GeoX integration appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/eigenrisk-expands-eigenprism-catastrophe-risk-management-platform-with-geox-integration" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22EigenRisk%20expands%20EigenPrism%20catastrophe%20risk%20management%20platform%20with%20GeoX%20integration%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Feigenrisk-expands-eigenprism-catastrophe-risk-management-platform-with-geox-integration%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>AXA collaborates with Publicis Sapient</h2>
+      <p>The idea is to develop AXA's Global AI Hub. The post AXA collaborates with Publicis Sapient appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>The idea is to develop AXA's Global AI Hub. The post AXA collaborates with Publicis Sapient appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/axa-collaborates-with-publicis-sapient" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AXA%20collaborates%20with%20Publicis%20Sapient%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Faxa-collaborates-with-publicis-sapient%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Cyber premiums are falling as AI attacks accelerate - Moody's</h2>
+      <p>Silent cyber exposure is creeping into property and casualty books never built to price it</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Silent cyber exposure is creeping into property and casualty books never built to price it</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/cyber/cyber-premiums-are-falling-as-ai-attacks-accelerate--moodys-588972.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Cyber%20premiums%20are%20falling%20as%20AI%20attacks%20accelerate%20-%20Moody%27s%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fcyber%2Fcyber-premiums-are-falling-as-ai-attacks-accelerate--moodys-588972.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">From AI adoption to AI control: how can insurers scale with confidence? - Insurance Post <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNd25qdzNHRnI2bjVuYlVPWHlqNDZZY0lSZkx6QjJVN1JhVnRjU28tNDU2RWd2XzB3Q0thNDdfWW56NkxtQWZuT3VIN1hod2tkZFYwTWZIQ1lxZ1hxV3lPLVo1ellfVUVpVF8wY2RnY2xPWFFCY08xZ1d1QjRGR2RQbVJXdld4UDJBUHptMTZTdDlTRE1BQTZvbmZ1T2ttZkNDdWpBQUxwMWI0XzBjTWVWc0tUanc4TjBPQ2JTQXhhU0s4S2o4b2JUQVNrWQ?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">Insurers can't trust AI unless they can also defend it - Digital Insurance <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTHVONWlWanNvR25IdTRoYTM0UkZ3S21ITU1zQlNrb2dCSFBvYWs0RmZqaHkyNVgtdi1YUlRCeW1pcnJycHRfVHNOamdpRlRWUDZnZ1BIeEJIa2JtSVdxUU14NE9JNXV0aWJBV25VWWhXWWEyMFktQnNSdGdoY01MaWtSUnlJYmxs?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">French insurer AXA Partners with Publicis Sapient to Boost AI Deployment - marketscreener.com <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRnk4V3haZDdCZVd2TWFsQXlBVkJNU3YtSkVyMUtoMll2SEVSUV9TSnplODZfQkRUU0FkbVNwbmZVdDNzNEZFNks5S19qZHFvY0EzS1MyaUdMbGdIaUVLMnB6THFuU2VEZnpGRHJjTUF0MWQwT1B0OFZyZ3JKS25uZWpoY3NKT05KZExpaTJyZmF3LVhfY0JkR1pGRHNRaXhfRHItSVRORVNzYTZEMm9FR1FUbFRKRTdsbWZoeWdtaTRrTXc?oc=5" rel="noopener">[marketscreener.com]</a></div>
+      <div class="line">AXA Partners with Publicis Sapient to Deploy AI Agents Across the Group - Idéal Investisseur <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQOVNKaDIxVk5weXFsUm1UWGlKNGtuSFdSM1ZwZXJ4akZxY3l1TVVMWUI1ZXlmYV9aZG0zOTQxNktYVUxWSm4zaUZfS19xd1QyWVlhbVFjSWhZNWxoZ0tjUEZrcV81SkNyXzBtbjNqMDlPTF8zOHUtMW9IMVdJdkZaUUlrNUNwT2VaWHoxbDQzZXRZUlZ2cUgyZVBNZHMzNU83ajNXY2xmTUg2ZWs3NEluQzYyNHVkaXl2b3prYVNKMlVqQk5mYVl5cUdR?oc=5" rel="noopener">[Idéal Investisseur]</a></div>
+      <div class="line">AI, Energy Investments Could Generate $200 Billion in Commercial Insurance Premiums - Program Business <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQcVU3TWNJajBZSzNMUVpFdV9RVTZFY0NXeDlpNDltUVp5VmFsaEtLckV1ckxrT3ZWLVJDSExMazRqbEFwXzJVWjhZT2ZrUmhBWGpwT0FlaUFBR3RNN3hDNldoeU1pckg0Ti1HWF91ZWJuazJUd0MyQ2c0NmJuUVpvYjlMWFh4MTBwVEtKSlp4QkRMUzJsR0hRSklod09UUVlueFdTbkdBU2o5RFRYeUNLaEpMOUJMZw?oc=5" rel="noopener">[Program Business]</a></div>
+      <div class="line">Most health plans use AI but few have policies to govern it - Insurance Business <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNb0ZTREw3ZGRkLWt0NzVJQk1qRUZSMWROb0Z2d2s3eURtTXpNekJVRUFkbzRnREFZYXNYU0M2MnVrTmIxaG93bFBmUTNIa3EyMmNZWVlmanMzQmMzUXgySmk1WWlCOERoYUJmVUFabjcxZGxQZ2xzYWg5QWdsUXhTbkdYSk94ZGJzS3FWUlVKWmQ3dGRxUnprb24zcW9BTm1VSmtnYVpCMDRrX01OeXVWcnMyM2xoc0VqR2NoVnhzU3FNRVU?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Your client’s AI platform could be helping cybercriminals - Insurance Business <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWGxtVjU3MDN1U1BmQXBZOFZEWC1wN3haNkZlOUpUOXY0QTJlUzJKMm5Ed19Md3ZDWGNXV1hCcUt6bVF0T0tMVGt3RWFkZ1NqVWxlZjJLRGJMdDEzM3FoV1RmRl81MXNMVTBSbmZDN0lGb0szVmkwWFlyVVlrR0hDSnVmekxvVE9QQ1g1RGxZYWdwbEpfRmhEUFh2ejRBMWhfZkFPWUZCR0Rpd0dIa3NvWUdoTW9EYkdGWkU4?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Cyber reinsurance market softens as AI and infrastructure risks start to emerge - Global Reinsurance <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxOM3FVLUNpZWhLN0JFQm5qMnRrMVFOa2NoSFQzeEl0ZjBlQzBaVV9iNDByZ0d1U1I4WkVJc1ctbWhtaEVVUEloZkk2X0Naay1rNDZLdFFRSmRfbFZ0anBfcXZEWXBoUjV0M19VdzExLUdHWTNQdjc3LUdpYm9DNE1KX1N6bzlWNEQ3dWNwVFlOVGRqeHVyTXFkRXB2QXUzUGgzT0NyNk1RRHdfUTRSeDVVanBudkVHZXJqTWdOQTZIc2FFUHFzZWhQUGo3Q2pOOE0?oc=5" rel="noopener">[Global Reinsurance]</a></div>
+      <div class="line">Google’s Atlas of the human genome could pave the way for new treatments <a href="https://www.theverge.com/ai-artificial-intelligence/991180/google-launches-alpha-genome-atlas" rel="noopener">[The Verge AI]</a></div>
+      <div class="line">Risk & Insurance Education Alliance Opens Enrollment for Certified AI Insurance Credential (CAIC) - Insurance Journal <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5zTFo0Nkg3cndETE9SZC13Y3BpWU03NmJXSXJsWkNzT1N6OEktWmQyZkljS2JSVTRCQTBFajZ6ZWk4UnpFSmg2Rk9LUklXcGNQTmR1VGZvd1BWN1poaUxUSHZXZ3hzSUhtQ1VObUVQSTRaRkZNY0hOd1RlenU?oc=5" rel="noopener">[Insurance Journal]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
