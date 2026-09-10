@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thursday, 10 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Thursday, 10 September 2026</h1>
+      <div class="meta">34 sources scanned · 33 qualified · 6 movers · generated 10:57 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurtech Sixfold launches AI Underwriter for life and health insurance - Beinsure</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Mosaic launches AI Lab and Forward Deployed Engineer Programme</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurtech Intellect AI outlines automation tools for wholesale insurance brokers - Beinsure</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Digital health AI adoption is outpacing the policies covering it</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Experian Launches AI-Enabled Decisioning Platform Bringing Real-Time Underwriting and Cash Flow Intelligence t</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Prudential Partners with Alibaba Cloud to Launch AI Underwriter, Delivering Preliminary Underwriting Guidance </span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Beinsure</span>
+      </div>
+      <h2>Insurtech Sixfold launches AI Underwriter for life and health insurance - Beinsure</h2>
+      <p>Insurtech Sixfold launches AI Underwriter for life and health insurance Beinsure</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurtech Sixfold launches AI Underwriter for life and health insurance Beinsure</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPUzZTREFvZkpMa3hsRF96eGZWcWhLcExJTEl1NjVoS2U4R0pzLXlBNWE4MjVzbUEzaDlxbkpKLUhiRGUxX0dMZzROeGlfR3pOVW1jU2JuY2dGS3hXcF8za3JuY0lhYkFPV1AzYWRWT2NZRFNNWlhvRWp5bG5aaXBjaElOOElYWlE?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurtech%20Sixfold%20launches%20AI%20Underwriter%20for%20life%20and%20health%20insurance%20-%20Beinsure%22%0ABeinsure%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMihwFBVV95cUxPUzZTREFvZkpMa3hsRF96eGZWcWhLcExJTEl1NjVoS2U4R0pzLXlBNWE4MjVzbUEzaDlxbkpKLUhiRGUxX0dMZzROeGlfR3pOVW1jU2JuY2dGS3hXcF8za3JuY0lhYkFPV1AzYWRWT2NZRFNNWlhvRWp5bG5aaXBjaElOOElYWlE%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Mosaic launches AI Lab and Forward Deployed Engineer Programme</h2>
+      <p>Mosaic Insurance, a global specialty insurer, has announced the launch of an AI Lab and Forward Deployed Engineer (FDE) Programme, designed to accelerate practical artificial intelligence (AI) adoption across its busines</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Mosaic Insurance, a global specialty insurer, has announced the launch of an AI Lab and Forward Deployed Engineer (FDE) Programme, designed to accelerate practical artificial intelligence (AI) adoption across its business functions. Mosaic’s AI Lab is a new unit working across its businesses to develop and deploy in-house AI capabilities that improve day-to-day operations. The […] The post Mosaic launches AI Lab and Forward Deployed Engineer Programme appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/mosaic-launches-ai-lab-and-forward-deployed-engineer-programme" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Mosaic%20launches%20AI%20Lab%20and%20Forward%20Deployed%20Engineer%20Programme%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Fmosaic-launches-ai-lab-and-forward-deployed-engineer-programme%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Beinsure</span>
+      </div>
+      <h2>Insurtech Intellect AI outlines automation tools for wholesale insurance brokers - Beinsure</h2>
+      <p>Insurtech Intellect AI outlines automation tools for wholesale insurance brokers Beinsure</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurtech Intellect AI outlines automation tools for wholesale insurance brokers Beinsure</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUFFaY1k5bG5GSHZEQ2tRSUxNQlNZSXpNdFRHMWppN0hlSjctVmhGRkk2Ny1lT2YwRUNyc1dBXy1lcjdBWXFzclExVVRYSDRrMmdrWmlsclhlb18xSkZkQTBLbVZxNmJfTUd3OWc4X0pOX1NFTk9nU2ZuZUhRaTJEMjROd3M5SE1kS1hKcFJLa3ZUemJJc2ZBR1NMRkZ0ZlZYdmtFaFFTbzRGdzA?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurtech%20Intellect%20AI%20outlines%20automation%20tools%20for%20wholesale%20insurance%20brokers%20-%20Beinsure%22%0ABeinsure%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiqwFBVV95cUxOUFFaY1k5bG5GSHZEQ2tRSUxNQlNZSXpNdFRHMWppN0hlSjctVmhGRkk2Ny1lT2YwRUNyc1dBXy1lcjdBWXFzclExVVRYSDRrMmdrWmlsclhlb18xSkZkQTBLbVZxNmJfTUd3OWc4X0pOX1NFTk9nU2ZuZUhRaTJEMjROd3M5SE1kS1hKcFJLa3ZUemJJc2ZBR1NMRkZ0ZlZYdmtFaFFTbzRGdzA%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Digital health AI adoption is outpacing the policies covering it</h2>
+      <p>Beazley survey finds a gap between what executives fear and what actually drives claims</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Beazley survey finds a gap between what executives fear and what actually drives claims</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/professional-liability/digital-health-ai-adoption-is-outpacing-the-policies-covering-it-589318.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Digital%20health%20AI%20adoption%20is%20outpacing%20the%20policies%20covering%20it%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fprofessional-liability%2Fdigital-health-ai-adoption-is-outpacing-the-policies-covering-it-589318.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Voice of Alexandria</span>
+      </div>
+      <h2>Experian Launches AI-Enabled Decisioning Platform Bringing Real-Time Underwriting and Cash Flow Intelligence t</h2>
+      <p>Experian Launches AI-Enabled Decisioning Platform Bringing Real-Time Underwriting and Cash Flow Intelligence to its Consumer Marketplace Voice of Alexandria</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Experian Launches AI-Enabled Decisioning Platform Bringing Real-Time Underwriting and Cash Flow Intelligence to its Consumer Marketplace Voice of Alexandria</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMixgJBVV95cUxQV1NIeEFhUVMtOGlOenBzODNTUEFZcHF2Z05ZcmpLVWwzWWs5UDlNY29CTm13NURWeWZETUtjYllCM0ZpNVNhS3NER2hJYzV6WEhEU2FEWk10a0JDZUJXemNfTHZWNUpqbXU5U1RQWm1kMjJPdHotMjZrRkppWTRpcDNMckN0MlplYThNNWk1YTJlR1VvQzUweVp0d3Vha1RSRXgtTHQ2TTg2RDRUUkhLb3NpY1hQN3lic0ZjZG80aXcyVVpHNWNmTU82b1RWM2RRSERyU28xcEhBczkwSVZLQlJpTWx2al9LSjJLdXk1SXYyY1lBX3B0X1d2enIxSXFLbmtlSXp2d1JIcXV0c0lGeks3Q3ZpS2t5dUNCTVNHcWJ1dmlpVElmeGFvMUNmSHI0cXZUQ285Qks0Yno4YTVLRGNpa3JBUQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Experian%20Launches%20AI-Enabled%20Decisioning%20Platform%20Bringing%20Real-Time%20Underwriting%20and%20Cash%20Flow%20Intelligence%20t%22%0AVoice%20of%20Alexandria%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMixgJBVV95cUxQV1NIeEFhUVMtOGlOenBzODNTUEFZcHF2Z05ZcmpLVWwzWWs5UDlNY29CTm13NURWeWZETUtjYllCM0ZpNVNhS3NER2hJYzV6WEhEU2FEWk10a0JDZUJXemNfTHZWNUpqbXU5U1RQWm1kMjJPdHotMjZrRkppWTRpcDNMckN0MlplYThNNWk1YTJlR1VvQzUweVp0d3Vha1RSRXgtTHQ2TTg2RDRUUkhLb3NpY1hQN3lic0ZjZG80aXcyVVpHNWNmTU82b1RWM2RRSERyU28xcEhBczkwSVZLQlJpTWx2al9LSjJLdXk1SXYyY1lBX3B0X1d2enIxSXFLbmtlSXp2d1JIcXV0c0lGeks3Q3ZpS2t5dUNCTVNHcWJ1dmlpVElmeGFvMUNmSHI0cXZUQ285Qks0Yno4YTVLRGNpa3JBUQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">finance.biggo.com</span>
+      </div>
+      <h2>Prudential Partners with Alibaba Cloud to Launch AI Underwriter, Delivering Preliminary Underwriting Guidance </h2>
+      <p>Prudential Partners with Alibaba Cloud to Launch AI Underwriter, Delivering Preliminary Underwriting Guidance Within Minutes finance.biggo.com</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Prudential Partners with Alibaba Cloud to Launch AI Underwriter, Delivering Preliminary Underwriting Guidance Within Minutes finance.biggo.com</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5mSHhqaGRiQTAtYjhUVnZYOFJYRVVQS1h0NFdfUUo2RjlZOGlmQ2ItRHhfMV9aS1VnVnBvNlJXLUNoNVlpU19kTkhCRUVORTZSWTlYbExpRkJ5M0ZHb3ozNFQyejRPOURoTmM5MGFQdHU1THFrNHc?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Prudential%20Partners%20with%20Alibaba%20Cloud%20to%20Launch%20AI%20Underwriter%2C%20Delivering%20Preliminary%20Underwriting%20Guidance%20%22%0Afinance.biggo.com%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMidkFVX3lxTE5mSHhqaGRiQTAtYjhUVnZYOFJYRVVQS1h0NFdfUUo2RjlZOGlmQ2ItRHhfMV9aS1VnVnBvNlJXLUNoNVlpU19kTkhCRUVORTZSWTlYbExpRkJ5M0ZHb3ozNFQyejRPOURoTmM5MGFQdHU1THFrNHc%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">AI agents are flooding public services with new requests <a href="https://techcrunch.com/2026/09/10/ai-agents-are-flooding-public-services-with-new-requests" rel="noopener">[TechCrunch AI]</a></div>
+      <div class="line">AI Risks to Enter 60–80% of Liability and Cyber Insurance Underwriting by 2028, ScienceSoft Predicts - GlobeNewswire <a href="https://news.google.com/rss/articles/CBMi_wFBVV95cUxOcUtKSGRsWndycFJKUmhuNEUtbGdDU0ktYUVQNVZDcXVjNExNVUNkTW1fQ2lKM1ViMU5kcmZvSWd1YjJkU3lhWlRaVWpya3lpcjdJZVdnQWd6OWhUTFpDNlNkaVJBRmpXYUllblJmaWotbmxkLVZkWTF1Z2ZsbFRYTjBaMmFSRzN0d2N0WmNXME8tSlZaUUVWR0pNVzhUUnJVZ0ZWTXB3T3ZvYTdQelcyQnFDRlctYTZheUwyQWVBTndkU1R1cW9oWkZudEFqOWtYUzVZZkFGZkhpX1JOdWlpdktWRXMtU1hlLThuSGZaeG52d2NvQzBaSGpMamdMSUU?oc=5" rel="noopener">[GlobeNewswire]</a></div>
+      <div class="line">Mindtrip Empowers Travelers with AI-Powered Trip Planning - PR Newswire <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNSGxXdkpuWUhwWF9yaGZqNFdyZFFqUjNzM2ZOWWpCSnBVNzFKSUFBVG5keHVIREZCOGNCYl8zS3hUMTZRaUJ4NXVpc3EyZWRDbnM2R3UxSHVxZDM5Ty1WMXJqNXh4bjd4M2Fjcm0wUV9OdUNkdXVWazVxV2N0TDFKaWJiZUJ1cHpWY2hZQUZXTmQtMGxuVGt6ZF9zdDNWZGREMFA1cXlpbFhNdVJlVzVNejdCYw?oc=5" rel="noopener">[PR Newswire]</a></div>
+      <div class="line">FCA weighs AI challenge as ChatGPT reshapes insurance distribution - Insurance Post <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNcDJIazlZaFNpSmlTcnA4ejBBU25VWXBha05LWWhqLU1XRGFDM0l2S1NSXzVhTG1Wdm9mQkt3bm84dWhHRFpoakkxWjNadEhYUjRaQlFuV1BCQmZ5bzZRUVVCOFRlOW9VQm03MUdzLXlaaTNOOFZ1SUhtaFRwZGNRUVJ6ck9tQU9PTEpLZ0pGalFESkFtZ0VQYm4tOC01V2k2bGEwQmItSGphdmEy?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">The Hartford at KBW Insurance Conference 2026: ai, growth and risk - Investing.com Canada <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNERYN2hfa0pfWXJZUTFmLXpHV1VueVJpdkJuYVlQMmFQUmVocHFMRDdOckd2ZDdrYUdoQ0k2SWNMZXVLUEl6WmlfSlRZeVJKRENqWGhRSzJaV3ctMklrRGZudXd3WHM3SHQ1Nm9KcVdSUFg3T2lkUXlNdDVwemZXeDQwRi00ZWZ1Q0RxOGtZZGtfWE1Gd0RIR3B2VmdONEVob09IR3JEUUp6eFVrRWxGNElsVTdQUHZtSXB3WVRaLUxhdkU?oc=5" rel="noopener">[Investing.com Canada]</a></div>
+      <div class="line">Consumers already trust AI with insurance decisions, and that breaks the usual pattern <a href="https://www.insurancebusinessmag.com/ca/news/technology/consumers-already-trust-ai-with-insurance-decisions-and-that-breaks-the-usual-pattern-589194.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">Acrisure introduces Auris AI <a href="https://coverager.com/acrisure-introduces-auris-ai" rel="noopener">[Coverager]</a></div>
+      <div class="line">AXA and BytePlus sign strategic MOU Pioneering AI-Driven Transformation across insurance value chain - The Malaysian Reserve <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNeW1NQU42MkxqaGxrSS1nT2JMTVpRbENpbkR3UmFmNzVFdG85ZDdYdndaZkdRRURZXzFJYlR6TG92c0U1TGZaV3ZaNlppbDdVV1ZJbXRadFRFcWs0U2hqbjJwLUs3ZjhGM29pN3F4WGlkV21LbUVlUzdJaHNOaURyaGkxM21ESDROTTB1WDdmLTFrdXV0Si1sZmdvSDYtNGw2QmFRcWhQQTBoN1BDczhVYUE5YUVWTkhNM3FPUzA4YWF1RVUyaW9kS0VmMUZkeXBncUM3bHFYajRZbEpy?oc=5" rel="noopener">[The Malaysian Reserve]</a></div>
+      <div class="line">Large losses likely before AI becomes stand-alone insurance class - Insurance Post <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNQTljLXpLSHVMS1dqNTRaUjZ2bExwSkhtWWRBaUVvWFBrYXJOS1IwNjFTenh1cERaRlFnU0drMjE1S2lTYWl6R09WdlZITzh6bmZWYXl5VmgyREVKdS1rLWViNEI3cVZ0R0c2UnBzaTdTbUd6eUhTQnpHOXVUNVBKNUZPeXo4VnFRMmMxSF9OMzJzYlhOZG9sLWJBRVN6cXFZS2Y0U2N0d1UyRDlQTk5UN1Rnaw?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">Prudential HK debuts Alibaba Cloud-powered AI Underwriter - Asset Publishing and Research Limited <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOSHI5RnNpWnZZclBHSWpaV1JVWVFCVEJCeFZ5aFB0cngwOER0Ty1tQ2NJMDlfX1k1NTBESlpUOXdFcW9EVFFyVndoNVNFSGtOTTR4VVBBQmNoMkcwTkFBenNLeEJ2bFlHbjRORDYtOWdpQ2RJUzMxQUdfX0Q4QzB3VlRaU2lsU2ZZSm9xY0hiT0hDeDdMNU44S29kOE4?oc=5" rel="noopener">[Asset Publishing and Research Limited]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
