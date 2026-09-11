@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friday, 11 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Friday, 11 September 2026</h1>
+      <div class="meta">34 sources scanned · 19 qualified · 4 movers · generated 10:57 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>The one item that changes a decision today is NAIC's move to require insurers to show their AI use in claims and models, because it converts internal AI governance from a voluntary practice into a documented compliance obligation with market conduct exposure attached. Everything else in today's set is either evidence supporting that shift or vendor and product noise that belongs on a watch list, not a plan.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Regulation</span>
+        <span class="meter" aria-label="severity 5 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>        </span>
+        <span class="lt">NAIC to require insurers disclose AI use in claims and models</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Underwriting (Cyber and Life Sciences)</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Anthropic documents AI accelerated attacks and blocked bioweapons research</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Capital / Portfolio Strategy</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Accenture finds only 23 percent of insurers scale AI enterprise wide</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Talent / Operating Model</span>
+        <span class="meter" aria-label="severity 2 of 5">
+<i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Mosaic Insurance embeds engineers directly in underwriting and claims</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Regulation</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+        <span class="src">Digital Insurance</span>
+      </div>
+      <h2>NAIC to require insurers disclose AI use in claims and models</h2>
+      <p>NAIC signaled it will require insurers to show how they use AI in claims handling and in underwriting or pricing models.</p>
+      <div class="sowhat"><b>So what</b>This turns internal model inventories and AI documentation from a best practice into an examinable compliance artifact that regulators can request on demand.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is a headline only, so the mechanics are not yet known: whether this arrives as a model bulletin, a model law, or an extension of the AI governance framework several states have already adopted, and what the compliance timeline looks like. What is clear from the framing is the direction, which is disclosure of specific AI use tied to specific decisions rather than a general attestation of AI principles. That is a materially higher bar than most carriers' current governance maturity, given Accenture's finding elsewhere in today's set that only 23 percent of insurers have scaled AI enterprise wide. It also connects to the separate Insurance Day framing of a tightening regulatory net on AI and liability, though that piece offers no named regulator or binding action yet. For a portfolio leader, the open question is whether your current model inventory can be produced in the format a supervisor would actually request. Nothing here says the requirement is final or dated, so treat this as a signal to prepare rather than a deadline to hit.</div>
+<div class="next">Watch next: Publication of the actual NAIC bulletin or model text and which states move first to adopt it.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQSVJZMzR5bFk0N3lMWktMYmV5NC1aT05qLTBEWjNLRFdOaGduSEtZWWRvY25helFxT2Rqb2E2ZldmVEdoaXdPZmJKUGtYYmplZndoYjAxZkFxeTVMZFpRamFGSi16bFZ4Zk1VQjBSaXRvNnFTTU55QnNFbXhzUmV1M0NuVWpiRU85Qmc?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22NAIC%20to%20require%20insurers%20disclose%20AI%20use%20in%20claims%20and%20models%22%0ADigital%20Insurance%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiigFBVV95cUxQSVJZMzR5bFk0N3lMWktMYmV5NC1aT05qLTBEWjNLRFdOaGduSEtZWWRvY25helFxT2Rqb2E2ZldmVEdoaXdPZmJKUGtYYmplZndoYjAxZkFxeTVMZFpRamFGSi16bFZ4Zk1VQjBSaXRvNnFTTU55QnNFbXhzUmV1M0NuVWpiRU85Qmc%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Underwriting (Cyber and Life Sciences)</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Anthropic documents AI accelerated attacks and blocked bioweapons research</h2>
+      <p>Anthropic's September 2026 threat report details AI assisted cyberattacks and five blocked attempts at AI assisted biological weapons research between December 2025 and August 2026.</p>
+      <div class="sowhat"><b>So what</b>This gives cyber and life sciences underwriters primary source case evidence that attacker speed and reach are rising even as cyber premiums fell, widening the gap between price and risk.</div>
+      <div class="deeper"><b>Deeper</b>The specifics matter more than the headline. A group consistent with Russia linked Midnight Blizzard built AI workflows that detected when their malware was flagged and rewrote the code until it evaded detection, and separately compromised hotel WiFi at three hospitality vendors through DNS hijacking to target government and defence workers. ShinyHunters affiliates moved from initial access to bulk theft in as little as two to three hours, exfiltrating more than a terabyte from one technology provider and tens of millions of passenger records from an airline. A single hacktivist using stolen API keys breached at least 14 of 42 targeted organisations and built a mass doxxing platform. Anthropic's own conclusion is the sharpest line in the report: intent, not sophistication, now separates a lone actor from a state sponsored group. That lands the same week Moody's flagged cyber as one of the most pressing exposures on its Emerging Risk Radar and Lockton data showed average premiums fell around 11 percent in 2025 even as incident frequency climbed, so the pricing direction and the threat direction are moving apart on documented evidence rather than projection. On the biological side, Anthropic blocked five cases including a gain of function grant application on chikungunya and work on avian flu mammalian adaptation, but admitted it could not always tell legitimate research from malicious intent, which leaves the dual use coverage question for life sciences liability policies unresolved. What remains unproven is whether this generalises beyond Anthropic's own platform telemetry, since no other model vendor's data is cited and no industry loss figures yet exist.</div>
+<div class="next">Watch next: Whether cyber and life sciences underwriters or brokers publish repricing models that explicitly account for AI shortened attack timelines.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/cyber/biological-weapons-researchers-were-using-ai--insurers-should-know-589443.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Anthropic%20documents%20AI%20accelerated%20attacks%20and%20blocked%20bioweapons%20research%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fcyber%2Fbiological-weapons-researchers-were-using-ai--insurers-should-know-589443.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Capital / Portfolio Strategy</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Beinsure</span>
+      </div>
+      <h2>Accenture finds only 23 percent of insurers scale AI enterprise wide</h2>
+      <p>Accenture reported that just 23 percent of insurers have scaled AI use across the enterprise.</p>
+      <div class="sowhat"><b>So what</b>This is the concrete benchmark for a portfolio governance leader showing the bottleneck is conversion of pilots to enterprise production, not the volume of use cases already identified.</div>
+      <div class="deeper"><b>Deeper</b>The supplied text is headline level only, so methodology, sample size, region mix, and the exact definition of scaled use are not stated, and those details matter before citing this number externally. Even so, the figure is directionally consistent with the rest of today's set: Mosaic's new AI Lab explicitly positions itself against two years of pilots that never reached production, and the separate Insurance Nerds piece on underwriters notes that AI saves time but decision quality gains still lag. Read together, the pattern is that time savings and pilot proliferation are outpacing governed, measurable production deployment, which is exactly the gap a portfolio review should be pressure testing rather than assuming away. The number is useful less as an industry statistic and more as a prompt to check whether your own program counts pilots or counts production when it reports AI progress internally.</div>
+<div class="next">Watch next: Accenture's full methodology and any breakdown by line of business that would let you benchmark your own program against peers.</div>      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQSjRwT3VTNVNxOE9WenM5d084NzVYaHJzX2k1Xzlnc283OTYxOFVjOXUtNTNhUTZHLWtQdFJmODhuUUh2QUlpQzVGY3N1ZUpDaEhLSDJia3dRSEtFbzY3TEk4ZHBoMHNXVXFmc1dINE00cFoxbXc3RmJzcTFHVjlxUEo3UQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Accenture%20finds%20only%2023%20percent%20of%20insurers%20scale%20AI%20enterprise%20wide%22%0ABeinsure%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMigwFBVV95cUxQSjRwT3VTNVNxOE9WenM5d084NzVYaHJzX2k1Xzlnc283OTYxOFVjOXUtNTNhUTZHLWtQdFJmODhuUUh2QUlpQzVGY3N1ZUpDaEhLSDJia3dRSEtFbzY3TEk4ZHBoMHNXVXFmc1dINE00cFoxbXc3RmJzcTFHVjlxUEo3UQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Talent / Operating Model</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Mosaic Insurance embeds engineers directly in underwriting and claims</h2>
+      <p>Mosaic hired four AI, machine learning and data science specialists into a new AI Lab and Forward Deployed Engineer program embedded in underwriting, claims, finance and operations teams.</p>
+      <div class="sowhat"><b>So what</b>This is a specific operating model choice, embedding builders in business teams rather than running a central pilot factory, that is worth benchmarking against your own AI governance structure even though the scale is still small.</div>
+      <div class="deeper"><b>Deeper</b>Co-CEO Mitch Blaser framed the rationale directly: most of the market has spent two years running pilots, and the Lab exists to build AI that runs in production on real data rather than repeat that cycle. The design reuses AI infrastructure across projects and draws on the company's own policy, loss and operational data, with human oversight and validation against business outcomes stated as controls. At four hires and a single London office, this is a signal of intent rather than proof of scale, and it directly counters the Accenture finding elsewhere in today's set that only 23 percent of insurers scale AI enterprise wide by claiming an operating model built from day one to avoid that trap. What is not yet demonstrated is whether the Forward Deployed Engineer model actually converts pilots to production faster than the conventional route, or how business outcome validation is measured in practice.</div>
+<div class="next">Watch next: Whether Mosaic reports actual production deployments from the Lab, not just headcount or program launch, within the next two quarters.</div>      <div class="links">
+        <a href="https://coverager.com/mosaic-launches-ai-lab" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Mosaic%20Insurance%20embeds%20engineers%20directly%20in%20underwriting%20and%20claims%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fmosaic-launches-ai-lab%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Insurance Day says the regulatory net on AI and liability is tightening but names no specific regulator or binding action yet, so it is a framing piece rather than a compliance trigger. <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQTGFGdmIzMjAySElGV2gxdWVHMEZvUlpUdzd0UFgxX1dQWDNORHlMTU80bTEyakVpREtxc3RkMGoxTXZrczZtNjVyNzFrWlAtLTN3RUJkS0dqZ3IzN0dRbmRlRmFvNXBpRWdWZi1TaEp3akpRWEhwYWFnSzhuYW5SSFNMQlFUU3JWdWdONzNCTkx4UjRZX0E?oc=5" rel="noopener">[Insurance Day]</a></div>
+      <div class="line">BMO joins Manulife in using AI for underwriting in Canada, per a headline only report with no detail on scope or model type. <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPYUdrb3l6OENVeWxmZHVDZDRlYU9CRUpSYVF1dk9YVHB5eDVTT2hzUnlGRW4zd1lidy1WeTgycUVZSWV5a0VaX1VTTWdNYlhxSkV5V3h1QmltT0F0SXdyQnVQNGJVUFo3SjJha3puNk84NllzZVF6aWRnR29WVlNzOTNNdlVScExtSXBMWHJzUWFlb0dHMF9ma0Ezb2hwM05lN3Bjb09SdEgtMmRvYnMxR0gwX0tIclNmMWc?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Prudential Hong Kong launched an AI Underwriter tool aimed at speeding preliminary review, per a headline only report. <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxOZ0RHWmpsdlNocWVCUENaaDdvSjJkcEdlSjdEM0gzWmgzQ3NjejZBWHlheGRLRnFjRDlIZzdmM2NjclVfR3FsY2JLTHY0VHlGVWFkRzRpaEpuNzVWVllsaVV1QU1VcWNua2gtR0FYZHdGbjZNMkVRTE85SjBvanBEWlNHUHJ1MEc0eDRCOW5panFJcGRMSVY4TGdn?oc=5" rel="noopener">[Insurance Asia]</a></div>
+      <div class="line">AXA Hong Kong and BytePlus are partnering to build insurance AI tools, per a headline only report with no product detail. <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOYVlvN3ppbW1paFBMTUU1NVdaMG8yVnZpYURBdHppcVc5b044dU40TVJieVlCbHpPZlg1SEZUQmdvenY2cm5aUklzU0JEc0ZIRnVsSkx1bzI0MGh4ZXJQazl1RC1XdXdTR3pXTnl2QXZRTFdlLTFCZ1RjdFZfLU90RGFrcGZub0hZanc?oc=5" rel="noopener">[reinasia.com]</a></div>
+      <div class="line">Wonderful is expanding an AI operating platform for insurance workflows, per a headline only report with no adoption figures. <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNUVEyQ09QWWU0RnQ1RFB2V21rdUxURXBHc296ZWYtZnl6U2xXVGFuNlI2Rl9hN3lfUTA3aFlUb2xkUGl5X2ZYaTQ4S2phbml2TGN2SjdoNHBwNjczWnlyYlQwaDZnblZ4ZEpCLVNQaXdVb0NGZFhodWtvbmJ4WTRCYUhVcHl5N3l4cGwwZG05MThOLTTSAaMBQVVfeXFMT1A1MmNjalB4bWcxZm1ZMnlMWnRKZERfcFFudHJZU2R1WW1ya0lNb25FUW5QdEx3N09qSzZtcUN6OG11ZVp0ZllLVHF6TW9sUUtaZWpuR0VwZlVnbFl0RUFQeGVXdF9rTnBWSG9melZ2S0RtRFRCN0dFVFk5QWRRTVRWNVpfNUt4bWpiTEJvT0ZiUzdfaE5BSW5qVGhJMGtKVEowZw?oc=5" rel="noopener">[Insurance Nerds]</a></div>
+      <div class="line">Insurance Nerds reports AI is saving underwriters time but decision quality gains are lagging, consistent with today's broader scaling gap theme. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQQk5VVGZRd1ktQ1RnUDdpMWtzWHV3Zmh5RHNCMXd5T0h2U1hVOVdRMk9VVkwwb1drUFgteGtnRUlLajZZVExMRUN5MDN1TndkLTdGQmFhTmNvZllLZXI3UDRrUzRqM1ZQRE94QlJ2SktIdktWZ2QwZ253Z20zZnAxVDJmWGRTX0ZrbXBnRFVpOEMwdUNuZ2dYb1NtUdIBmwFBVV95cUxQQk5VVGZRd1ktQ1RnUDdpMWtzWHV3Zmh5RHNCMXd5T0h2U1hVOVdRMk9VVkwwb1drUFgteGtnRUlLajZZVExMRUN5MDN1TndkLTdGQmFhTmNvZllLZXI3UDRrUzRqM1ZQRE94QlJ2SktIdktWZ2QwZ253Z20zZnAxVDJmWGRTX0ZrbXBnRFVpOEMwdUNuZ2dYb1NtUQ?oc=5" rel="noopener">[Insurance Nerds]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If a regulator asked us this week to produce every AI model touching claims or underwriting decisions and show how each one is governed, could we hand that over in days rather than months?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
