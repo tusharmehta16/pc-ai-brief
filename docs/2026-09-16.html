@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wednesday, 16 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Wednesday, 16 September 2026</h1>
+      <div class="meta">34 sources scanned · 20 qualified · 6 movers · generated 11:23 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">$40m Series A: AIUC raises funding to build insurance and certification infrastructure for AI agents</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Verisk and Qantev collaborate to help health insurers in APAC and GCC markets</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">How AI is Transforming Document Workflows in Claims</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Loblaw Bolsters Supply Chains With AI-Powered Gate Automation - Progressive Grocer</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Humans Still Matter to Insurance Consumers, Says Big ‘I’ Survey</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Group health underwriters must govern AI-assisted decisions - Digital Insurance</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>$40m Series A: AIUC raises funding to build insurance and certification infrastructure for AI agents</h2>
+      <p>Artificial Intelligence Underwriting Company (AIUC) has closed a $40m Series A round led by Ribbit Capital, with participation from First Harmonic. Alongside its $15m seed led by NFDG, the round brings its total funding </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Artificial Intelligence Underwriting Company (AIUC) has closed a $40m Series A round led by Ribbit Capital, with participation from First Harmonic. Alongside its $15m seed led by NFDG, the round brings its total funding to $55m. The post $40m Series A: AIUC raises funding to build insurance and certification infrastructure for AI agents appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/40m-series-a-aiuc-raises-funding-to-build-insurance-and-certification-infrastructure-for-ai-agents" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22%2440m%20Series%20A%3A%20AIUC%20raises%20funding%20to%20build%20insurance%20and%20certification%20infrastructure%20for%20AI%20agents%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2F40m-series-a-aiuc-raises-funding-to-build-insurance-and-certification-infrastructure-for-ai-agents%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Verisk and Qantev collaborate to help health insurers in APAC and GCC markets</h2>
+      <p>Verisk and Qantev, an AI claims intelligence platform for health and life insurers, have announced a collaboration for insurers in the Asia-Pacific and Gulf Cooperation Council markets, designed to help health and life i</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Verisk and Qantev, an AI claims intelligence platform for health and life insurers, have announced a collaboration for insurers in the Asia-Pacific and Gulf Cooperation Council markets, designed to help health and life insurers make more precise underwriting decisions while improving claims efficiency. The post Verisk and Qantev collaborate to help health insurers in APAC and GCC markets appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/verisk-and-qantev-collaborate-to-help-health-insurers-in-apac-and-gcc-markets" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Verisk%20and%20Qantev%20collaborate%20to%20help%20health%20insurers%20in%20APAC%20and%20GCC%20markets%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fverisk-and-qantev-collaborate-to-help-health-insurers-in-apac-and-gcc-markets%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>How AI is Transforming Document Workflows in Claims</h2>
+      <p>Empowering claims teams to spend less time digging through files and more time delivering for policyholders The post How AI is Transforming Document Workflows in Claims appeared first on Coverager - Insurance news and in</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Empowering claims teams to spend less time digging through files and more time delivering for policyholders The post How AI is Transforming Document Workflows in Claims appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/how-ai-is-transforming-document-workflows-in-claims" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22How%20AI%20is%20Transforming%20Document%20Workflows%20in%20Claims%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fhow-ai-is-transforming-document-workflows-in-claims%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Progressive Grocer</span>
+      </div>
+      <h2>Loblaw Bolsters Supply Chains With AI-Powered Gate Automation - Progressive Grocer</h2>
+      <p>Loblaw Bolsters Supply Chains With AI-Powered Gate Automation Progressive Grocer</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Loblaw Bolsters Supply Chains With AI-Powered Gate Automation Progressive Grocer</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPUnJNMWx1RDZoMWZBN0s2SDhwWlZITzVxRHFsODFsVlUyWFRoQzZYaHZfZDBYTkx1cmxDeUlEMDJTLVUtaW5NWFZvaWFLTk1IMWExalpyMUZpSmlyTUlscnBwYm9MR1dwaXZYbnljcXJsNFJOb3Q1WDlZbk5JYjlxNWxYWTNyWkNvTUtpRXlQUQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Loblaw%20Bolsters%20Supply%20Chains%20With%20AI-Powered%20Gate%20Automation%20-%20Progressive%20Grocer%22%0AProgressive%20Grocer%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMijwFBVV95cUxPUnJNMWx1RDZoMWZBN0s2SDhwWlZITzVxRHFsODFsVlUyWFRoQzZYaHZfZDBYTkx1cmxDeUlEMDJTLVUtaW5NWFZvaWFLTk1IMWExalpyMUZpSmlyTUlscnBwYm9MR1dwaXZYbnljcXJsNFJOb3Q1WDlZbk5JYjlxNWxYWTNyWkNvTUtpRXlQUQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>Humans Still Matter to Insurance Consumers, Says Big ‘I’ Survey</h2>
+      <p>There is some good news, according to the Independent Insurance Agents & Brokers of America, as the use of artificial intelligence proliferates across the industry. People still prefer people. A survey commissioned by th</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>There is some good news, according to the Independent Insurance Agents & Brokers of America, as the use of artificial intelligence proliferates across the industry. People still prefer people. A survey commissioned by the Big “I” found 87% of consumers …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/09/16/885320.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Humans%20Still%20Matter%20to%20Insurance%20Consumers%2C%20Says%20Big%20%E2%80%98I%E2%80%99%20Survey%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F09%2F16%2F885320.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Digital Insurance</span>
+      </div>
+      <h2>Group health underwriters must govern AI-assisted decisions - Digital Insurance</h2>
+      <p>Group health underwriters must govern AI-assisted decisions Digital Insurance</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Group health underwriters must govern AI-assisted decisions Digital Insurance</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPbE9vNzBoeTFaY2U5d0lETDJLR0ZNXzVHdzdJejFwbjdzMG01Q01XLTdxZFV1eWNhTXdIbXdrSldNRjRzRUszdVVBZFI4LXdsVlJ2Q2lhZkMtVWJjbVBldE9fanRZeG9WVFpaQVpFdlpqbWthVy1JLVdneTB1eUlLVnd4ZDVGUERBUl9WeXEteTRlM0VB?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Group%20health%20underwriters%20must%20govern%20AI-assisted%20decisions%20-%20Digital%20Insurance%22%0ADigital%20Insurance%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMilAFBVV95cUxPbE9vNzBoeTFaY2U5d0lETDJLR0ZNXzVHdzdJejFwbjdzMG01Q01XLTdxZFV1eWNhTXdIbXdrSldNRjRzRUszdVVBZFI4LXdsVlJ2Q2lhZkMtVWJjbVBldE9fanRZeG9WVFpaQVpFdlpqbWthVy1JLVdneTB1eUlLVnd4ZDVGUERBUl9WeXEteTRlM0VB%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">AI can help industry’s growth pains says Earnix’s Gilthorpe - Insurance Post <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxOQkRLUm8xczlQRUlvRnQ1c0tPMXFIaFVjdDNuNXVsX0tXV0poSmZ3RWtKcnNKN1VpcTRid0ttenVZUkZsZGlrZXNQME1MeWRGaDE1V3R6QjEyWlJQYkdBcFdISm9CRmhfTkJqb0RfazRHaXlBUV9BWFdrNGF1bGd4WDFxMUZfbnNWUjZUQVRrbnJLdmFCWi1KVVdJcDZLLVE2?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">Property Claims Face Mounting Pressure From Talent Loss, AI Gaps And Climate Volatility - Risk & Insurance <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNcUJaQXYwM1hEWFNOZlI1bHRPYS1UUUNIdVV1ZDN2S3VDemgwVmVKcVYwekNYMXVFX0ZIQzFYY1dhdndIcWhYOGFza1VpckRBcm1pN3UxdEVNWEZ1d0VMYWlvR21pQzBldXpaakJCZ0N6Z1dvcHRFTl9JcXBJeDI0TTZ0WUhmSWEwbFl6dk5ZTEJmRk9LR1dRT09tS3FkZF8tb2lEckxscGhTdnI1Snp2UUdUX05RaUk?oc=5" rel="noopener">[Risk & Insurance]</a></div>
+      <div class="line">Why faster insurance AI needs stronger governance - FinTech Global <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNdHRDREttVk9xeFVOLVZCWkJWWHZGNXFkaFpnRHFLSEdyMWtPRjVKZ2N5Z1ZWM3VkeFBWdDlMb0ZVTkxpVjB5UGpDMk1VNGtRajNpbk9WLVl3WkxZRGt4OXZCTzN5TGk4TnlsZnQ0WjN6U1RTMUtqdlp6ZWdaSjBnY1JIX3JhU3kxTkZ4Tw?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Bulgarian student joins elite ETH Zurich programme to study AI safety - БНР Новини <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOSFJQNkc2ZmlQdlRBcVMxamUtbDQ0bHhjWDcxS0t6dXd2dmV1V05UWkUzRTJfcWlqUmNyQUFEYkRwZVJwQVFNYUthUVpIcVZQWExXSC1oSk51Y0tqMTl1cFVUOE1pZklzTUlTdE56T043U1hqOVU1bGxqdXZrdFZBM3lRMjRaN09jQlFiTnE1M0EzNEVpODBCbTZEMng5LTVDNU5HVlhR?oc=5" rel="noopener">[БНР Новини]</a></div>
+      <div class="line">How Genesis AI (CN:AIG) Could Tap Into the Expanding Artificial-Intelligence Investment Story - kalkine.ca <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxQZGxaODJEbzY5a1lxZDQ5WmduakxmUlNjSVZ0SEVSd0x3YzlpTzFvWFJ4bzZrbTd6Ym5tS3IwN1J2bnZUR1N0a1pyOURIQnZCdTFJUW85T2lzM0ltYnNrRkl5NENnQ19UUnh6REUxTzdwTXQteHNrYk5qQlJvY2dURjFKdEItcU0tVDFxaWFaOHZNYXRObmtHZHI2NFhpVVVVcUxFVUZaeXZWTk5vNDVZcGpLSFk3YlBYbnRIaEctb0lQbzhGRFA0bDN1dU1zOTVwMVlzTQ?oc=5" rel="noopener">[kalkine.ca]</a></div>
+      <div class="line">Allianz: Is Sentiment Turning? AI Shock at Aixtron! Resource Gem Power Metallic Mines Poised for an Upswing? - Stockhouse <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQUkdtSndnTEp6dGhiallFTTdtcF93NUU4NFJhYTRpMXByZHdpWXk3MUxNY2Y3ZlY5Q0tBaHN5a0lNRVFRUlZkajZvS0NUd2N0aEVwQkpjNXo2aWxlYW12Wk1XeGFkRUJoUVJvc0JJanFodm9uTzZiLTFWLXluZDkzcGxXQm5UZ1FYMzZSQ1dZajBHQ042RXBJMXVkSGoxWkM0anFZSzEzdGFCWER4UXJBemo5WTk0UnhhTjBpcGVnQlEzZ19jR3p2THp0RjZsTms?oc=5" rel="noopener">[Stockhouse]</a></div>
+      <div class="line">Sapiens launches AI-native insurance platform - Captive Insurance Times <a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxObTI5ek9QQWZmUFFPbmE2cnFxYmxMaWsyWkZtR195cDE0Tm9jMFdqbVB5dDJRREhPUGU5T3RISURGTTNzMjM2QmVjU3hoNzZjYi1rQ0tmdHRDX3dWcWxIYW9mZGJhWjUyZW9MTjdsVm4zRUZWWWE2U1E5UTkybzZXUDdJc2JVQm5NQkZVSjY3NFpKMzYwd1R5ZHVtVmdZdTNJbWlqWjJWVDRpRENyckdySVoyZHpzYmI2Wmtrc3lxa0tEM05KUFlYajJFaWF2aHMzc0taS3ZmTFlsM1Ntd0dpZjl2QnNQM1EzOF9v?oc=5" rel="noopener">[Captive Insurance Times]</a></div>
+      <div class="line">Measuring AI’s Impact on Workers Requires a Better-Funded BLS - Progressive Policy Institute <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOY2Jqa1dpbHh5UUM1Q1gyUGRPbVhMZGxuTVc2ekZObnMxdGdpYko5WEozY1hhOXQ1Q1pIeVQ5NVo2cENOR2ZRRTNjZklNTWV2ODNrcTBYZnZwdHc2UXoxWUM2UjVWOFFpZXlkRXhqcUMycURIcDV1VkFSSmF2aGs1bDBaVFdlYWN6X0tsSkRNVktteU5rdTFxUDQ2Yw?oc=5" rel="noopener">[Progressive Policy Institute]</a></div>
+      <div class="line">AI overtakes traditional concerns as the biggest Professional Indemnity risk - Claims Media <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0t4T0ZNTlJyQm1vSjhHUFBTQXl5RXRScVRPQmlYdlBXVUVaa2hHaEVQNG8yRVZkZFlmR2paSlBhRVpQY3l3Y090bFM4T3ZHb2N2VnFtUjhOT25mZnBHNXlkYnNERVdic3ZDRnRqRDhBWDl6QmhmQVZHc2R1UWg1eC1TVFJMeFl6ZW5nWmk2d2Ytbzc5Um5xTmFMaUtTN3NHYWwyWHBRR0h2NDNvUlE?oc=5" rel="noopener">[Claims Media]</a></div>
+      <div class="line">Insurance AI market to hit $154b by 2034 - Insurance Asia <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE10alROZnNSZTNDZ0VnVjQ3eFZLSEVBcjJwWDBYN0cwa2NEUUp0SjRnZzhzaTVybi1mQzNudlNtYVNwSVJpc2FuYjYwakNvWFFrQnNFcUJRY0ZlWGxzaXhFOUhIOUNoTDJ5Skt3U1hYcTVraWctNldtWkVfOU43SEE?oc=5" rel="noopener">[Insurance Asia]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
