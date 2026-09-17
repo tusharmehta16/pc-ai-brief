@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thursday, 17 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Thursday, 17 September 2026</h1>
+      <div class="meta">34 sources scanned · 27 qualified · 5 movers · generated 11:31 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>The one item that actually forces a decision today is Beazley and CFC moving to affirmative AI wording in cyber and tech E&O cover, because it turns a theoretical silent-AI cyber exposure into a competitive and reserving question every carrier now has to answer for its own book. Everything else today is directional noise: agentic platform tooling, captive funding, and vendor opinion pieces worth tracking but not acting on yet.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 5 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>        </span>
+        <span class="lt">Beazley and CFC add affirmative AI cover to cyber policies</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Platform</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Earnix launches multi-agent orchestration hub for insurers</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Capital</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Arbol CEO says data centre boom will force new risk models</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Capital</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Captive platform Luzern Risk raises $45 million Series B</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 2 of 5">
+<i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Bermuda ILS manager Pillar adopts AI contract review tool</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>Beazley and CFC add affirmative AI cover to cyber policies</h2>
+      <p>Beazley confirmed affirmative AI cover in its cyber and tech E&O policies on Sept 17, and CFC separately upgraded its financial institutions suite to include its full Cyber Proactive Response policy with affirmative AI cover.</p>
+      <div class="sowhat"><b>So what</b>Any carrier still writing cyber or tech E&O without explicit AI language now carries an unpriced silent-AI exposure that two competitors have just moved to close.</div>
+      <div class="deeper"><b>Deeper</b>Beazley's Alessandro Lezzi framed this as removing uncertainty, saying clients are protected 'in the event of a cyber attack, AI-driven or otherwise,' which is a statement about clarity of wording, not a new risk being newly covered. CFC's move is broader: it is folding its full CPR policy, with unlimited reinstatements and nil deductible, plus affirmative AI language, across most of its FI product line as part of what it calls a wider program to embed affirmative AI coverage across its whole portfolio. The real story sitting behind both headlines is the same one the market has been avoiding, that most cyber and E&O books today are silent on AI and nobody has priced the aggregation risk of AI-driven attacks or AI tool failures at scale. What remains unproven is whether either insurer has actually repriced for this exposure or is simply relabeling existing cyber cover to reduce ambiguity and litigation risk, which is a cheaper move than genuine repricing. This connects directly to Arbol's point elsewhere today about industry risk models lagging new exposure types, since affirmative AI wording without new loss data is a wording fix, not a modeling fix. For a carrier running its own cyber and tech E&O book, the immediate question is whether internal wording review has even started.</div>
+<div class="next">Watch next: Whether a top-five cyber carrier follows with its own affirmative AI endorsement this quarter, which would signal a market standard forming rather than isolated moves.</div>      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/09/17/885463.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Beazley%20and%20CFC%20add%20affirmative%20AI%20cover%20to%20cyber%20policies%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F09%2F17%2F885463.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Platform</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Earnix launches multi-agent orchestration hub for insurers</h2>
+      <p>Earnix launched Agent Hub, bringing more than 25 insurance-specific AI agents and apps into its AI Orchestration System.</p>
+      <div class="sowhat"><b>So what</b>This shifts the governance unit from reviewing a single model or copilot to overseeing a fleet of agents acting across pricing, underwriting and claims workflows simultaneously.</div>
+      <div class="deeper"><b>Deeper</b>The announcement itself is the entire evidentiary basis here, no client names, no adoption numbers, no performance data, and no description of the guardrails or human checkpoints built into the orchestration layer. That makes this vendor noise dressed as a platform milestone until a carrier or MGA discloses a live deployment. The strategic point worth noting regardless is directional: Earnix is explicitly positioning this as insurance AI moving 'from advice into action,' meaning agents that execute rather than just recommend. That is a materially different governance problem than the copilot generation, since an agent that acts inside a policy admin or claims system needs audit trails, kill switches and liability allocation that a recommendation tool does not. Today's set also carries two headline-only pieces on why automation-first AI underperforms in specialty lines and why insurance copilots fail, which suggests the market is simultaneously being sold agentic orchestration and warned that the underlying copilot layer is not yet trusted. Any carrier evaluating Agent Hub should ask which of the 25-plus agents are advisory versus autonomous, since that distinction is exactly what today's other stories say vendors tend to blur.</div>
+<div class="next">Watch next: First named carrier or MGA production deployment of an Agent Hub agent with disclosed accuracy or oversight metrics.</div>      <div class="links">
+        <a href="https://www.insurtechinsights.com/earnix-pushes-insurance-ai-from-advice-into-action-with-agent-hub-launch" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Earnix%20launches%20multi-agent%20orchestration%20hub%20for%20insurers%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fearnix-pushes-insurance-ai-from-advice-into-action-with-agent-hub-launch%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Capital</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Artemis</span>
+      </div>
+      <h2>Arbol CEO says data centre boom will force new risk models</h2>
+      <p>Arbol CEO Sid Jha said the scale and complexity of the AI data centre build-out will force re/insurers to rethink traditional risk modeling approaches, speaking after the 2026 Monte Carlo Rendez-vous.</p>
+      <div class="sowhat"><b>So what</b>Data centres are becoming a fast-growing insured asset class with thin loss history, so carriers pricing this exposure with legacy property or business interruption models risk mispricing a book that is scaling ahead of the data needed to underwrite it well.</div>
+      <div class="deeper"><b>Deeper</b>Jha's comments are a CEO's read of the Monte Carlo conversation, not new data or a filed model, so treat this as a directional signal rather than evidence of an actual modeling gap being quantified anywhere yet. He ties three threads together: the data centre build-out as a growth opportunity that also introduces risks the industry is 'still learning to adapt to,' physical climate volatility compounding that exposure, and a softening reinsurance market where he warns the industry needs to 'maintain underwriting discipline as increased capacity and competition put pressure on pricing.' He also flags that alternative capital, including ILS, is starting to move beyond traditional property and cat risk into longer-tail liability, which is relevant if data centre risk ends up structured as parametric or ILS-backed cover rather than traditional property lines. Nothing here says what a revised risk model would actually look like or which insurers are behind or ahead on this. The connective tissue to today's other stories is that new infrastructure risk and new AI-driven cyber risk are both showing up as underwriting problems the current toolkit was not built for.</div>
+<div class="next">Watch next: First disclosed parametric or ILS placement specifically priced for AI data centre exposure.</div>      <div class="links">
+        <a href="https://www.artemis.bm/news/data-centre-build-out-will-force-industry-to-rethink-approaches-to-risk-modeling-arbol-ceo" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Arbol%20CEO%20says%20data%20centre%20boom%20will%20force%20new%20risk%20models%22%0AArtemis%20%7C%20https%3A%2F%2Fwww.artemis.bm%2Fnews%2Fdata-centre-build-out-will-force-industry-to-rethink-approaches-to-risk-modeling-arbol-ceo%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Capital</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Captive platform Luzern Risk raises $45 million Series B</h2>
+      <p>Luzern Risk raised a $45 million Series B led by Insight Partners, following a $12 million Series A in 2025 and prior seed funding, to expand its platform and AI capabilities for designing and managing captive insurance programs.</p>
+      <div class="sowhat"><b>So what</b>More capital behind captive-formation tooling lowers the barrier for mid-market accounts to self-insure, which is a slow but real threat to primary carriers' retained premium on the accounts most exposed to rate hardening.</div>
+      <div class="deeper"><b>Deeper</b>CEO Gabriel Weiss said the goal is to make captives 'more accessible to a broader set of the market' and that captives 'will play a far bigger role in risk management than they do today.' Insight Partners' Philine Huizing framed the captive market as undergoing 'a structural expansion, moving from a tool reserved for large multinationals into a viable strategy for a much broader universe of companies,' calling Luzern the infrastructure layer enabling that shift. None of this is backed by disclosed premium volume, client count, or a specific description of what the AI capabilities actually automate beyond CTO Jonathan York's general claim that 'every process we automate makes a captive more efficient to run.' What is proven is the funding progression, from $13.5 million total prior funding to a $45 million round in roughly two years, which signals investor conviction in captives as a structural trend rather than evidence the trend has materially hit carrier retention numbers yet. For a P&C carrier, this belongs on the watch list for mid-market retention risk rather than the action list.</div>
+<div class="next">Watch next: Disclosure of actual captive premium volume or client count moved onto the Luzern platform, rather than further funding milestones.</div>      <div class="links">
+        <a href="https://coverager.com/luzern-risk-raises-45-million" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Captive%20platform%20Luzern%20Risk%20raises%20%2445%20million%20Series%20B%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fluzern-risk-raises-45-million%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>
+        <span class="src">Artemis</span>
+      </div>
+      <h2>Bermuda ILS manager Pillar adopts AI contract review tool</h2>
+      <p>Pillar Capital Management, a $4.3 billion AUM Bermuda-based collateralized reinsurance and ILS manager, adopted Ultrassure's AI contract intelligence platform for contract review and underwriting workflows.</p>
+      <div class="sowhat"><b>So what</b>Contract intelligence tools that preserve links back to source documents address the core audit weakness in AI-assisted underwriting, which is unverifiable output, and specialty and reinsurance underwriters are the natural first adopters given contract complexity there is highest.</div>
+      <div class="deeper"><b>Deeper</b>Pillar's CUO Jeff Franklin said Ultrassure 'demonstrated a strong understanding of the reinsurance business' after a formal evaluation process, and Ultrassure's founder Matti Parnanen confirmed the collaboration, but no performance metrics, time savings, or error-rate figures were disclosed. This is a single-client adoption announcement from a niche vendor, not evidence of a broader shift in how specialty underwriters review contracts, so treat the scope accordingly. What makes it worth noting is the mechanism: Ultrassure is explicitly built to keep extracted contract data traceable to the underlying source document, which is the traceability gap that is driving skepticism about generic AI copilots elsewhere in today's set. For a large P&C carrier this is a small but useful data point on what specialty and reinsurance buyers are prioritizing when they evaluate contract AI, namely provenance over raw automation speed.</div>
+<div class="next">Watch next: Whether a larger reinsurer or primary carrier discloses a similar contract-intelligence rollout with actual performance data attached.</div>      <div class="links">
+        <a href="https://www.artemis.bm/news/pillar-capital-management-adopts-ultrassure-to-support-contract-review-workflows" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Bermuda%20ILS%20manager%20Pillar%20adopts%20AI%20contract%20review%20tool%22%0AArtemis%20%7C%20https%3A%2F%2Fwww.artemis.bm%2Fnews%2Fpillar-capital-management-adopts-ultrassure-to-support-contract-review-workflows%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Insurance Business reports brokers are backing AI regulation while an underwriter warns of overreach, but the supplied text gives no detail on which proposal or jurisdiction is at issue. <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxPRFc3TG4tdzl0VzhaUFMwR0JzdGpzbFhveEJhdGx5ZDNzd1dUaWd5VEltYS1JRkZaWW9ob05xY0N1dGVNWkxQUGd1REE5VXh1TE1rZ1c5RE5zNkNiZk5sdDBrYm8yaVc0WVVQWnBHbEMwLXBxTjdLRHFBekx6WV8tZG5HWkl3SVozVUZyU1FZbGVXM3c2ZWRNb01GcF9Qa3cxblFtbTdTUTc5ZEp4ODV3aTh3SnZJVkMxamV0V1lBRXpxTHhySXVYMlNvdzY3dw?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Carrier Management argues automation-first AI underperforms in specialty lines, a thesis worth reading in full once the underlying article text is available. <a href="https://news.google.com/rss/articles/CBMickFVX3lxTE5ZODZ2M01SYUlBeWtlMW9aLWszdHZ0OVY2NWgtSVVIWmQ5NVNyQ0RkMXBzcU1YYWh5X0hTaUxoUFhEVkZuaEltVlpxeV9XME4yeFpTLVdBaGxxZ2h0VU1Ha2tQc09zQUZ5NmEtMm5YVUJmZw?oc=5" rel="noopener">[Carrier Management]</a></div>
+      <div class="line">Insurtech Insights previews why insurance copilots fail and how contextual RAG could fix it, currently headline only. <a href="https://www.insurtechinsights.com/why-insurance-copilots-fail-and-how-contextual-rag-changes-the-game" rel="noopener">[Insurtech Insights]</a></div>
+      <div class="line">Risk & Insurance flags research showing insurers are split on who should own AI-driven work, without detail yet on how the split breaks down. <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPREtETko3ZHNWWS1KcUlWaVVNOUh2UGplYzhSYlVzaEt3bjhlNXRzTXNrZ3VsbDlhSXZyQnlmTjYzdUFmSVZOanI2R0xCcXhLcXFHbFZoRzhKRjFwc3A1LUFNNnhaUUF4OWdjeEhrM1h5S3QwQkdiVTlsNHp4emJ4aVpsWldpbWpEdjRGM0N3TE45UTYxMEtOR2pB?oc=5" rel="noopener">[Risk & Insurance]</a></div>
+      <div class="line">Allianz's Lalwani calls for more industry collaboration on AI governance, per Insurance Post, with no specifics given in the supplied text. <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNUNKNkNwQnpjcThXcVA0VUtJMnVhRHY0NFdEY2d1TzlIYVgxajNDYk1FOWZFeGliYmVKQ2Z3OHpwRS1DNW5tQncyMU84dGpOWHo2Ul9IN19Pd044WUJudFJIM09MNFNfZjhfVDVLMW9kaGFtbUZlcTFCRFpvVmZDNWd6dTJpMEIydW5FQ0MzYlN1SFJBbVhLa1hNV2p0WGhRVnZ6blRHTmo?oc=5" rel="noopener">[Insurance Post]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If a claim today involved an AI-driven cyberattack or a failure inside our own AI-assisted claims or underwriting process, could we state with certainty whether our own policy wording and our own E&O exposure treat that as covered or silent?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
