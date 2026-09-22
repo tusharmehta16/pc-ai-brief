@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 22 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 22 September 2026</h1>
+      <div class="meta">34 sources scanned · 27 qualified · 6 movers · generated 11:29 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Marsh launches Broker WorkBench to reduce placement times for specialty risks</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Marsh launches Broker WorkBench</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Tech Update: Marsh Launches AI-Powered Platform to Cut Placement Times in London</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Marsh launches AI-powered broker tool - Insurance Post</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI-Powered Floor Elevation Technology Could Halve Flood Insurance Premiums For Thousands Of Homes - SMBtech</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Snorkel AI raises $350 million</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Marsh launches Broker WorkBench to reduce placement times for specialty risks</h2>
+      <p>Marsh has announced the launch of Broker WorkBench, an AI-powered platform designed to transform how Marsh's brokers operating in the London insurance market serve their clients. The post Marsh launches Broker WorkBench </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Marsh has announced the launch of Broker WorkBench, an AI-powered platform designed to transform how Marsh's brokers operating in the London insurance market serve their clients. The post Marsh launches Broker WorkBench to reduce placement times for specialty risks appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/marsh-launches-broker-workbench-to-reduce-placement-times-for-specialty-risks" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Marsh%20launches%20Broker%20WorkBench%20to%20reduce%20placement%20times%20for%20specialty%20risks%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fmarsh-launches-broker-workbench-to-reduce-placement-times-for-specialty-risks%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Marsh launches Broker WorkBench</h2>
+      <p>Broker Workbench is an AI-powered platform that streamlines the placement process. The post Marsh launches Broker WorkBench appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Broker Workbench is an AI-powered platform that streamlines the placement process. The post Marsh launches Broker WorkBench appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/marsh-launches-broker-workbench" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Marsh%20launches%20Broker%20WorkBench%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fmarsh-launches-broker-workbench%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (International)</span>
+      </div>
+      <h2>Tech Update: Marsh Launches AI-Powered Platform to Cut Placement Times in London</h2>
+      <p>Insurance broker Marsh announced the launch of an AI-powered platform designed to improve Marsh brokers’ operational efficiency and reduce placement times for clients in the London insurance market. Called “Broker WorkBe</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurance broker Marsh announced the launch of an AI-powered platform designed to improve Marsh brokers’ operational efficiency and reduce placement times for clients in the London insurance market. Called “Broker WorkBench,” the platform combines streamlined workflows with intelligent data processing …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/international/2026/09/22/886374.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Tech%20Update%3A%20Marsh%20Launches%20AI-Powered%20Platform%20to%20Cut%20Placement%20Times%20in%20London%22%0AInsurance%20Journal%20%28International%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Finternational%2F2026%2F09%2F22%2F886374.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>Marsh launches AI-powered broker tool - Insurance Post</h2>
+      <p>Marsh launches AI-powered broker tool Insurance Post</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Marsh launches AI-powered broker tool Insurance Post</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPUlJvZFcza3VrSVpWV0dVbndEYnNFX2tFeVp6OVdqaDBCMUFQQ01LMk5CZC1ScDl3X3hxZjhENGlibmF2d2JybEw4dWhQZkVhQS0xOWJ2Y0pYNHozWUNhQURPNThMdmtoWmY5ZUdDb2NGNXgxWk1WUUFSdXBXWlBQR2p2WnVwTms5ZXBKaUF3?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Marsh%20launches%20AI-powered%20broker%20tool%20-%20Insurance%20Post%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMijgFBVV95cUxPUlJvZFcza3VrSVpWV0dVbndEYnNFX2tFeVp6OVdqaDBCMUFQQ01LMk5CZC1ScDl3X3hxZjhENGlibmF2d2JybEw4dWhQZkVhQS0xOWJ2Y0pYNHozWUNhQURPNThMdmtoWmY5ZUdDb2NGNXgxWk1WUUFSdXBXWlBQR2p2WnVwTms5ZXBKaUF3%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">SMBtech</span>
+      </div>
+      <h2>AI-Powered Floor Elevation Technology Could Halve Flood Insurance Premiums For Thousands Of Homes - SMBtech</h2>
+      <p>AI-Powered Floor Elevation Technology Could Halve Flood Insurance Premiums For Thousands Of Homes SMBtech</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AI-Powered Floor Elevation Technology Could Halve Flood Insurance Premiums For Thousands Of Homes SMBtech</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPd0dVRUpfbkdPUjRCekQ2UFI0eHY2NVhsRGJQa3k1Rm1LcERjZUpKMEM4YjJXYm9Qa1NHZV9GcktkWjZTdm9xMkpCMjVhRVAtVmw2OGtqSk9uWVhMU2czelN4Y0I2MEdVbzY0d09sS1RYdWlCQkp5VzB0LVVNY1o1dWItZlRYMEVITWRxajROQzliTlFLUERQYXFNVXkxZ1FKdVBwb0M1NXhFOHhhQ3o0UEpKN1g0WEcxSWoxWHAycw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI-Powered%20Floor%20Elevation%20Technology%20Could%20Halve%20Flood%20Insurance%20Premiums%20For%20Thousands%20Of%20Homes%20-%20SMBtech%22%0ASMBtech%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMivwFBVV95cUxPd0dVRUpfbkdPUjRCekQ2UFI0eHY2NVhsRGJQa3k1Rm1LcERjZUpKMEM4YjJXYm9Qa1NHZV9GcktkWjZTdm9xMkpCMjVhRVAtVmw2OGtqSk9uWVhMU2czelN4Y0I2MEdVbzY0d09sS1RYdWlCQkp5VzB0LVVNY1o1dWItZlRYMEVITWRxajROQzliTlFLUERQYXFNVXkxZ1FKdVBwb0M1NXhFOHhhQ3o0UEpKN1g0WEcxSWoxWHAycw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Snorkel AI raises $350 million</h2>
+      <p>QBE Ventures invested in Snorkel AI in 2024. The post Snorkel AI raises $350 million appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>QBE Ventures invested in Snorkel AI in 2024. The post Snorkel AI raises $350 million appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/snorkel-ai-raises-350-million" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Snorkel%20AI%20raises%20%24350%20million%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fsnorkel-ai-raises-350-million%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">People Moves: Chubb Names Ringsted Chief Scientist; Technical Risk Underwriters Makes Leadership Promotions <a href="https://www.insurancejournal.com/news/national/2026/09/22/886319.htm" rel="noopener">[Insurance Journal (National)]</a></div>
+      <div class="line">Woodgate & Clark’s Durkin worries as genuine claim footage is being chalked off as AI - Insurance Post <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNelFmX25PZjlzTTdxbWt0bWJrNnY1c3NEVkttbkFQclY1d2FfXzBaZVBBSnA2UXRRRnRScFZmYlNYRTdRd0dUeVp0X2o0emFqOEZMc0QwMmNzejZBcjJtcHlJZWF0c0xJd1kyZzV6cHJUU20td3VJMGlRNGpDUmtlcldTN1hBQUdzMDNkeVhOaVBXdGFJeUhTMmw5RkdUNVAtM1RucUdRRTQ4aXlQQkVBbllnQi1HV2M5b2ZlVjBJSnpRVWdlMnk4QU9n?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">AI will amplify rather than replace underwriting expertise - Insurance Post <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTUR4OHpKaXhDNUUwT3pVQUROUWpCc1FDZEpVS1NTQ0tFVElmeHZValUzYWdCTjNsV2R5TXlDTnQ3c0RnUkViOHRLQzA0dl9YVG45WXd2bG9mV0FGSWItZzhLSDFDX1I5TExvZXhUT2tPcWpDQnJCTzVNSTB0VFVuZjZqQ3ZYMldoTWxDMHhLUXJHSkJ0ekVCMnRNcnBKRkR2bV9naXZKVzRjQQ?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">QBE’s Higgins explains why AI success depends on people - Insurance Post <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNb29JWWxMVF9iME1LLWJtT3J3dUJJdFVXdnBoOFNRQzNLdlMzUkw0N2NlNUUxT2VvY2owVlNtaWlqVE1NLTlwQkNYSk5TUDZHLWQ1eVhISThuNFRqMVNLdkpkWTlLQkJQeHB0ZHM2TnJReXd6dU1IejJWWUJFeDZnZGdlb0lfeFctZFgxWkxicjV3RXBqRFZlb05TNG5INW8?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">BC sues OpenAI: a test case for AI liability coverage <a href="https://www.insurancebusinessmag.com/ca/news/professional-liability/bc-sues-openai-a-test-case-for-ai-liability-coverage-590621.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">Why Every Commercial-Lines Agency Needs AI Risk Fluency <a href="https://coverager.com/why-every-commercial-lines-agency-needs-ai-risk-fluency" rel="noopener">[Coverager]</a></div>
+      <div class="line">Soteris Unveils AI Profit Optimization Tool for Insurers, Unlocks Millions from Bleeding Books - sociable.co <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5JZ1o5N2FTaFY2LVl0dWhOSTdXdWZ1cUU4aVlKOVg2aXZNYmwxVDE0WDd1SjVxVDBtU0FyR1NaMWRXUVFXeHpaMlRBVEN0ZmFLeTBHeTlfT1dtX09ZenhkcXhNNnYyOHVwQVgyR2NBU1lfcmlzRF9fUjZfWWM3cXM?oc=5" rel="noopener">[sociable.co]</a></div>
+      <div class="line">AI Neo-Insurer MGT Expands Small Commercial Coverage to California - businesswire.com <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxObjNZYWttYm44RnFyMnRBaGlNRVVLN2hLSXktVnZrU1VyR0h4NjdyNHlGSS1qdnNsWHN4Q0prQjRtdy1fbHM3S1FxRGpBNDF5VGRFY3pBcTVUZUtWUE9Jcm0yVDFpZGJWWkwwTHNRZHFKdmUtVDN6RVZIem1YSjVlT1hMbXdaTE1nM3NMVDA1RDZXMjFTa09UdjBmdVktWjBoZ2tybHBkXzFPdFpjZV9qak9LaEIwMUd4Z3h1RTJfMW4?oc=5" rel="noopener">[businesswire.com]</a></div>
+      <div class="line">Gradient Showcases AI-Powered Workers’ Compensation Claims Innovation at Elevate 2026 - TipRanks <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPdGV2UU95SnZuQjdNN3gzbG9QbnppVTIyUERXMDFxY1RabzNHa0JmQV8zdU9kRU9ZeV9BQ0loSDAwVi1vUUo4MTY0ZVhGclMyN01RMDJQSDNqRGstM0QwT3hGVjhRaGhZSk5DQXc0Y0VJQV83YV9zZnBESDdvY284ZzhkWmNjQ1VWZE5Xd0N0bzRKT1l6OUwwYTZ6aFQ2RjZhcmFTUzNkYWRLQUxOc3VRelByRmRCR2wtbWRsMksyNTdtYzRyU0RZNXdzM0U?oc=5" rel="noopener">[TipRanks]</a></div>
+      <div class="line">Former Google AI lead raises concerns over AI use in insurance - Insurance Post <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOVWQ3MWdMeDY1b2I5bXFFWDlXeGd2cmdVbVdlNEllcm1sQzNWOWtMZEhQUUpTckxyX2RLX0VwSkc3QTRRZmxZTEUxWlhjLTBNcmZQaUZCZ2ZlQmVUUi15ZjlOZ3hmZVZQLWc0eGVBczdKTmdieXlvdjJxLTk1Nk92SS1GUDc3VEVZVmtEc3FKU2cxdlMySTZsNzMza2paNnhmTHduYkUyMA?oc=5" rel="noopener">[Insurance Post]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
