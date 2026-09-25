@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friday, 25 September 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Friday, 25 September 2026</h1>
+      <div class="meta">34 sources scanned · 29 qualified · 5 movers · generated 11:47 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>The real story today is not any single launch but a pattern: governance is becoming the thing that separates winners from laggards in AI, and S&P is now saying that explicitly ties to credit quality. Everything else in today's set, from Beazley's new AI liability products to Munich Re's board-level AI officer to the EPL exposure warning, is different parts of the industry responding to that same governance gap.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Underwriting</span>
+        <span class="meter" aria-label="severity 5 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>        </span>
+        <span class="lt">S&P ties AI governance maturity to future credit ratings</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Capital</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Beazley now sells cover for a carrier's own AI failures</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Claims</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">Policyholders trust AI far less than executives assume</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Regulation</span>
+        <span class="meter" aria-label="severity 4 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i>        </span>
+        <span class="lt">AI in hiring is opening a new EPL exposure gap</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Talent</span>
+        <span class="meter" aria-label="severity 5 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>        </span>
+        <span class="lt">Munich Re's ERGO puts AI on the management board</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Underwriting</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>S&P ties AI governance maturity to future credit ratings</h2>
+      <p>S&P Global Ratings surveyed 121 rated re/insurance entities representing roughly 38% of the assets it rates in the sector and found governance maturity, not adoption speed, will determine which insurers benefit from AI.</p>
+      <div class="sowhat"><b>So what</b>A carrier's AI governance posture is moving from an internal best-practice question to something a rating agency is explicitly watching, meaning governance gaps now carry a path to capital and cost-of-capital consequences.</div>
+      <div class="deeper"><b>Deeper</b>The headline expectation numbers are modest and worth naming precisely: insurers expect only 6% to 7% efficiency gains and 4% to 5% revenue improvement from AI by 2028, but the share expecting cost savings above 3% is projected to jump from 16% in 2025 to 80% by 2028, a much sharper curve than the efficiency numbers themselves suggest. Nearly all surveyed insurers already have or are building formal AI governance frameworks and almost two-thirds maintain model inventories, so the infrastructure question is largely solved. What S&P is flagging is different: it explicitly says governance weaknesses could produce model inaccuracies, regulatory breaches, and remediation costs that feed into credit quality, even though no AI-related rating action has happened yet. EIP's Ross Sinclair sharpens the operational version of this in claims specifically, drawing a hard line between using AI to gather information or spot anomalies versus letting it decide whether a claim gets paid, and criticizing vendors who blur that line. That claims-decisioning boundary is the same boundary Kingstone's chief claims officer draws in story 4, and the same exposure Beazley is now underwriting for in story 22. Read together, this is the governance conversation moving from framework to consequence.</div>
+<div class="next">Watch next: Whether S&P or any rating agency issues its first AI-linked rating action, which would convert this from a forward warning into a live signal.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/technology/ai-governance-will-separate-winning-insurers-from-laggards--sandp-global-ratings-591163.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22S%26P%20ties%20AI%20governance%20maturity%20to%20future%20credit%20ratings%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Ftechnology%2Fai-governance-will-separate-winning-insurers-from-laggards--sandp-global-ratings-591163.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Capital</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Beazley now sells cover for a carrier's own AI failures</h2>
+      <p>Beazley launched an AI Voluntary Shutdown endorsement and an AI Regulatory Defense and Penalties endorsement, covering precautionary shutdown costs and regulatory fines from unintentional AI misuse.</p>
+      <div class="sowhat"><b>So what</b>This creates a named liability category for AI governance failure that carriers themselves may need to buy, and signals the market is starting to price a risk that most current cyber wordings do not address cleanly.</div>
+      <div class="deeper"><b>Deeper</b>Alessandro Lezzi, Beazley's group head of cyber risks, said the market is not pricing AI's growing exposure accurately, noting that international cyber pricing keeps falling even as underlying exposure grows, and framed these products as an attempt not to feed that mispricing by pretending AI risk fits inside existing wordings. This follows a period of scrutiny: in April 2026 the Financial Times reported Beazley was among insurers proposing wording that would cap AI-linked payouts, particularly regulatory-breach losses, which worried brokers. Lezzi's response then was that Beazley had not reduced cover, only clarified whether AI counts as data or software within a policy, since that classification alone can change what is covered. Read against that history, this launch and the earlier September confirmation that AI-driven attacks are covered under existing wording look like a deliberate two-step: affirm existing cover first, then build new purpose-specific products rather than narrow anything. Lezzi expects this kind of product to become close to standard across the market, with quantum computing cited as the next emerging-tech exposure in the same vein. This is a genuine underwriting response to a real gap, not vendor noise, and it directly operationalizes the governance-failure exposure S&P describes in story 8.</div>
+<div class="next">Watch next: Whether competing carriers introduce comparable AI-shutdown or AI-regulatory-penalty endorsements, which would confirm Lezzi's standard-of-market prediction.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/cyber/beazley-launches-cover-for-ai-shutdowns-regulatory-penalties-591149.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Beazley%20now%20sells%20cover%20for%20a%20carrier%27s%20own%20AI%20failures%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fcyber%2Fbeazley-launches-cover-for-ai-shutdowns-regulatory-penalties-591149.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Claims</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Policyholders trust AI far less than executives assume</h2>
+      <p>A Hi Marley study of 550 P&C decision-makers and 2,000 policyholders found 85% of executives expect AI to strengthen customer trust versus just 40% of policyholders, and trust in AI-delivered claims-filing information drops to 45%.</p>
+      <div class="sowhat"><b>So what</b>Carriers scaling AI in claims risk a trust gap that shows up as complaints or churn if human escalation is not visibly built into the design, particularly at the point of filing rather than general inquiry.</div>
+      <div class="deeper"><b>Deeper</b>The more interesting number sits underneath the headline gap: 91% of policyholders who actually used AI-supported channels said they were satisfied, meaning the anticipated fear is much larger than the experienced reality once the channel is used well. Two-thirds of policyholders said their biggest concern is not AI itself but being unable to reach a human when it matters, and 90% said knowing when they are talking to AI is very or extremely important to them, so disclosure and escalation design matter more than the underlying model quality. Kingstone's chief claims officer, Dave Fernandez, drew the same boundary line as EIP in story 8, saying AI can support coverage decisions, liability determinations, and payment negotiations but should not be the decision-maker. Amica's chief digital officer, Saurabh Saraf, raised a separate strategic concern: if AI adoption becomes near-universal, it stops being a differentiator and carriers need another basis for competition once everyone has the same baseline capability. That differentiation question sits alongside the 65% of insurers in the same study who said they plan to increase AI investment regardless.</div>
+<div class="next">Watch next: Whether any carrier publishes claims-specific complaint or NPS data tied to AI-channel use, which would test the stated-versus-revealed trust gap directly.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/technology/insurers-are-bullish-on-ai-but-policyholders-want-a-human-on-standby--study-591160.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Policyholders%20trust%20AI%20far%20less%20than%20executives%20assume%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Ftechnology%2Finsurers-are-bullish-on-ai-but-policyholders-want-a-human-on-standby--study-591160.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Regulation</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>AI in hiring is opening a new EPL exposure gap</h2>
+      <p>Purves Redmond client executive Alex Ilkos said employers are adopting AI in recruitment and performance management faster than they can govern it, creating employment practices liability exposure with no reported AI-based EPL claim yet.</p>
+      <div class="sowhat"><b>So what</b>Underwriters writing EPL need to start asking specific questions about AI use in HR decisions now, before claims materialize, since responsibility for a discriminatory outcome may trace to the tool or the employer and that ambiguity is the exposure itself.</div>
+      <div class="deeper"><b>Deeper</b>Ilkos said the exposure runs both directions, from AI evaluating current employees internally to AI screening job applicants externally, the latter now subject to disclosure requirements in job postings in some jurisdictions. He explicitly said he has not personally seen an AI-based EPL claim yet, so this is a forward-looking exposure rather than a confirmed loss trend, and that distinction matters for how a carrier prices it today. He connected this to a jurisdictional problem that predates AI but is compounded by remote hiring: a firm hiring across Ontario, British Columbia and Quebec simultaneously is effectively managing three separate regulatory environments at once rather than one. This is the same governance-outpacing-adoption dynamic S&P describes in story 8, just applied to a liability line instead of a rating question, and it is a concrete underwriting action item rather than a speculative risk.</div>
+<div class="next">Watch next: The first reported AI-linked EPL claim or regulatory action, which would convert this from anticipated exposure into priced loss experience.</div>      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/professional-liability/employers-are-adopting-ai-faster-than-they-can-govern-it-and-epl-claims-will-follow-broker-says-591124.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20in%20hiring%20is%20opening%20a%20new%20EPL%20exposure%20gap%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fprofessional-liability%2Femployers-are-adopting-ai-faster-than-they-can-govern-it-and-epl-claims-will-follow-broker-says-591124.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Talent</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Munich Re's ERGO puts AI on the management board</h2>
+      <p>ERGO Group appointed Guy Goldstein, founder of US P&C insurer ERGO NEXT, to a newly created Chief AI Officer seat on its Management Board effective 1 October 2026, while long-serving Chief Digital Officer Mark Klein departs at year end at his own request.</p>
+      <div class="sowhat"><b>So what</b>A top-five global reinsurer's primary subsidiary has just made AI a board-level governance function rather than a technology or digital initiative, setting a structural template that will pressure peer carriers on both governance credibility and CAIO-level talent competition.</div>
+      <div class="deeper"><b>Deeper</b>Goldstein founded ERGO NEXT in Palo Alto in 2016 focused on small business P&C on a proprietary tech stack, and the venture was fully integrated into ERGO in 2024 after a partnership with ERGO and Munich Re that began in 2017, so this is an internal operator being elevated, not an external hire untested inside the group. CEO Markus Rieß framed the move as making AI systematic across ERGO's entire value chain and all markets, and explicitly credited Goldstein's track record building an AI-driven insurance venture as the qualification for the board seat. Klein's departure is described as at his own request rather than a removal, and Rieß's language credits him with building ERGO's digital foundations since 2016 rather than framing this as a governance failure. The structural signal worth noting is that this is a board-level AI officer role, not a chief digital officer relabeled, which puts ERGO ahead of the governance-framework-without-board-authority pattern S&P describes in story 8. Whether a board seat translates into faster or safer AI scaling than peers with governance frameworks but no board-level owner is the open question.</div>
+<div class="next">Watch next: Whether other large European or global primary insurers create equivalent board-level CAIO roles rather than folding AI under existing digital or technology officers.</div>      <div class="links">
+        <a href="https://www.reinsurancene.ws/guy-goldstein-joins-munich-res-primary-subsidiary-ergo-as-chief-ai-officer" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Munich%20Re%27s%20ERGO%20puts%20AI%20on%20the%20management%20board%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Fguy-goldstein-joins-munich-res-primary-subsidiary-ergo-as-chief-ai-officer%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">A headline-only piece frames undeclared or shadow AI use inside carriers as an unaddressed blind spot, but no detail beyond the headline is available yet. <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb1ZqcHFISmJJS3g0MzNKZVhkWXFXTmZFMzFFVVczQmg2R2hBa2JURWtKcVJxMk4zSVZZMTFqYW91SFlXT0dVem1FY0lhMWNMc0JKdy1fbGJmdHZOT2JrTU83dE4xeDFLc044WWJBVXJLNWhvYUxZaHlBSzdsaXlsTHZ3M3JSUi1j?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Swiss Re Institute and LSE analysis of 91 Fortune-100 filings found a 24% rise in interconnections between risks since 2019, warning that shared AI models could make future shocks propagate at machine speed rather than predicting any specific event. <a href="https://www.reinsurancene.ws/ai-and-supply-chain-dependencies-drive-systemic-stress-surge-as-risks-become-more-interconnected-swiss-re-institute-lse" rel="noopener">[Reinsurance News]</a></div>
+      <div class="line">Vertafore launched Digital Underwriter AI agents aimed at MGAs, with only a headline available and no detail yet on functionality or adoption. <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPVUszOVpQNUlrdkk5c3JzRF9UZkdzMkhKNm4wMDVNcjg3dlVDMC1BeFJfVEVobk91MUpLSkpFX3FUaldDbTF5eGkwVHh4QWlhM25sQ0lfUDA0TmZURDZQNmpKWVZ0OEtnWFZxbV9EYWJFbmQ3OXoybjZEWUN0aFVXY0RnYzV3QTRGQlNBRA?oc=5" rel="noopener">[beinsure.com]</a></div>
+      <div class="line">Bold Penguin rebranded its commercial submission platform around DeX AI, extending its existing structured-data and market-matching business rather than introducing a new capability. <a href="https://coverager.com/bold-penguin-rebrands-around-dex-ai" rel="noopener">[Coverager]</a></div>
+      <div class="line">Groupama formalized a multi-year rollout of Continuity's AI underwriting assistant and portfolio monitoring tool across all nine of its French regional branches, extending a pilot that began in 2021. <a href="https://coverager.com/groupama-expands-continuity-partnership-in-france" rel="noopener">[Coverager]</a></div>
+    </section>
+  </div>
+
+  <div class="close"><b>Ask your own shop today</b><p>If a rating agency or regulator asked us tomorrow for our AI model inventory and governance framework, could we produce one that would hold up, or are we still relying on the same informal oversight that S&P just said separates winners from laggards?</p></div>
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
