@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wednesday, 21 October 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Wednesday, 21 October 2026</h1>
+      <div class="meta">34 sources scanned · 18 qualified · 6 movers · generated 11:55 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">First Central launches agentic AI motor proposition with Microsoft - Insurance Post</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI skills and retirements will keep insurance talent scarce through 2027</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">WR Berkley CEO Shares Insights on AI Adoption During Q3 Call</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">How AI is redefining the art and science of underwriting - Insurance Post</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">How can AI fast track insurance claims? - Insurance Post</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Cyber claims shift as AI failures create new liability risks - Digital Insurance</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>First Central launches agentic AI motor proposition with Microsoft - Insurance Post</h2>
+      <p>First Central launches agentic AI motor proposition with Microsoft Insurance Post</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>First Central launches agentic AI motor proposition with Microsoft Insurance Post</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQX2ZMcUxXSHBKXzlwUDFhZTNfN1ZWaEFfUG1kVHpNRTBnbVgxWE93WkNQbFpBNE43TE5LUTJ4YlVlc0xoNnR5bTZrOGZPU2JfYXIwaDViaTNSWXJjY3FJYVJoa3k1ek05WUJzM1VzVWJFallTSVAzYU1qcFE1S3k4QU9mV096SVl1RDdWSThFd2NmU09XcjZsYUNoZ0lqcFlXai1va3dMSXVDcXZD?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22First%20Central%20launches%20agentic%20AI%20motor%20proposition%20with%20Microsoft%20-%20Insurance%20Post%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMirAFBVV95cUxQX2ZMcUxXSHBKXzlwUDFhZTNfN1ZWaEFfUG1kVHpNRTBnbVgxWE93WkNQbFpBNE43TE5LUTJ4YlVlc0xoNnR5bTZrOGZPU2JfYXIwaDViaTNSWXJjY3FJYVJoa3k1ek05WUJzM1VzVWJFallTSVAzYU1qcFE1S3k4QU9mV096SVl1RDdWSThFd2NmU09XcjZsYUNoZ0lqcFlXai1va3dMSXVDcXZD%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>AI skills and retirements will keep insurance talent scarce through 2027</h2>
+      <p>Mergers and an aging workforce are pushing insurers deeper into transformation</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Mergers and an aging workforce are pushing insurers deeper into transformation</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/breaking-news/ai-skills-and-retirements-will-keep-insurance-talent-scarce-through-2027-593927.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20skills%20and%20retirements%20will%20keep%20insurance%20talent%20scarce%20through%202027%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fbreaking-news%2Fai-skills-and-retirements-will-keep-insurance-talent-scarce-through-2027-593927.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>WR Berkley CEO Shares Insights on AI Adoption During Q3 Call</h2>
+      <p>W.R. Berkley Corp. Chairman, President and CEO W. Robert Berkley, Jr. chose the third quarter of 2026 to enlighten analysts on the insurer’s journey parallel to society’s breakneck adoption of technological advances and </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>W.R. Berkley Corp. Chairman, President and CEO W. Robert Berkley, Jr. chose the third quarter of 2026 to enlighten analysts on the insurer’s journey parallel to society’s breakneck adoption of technological advances and its effect on the economy. “My colleagues …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/10/21/889753.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22WR%20Berkley%20CEO%20Shares%20Insights%20on%20AI%20Adoption%20During%20Q3%20Call%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F10%2F21%2F889753.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>How AI is redefining the art and science of underwriting - Insurance Post</h2>
+      <p>How AI is redefining the art and science of underwriting Insurance Post</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>How AI is redefining the art and science of underwriting Insurance Post</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxON29nSk9ETC1uaDVnbjlOZ0Q4bmgyanpFV3pBc1gzRlBjRndfTVBJbWlvb2JZWFQ0QU0xQzBLemZFc2w0akRhME1jVDUwa05IQ3JFell2dlhSNWFFb19rRjRjNGlwZy00Z2U3Wm80dDZNdVU3SWduanR2bVg3ak5aMFg4aU5BU1VLTFRVVUpJOG5RemFzMTU5ZUFGcUZwRHpOWXowOHRENA?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22How%20AI%20is%20redefining%20the%20art%20and%20science%20of%20underwriting%20-%20Insurance%20Post%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMipwFBVV95cUxON29nSk9ETC1uaDVnbjlOZ0Q4bmgyanpFV3pBc1gzRlBjRndfTVBJbWlvb2JZWFQ0QU0xQzBLemZFc2w0akRhME1jVDUwa05IQ3JFell2dlhSNWFFb19rRjRjNGlwZy00Z2U3Wm80dDZNdVU3SWduanR2bVg3ak5aMFg4aU5BU1VLTFRVVUpJOG5RemFzMTU5ZUFGcUZwRHpOWXowOHRENA%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>How can AI fast track insurance claims? - Insurance Post</h2>
+      <p>How can AI fast track insurance claims? Insurance Post</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>How can AI fast track insurance claims? Insurance Post</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPMnVybEtZWVVpY0V4dmZpdzdJLTduZjJZYUJIYlZ0SjhqZGExejBkNnpCUmxkY01OZG1lR3pwS3l5bFVSb29BZHRSTFZvT3RRcEpxaHNUUGpyWTlBZDJNc2hLSnJSOW9sYkZXRHQySjZKd2VBUHRqX3V5T3FjbWc2aVRRQVhRZUFUMEE?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22How%20can%20AI%20fast%20track%20insurance%20claims%3F%20-%20Insurance%20Post%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiigFBVV95cUxPMnVybEtZWVVpY0V4dmZpdzdJLTduZjJZYUJIYlZ0SjhqZGExejBkNnpCUmxkY01OZG1lR3pwS3l5bFVSb29BZHRSTFZvT3RRcEpxaHNUUGpyWTlBZDJNc2hLSnJSOW9sYkZXRHQySjZKd2VBUHRqX3V5T3FjbWc2aVRRQVhRZUFUMEE%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Digital Insurance</span>
+      </div>
+      <h2>Cyber claims shift as AI failures create new liability risks - Digital Insurance</h2>
+      <p>Cyber claims shift as AI failures create new liability risks Digital Insurance</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Cyber claims shift as AI failures create new liability risks Digital Insurance</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOOGREbnVXaTNHTzZlZW5UenQ0ZkxQVDZfNmlaY0ZZaGdiLWI5dENoTm95ZGJyaVN5ajEzZ3hPY3dHSVdsTzhzMjdOOGtnVWJqQWJZZ2tlbzI4UWpLajhVa2JSMGtXbHlIYWVrZm5tT01XSlZaMmVNNFdDZy1TSl80S1JMT3NtOENHZVZ6c3lpOE5sNHB5Q0E?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Cyber%20claims%20shift%20as%20AI%20failures%20create%20new%20liability%20risks%20-%20Digital%20Insurance%22%0ADigital%20Insurance%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMilgFBVV95cUxOOGREbnVXaTNHTzZlZW5UenQ0ZkxQVDZfNmlaY0ZZaGdiLWI5dENoTm95ZGJyaVN5ajEzZ3hPY3dHSVdsTzhzMjdOOGtnVWJqQWJZZ2tlbzI4UWpLajhVa2JSMGtXbHlIYWVrZm5tT01XSlZaMmVNNFdDZy1TSl80S1JMT3NtOENHZVZ6c3lpOE5sNHB5Q0E%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">AXA: AI risks surpass climate change as experts' top concern - Digital Insurance <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQem5iZnZrVEJ4aklKeHhMNXRZWmgwMjFGVmRsd294OGV3cER1b2c3RjZ2SndUODF5am1uLUVJMXRnUW5Wa0FwMTFmMExCSGUyWDBKWUtHV2JHb0NfVDdkbWw4bVMzYVhmWWRkdG1abGFDclRpYUYyNmlFczJVaU9JS1V0MkxYSU01WGlwVHNrMA?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">Intelligent orchestration: How insurers are connecting AI, workflows and controls - Insurance Post <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNemk1S0dxMmNITE9MVUgyRk1kUE01Tjc3TjFCMUpyV2RaaUx2OUVVZ1JVNzlNM3YyVDJPQXpqVFRoeVJ2NkY0ZlFvWHJRNVRJQ3p2OEV5a3JCMzVNeFJjVGI2WnhXRVVUWW9PQ3lZWGFqWV9VQWFUSXpBaVhHX2ExUUJzbDZ6dm5MQUhTSENLMDU1amJJc2ExZWlfRWxxWXpoc1p0OF9DdDVBVmJaQk81bTJzNGhRb3ZsV0Zka19KTzlBWmc?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">Corgi appoints James Kullman as Head of Underwriting, North America <a href="https://www.reinsurancene.ws/corgi-appoints-james-kullman-as-head-of-underwriting-north-america" rel="noopener">[Reinsurance News]</a></div>
+      <div class="line">Building the data foundation for AI in insurance - Insurance Post <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNSVZkMUZ4SXYyZF9tenlkbGRBTEFnbEh3TjJtTFFrc3llU1JwVFR3VTBLVm83TTVOUGZVeG5qSVpwQi1oYzNxbTV3TjE3Y2hIQzhZcTJlbHgxOWJwc2kwRHR6Y2dJZWhDU2RNMXZKTVFISlhCaW1FQ0FZUmYxeERnVWJWVmZaYWpmMXhodF91b0RKalZ0bUJvNWJB?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">IBC flags AI and shared tech as new cyber risks as Canada’s market stabilizes <a href="https://www.insurancebusinessmag.com/ca/news/cyber/ibc-flags-ai-and-shared-tech-as-new-cyber-risks-as-canadas-market-stabilizes-594301.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">AI Accelerates Cyber Threat Landscape, Poses New Risks for Insurers and Businesses - Insurance Journal <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5TUnFGWWdMVW1sa0FWdS1XQTRuS0pKdUp3QmhmdDVYX1dWT1NqWkdzRGdiV2tyUEIydjVMbHQwdkdOUDJ1akh4YXJNVnFwVExrZXBiNGNucTZnak9VVlU5c1R4ckFEcktZdUNxLVlMdzZQZHdkWjY0?oc=5" rel="noopener">[Insurance Journal]</a></div>
+      <div class="line">EC-Council Acquires Cyber Insurance Academy, Expands AI Risk Education <a href="https://www.insurancejournal.com/news/national/2026/10/21/889750.htm" rel="noopener">[Insurance Journal (National)]</a></div>
+      <div class="line">Why Aspire General now lets AI take most FNOL calls - Digital Insurance <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOUW1BZEtjTWRnMkpJV0lrbWVsU21QQUFtYnNxdlcxX0xSWnkxSGZyTW9SdWNvNTdzeGJJOUszXzJiRTcxS01uSldDU3A0NzRMNjJIeUNaOHJUNWF0UTFHdzM2Um9ETVN0RGU2NFFMSlZEYk1zcURxRTNaUGUyQXozZVdwYzZKZw?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">Transforming your insurance organisation with AI - Insurance Post <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPV3U4NDh4ZldObFAydF9QOE8zV1VSaV9kWDhjcXl2NHh3V3J4T2xnQXNLVEFkY0RUNm1mUnUtd2FSdVVpbS02SWh4TEJRZWhXU1l1MG9uM3dXeDJjcFRMTEtLZndTc05uZU1IcDdKbnNRQXhqTFU4bU9sakwwTkd5ekpBaVV1MjJEV0RDdTk5OUJ0TkZ0SHVZVUp3?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">AI Can Boost Insurance Uptake in India - Fintech Singapore <a href="https://news.google.com/rss/articles/CBMiR0FVX3lxTFBiX3MwYm1RcmMyMkY2eDRLSDJ2Nk5DZ1lMcW9rSFJMOS1pSXBVemNfdTZwX0RJaXFHSjNMZDBySzQxTTd5bUpz?oc=5" rel="noopener">[Fintech Singapore]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
