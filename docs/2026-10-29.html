@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thursday, 29 October 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Thursday, 29 October 2026</h1>
+      <div class="meta">34 sources scanned · 27 qualified · 6 movers · generated 13:23 EDT</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Markets & Coverages: Aon and SAGE to Use AI to More Precisely Price Crop Insurance</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Verisk Expands Insurance Intelligence Across Amazon, Microsoft and Claude AI Platforms - Program Business</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">PolicyMe launches AI underwriting copilot</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">CoverGo raises $6m in Series B1 initial close led by Betatron Venture Group</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Where AI still falls short in specialty underwriting - Canadian Underwriter</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurity’s Dorado Release Accelerates Insurance Product Innovation, Regulatory Change, and AI-Powered Risk Int</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>Markets & Coverages: Aon and SAGE to Use AI to More Precisely Price Crop Insurance</h2>
+      <p>Insurance broker Aon and SAGE, an agricultural risk intelligence company, are launching a crop insurance program in the U.S. they say will assess agricultural risk more accurately and help price insurance more effectivel</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurance broker Aon and SAGE, an agricultural risk intelligence company, are launching a crop insurance program in the U.S. they say will assess agricultural risk more accurately and help price insurance more effectively. The program uses artificial intelligence to combine …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/10/29/890750.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Markets%20%26%20Coverages%3A%20Aon%20and%20SAGE%20to%20Use%20AI%20to%20More%20Precisely%20Price%20Crop%20Insurance%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F10%2F29%2F890750.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Program Business</span>
+      </div>
+      <h2>Verisk Expands Insurance Intelligence Across Amazon, Microsoft and Claude AI Platforms - Program Business</h2>
+      <p>Verisk Expands Insurance Intelligence Across Amazon, Microsoft and Claude AI Platforms Program Business</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Verisk Expands Insurance Intelligence Across Amazon, Microsoft and Claude AI Platforms Program Business</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVV9GRWVwNzB3SGxuY1B1YURXXzRnbzBpVWk3Q01BZzR4N0ZaNkhpU05fb3VNSGdGbWlJR0RzeHhSblJTV1NFa3hYbmVaSlRLdWVEU2VyYUtZUS1Ua0I2cENQRmwyMWdaeURHYURaQlpXZ1lBblMyekk3Q3cwQ1J5S3BNNG1aSHN3ZFJ6QWpkSEJCQ0k5REJrYnQzWWRrYmp5U2pNN1o2WUJpWjhvZDhyYUp5QUVpcU1CTU5v?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Verisk%20Expands%20Insurance%20Intelligence%20Across%20Amazon%2C%20Microsoft%20and%20Claude%20AI%20Platforms%20-%20Program%20Business%22%0AProgram%20Business%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiuwFBVV95cUxNVV9GRWVwNzB3SGxuY1B1YURXXzRnbzBpVWk3Q01BZzR4N0ZaNkhpU05fb3VNSGdGbWlJR0RzeHhSblJTV1NFa3hYbmVaSlRLdWVEU2VyYUtZUS1Ua0I2cENQRmwyMWdaeURHYURaQlpXZ1lBblMyekk3Q3cwQ1J5S3BNNG1aSHN3ZFJ6QWpkSEJCQ0k5REJrYnQzWWRrYmp5U2pNN1o2WUJpWjhvZDhyYUp5QUVpcU1CTU5v%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>PolicyMe launches AI underwriting copilot</h2>
+      <p>The company says it has helped more than 50,000 Canadians secure over $20 billion in coverage. The post PolicyMe launches AI underwriting copilot appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>The company says it has helped more than 50,000 Canadians secure over $20 billion in coverage. The post PolicyMe launches AI underwriting copilot appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/policyme-launches-ai-underwriting-copilot" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22PolicyMe%20launches%20AI%20underwriting%20copilot%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fpolicyme-launches-ai-underwriting-copilot%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>CoverGo raises $6m in Series B1 initial close led by Betatron Venture Group</h2>
+      <p>CoverGo has raised $6m in the initial close of its Series B1 round, led by Betatron Venture Group, to support its AI-native insurance platform and go-to-market expansion. The post CoverGo raises $6m in Series B1 initial </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>CoverGo has raised $6m in the initial close of its Series B1 round, led by Betatron Venture Group, to support its AI-native insurance platform and go-to-market expansion. The post CoverGo raises $6m in Series B1 initial close led by Betatron Venture Group appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/news/covergo-raises-6m-in-series-b1-initial-close-led-by-betatron-venture-group/7123" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22CoverGo%20raises%20%246m%20in%20Series%20B1%20initial%20close%20led%20by%20Betatron%20Venture%20Group%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fnews%2Fcovergo-raises-6m-in-series-b1-initial-close-led-by-betatron-venture-group%2F7123%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Canadian Underwriter</span>
+      </div>
+      <h2>Where AI still falls short in specialty underwriting - Canadian Underwriter</h2>
+      <p>Where AI still falls short in specialty underwriting Canadian Underwriter</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Where AI still falls short in specialty underwriting Canadian Underwriter</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOOEZEU1RCdElLcTY3YVhTQ3ltV1ltQ0ZuNklqS2VKU3l1YXhvZ2xSUjNZcVdWMHBmQ2xNRlR0SkpYblZOLThmSnRjYk9KcHIwY0dUTFlKQTlzdlhlUzdiVERQcENlOXcyZFREb3pocXNmVjVUcHVvenNqVnN0U2ZrM1JsZk9QeUlKOXA1eWFPNXFjV1FHZGlRNy1XczR4TTg?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Where%20AI%20still%20falls%20short%20in%20specialty%20underwriting%20-%20Canadian%20Underwriter%22%0ACanadian%20Underwriter%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinwFBVV95cUxOOEZEU1RCdElLcTY3YVhTQ3ltV1ltQ0ZuNklqS2VKU3l1YXhvZ2xSUjNZcVdWMHBmQ2xNRlR0SkpYblZOLThmSnRjYk9KcHIwY0dUTFlKQTlzdlhlUzdiVERQcENlOXcyZFREb3pocXNmVjVUcHVvenNqVnN0U2ZrM1JsZk9QeUlKOXA1eWFPNXFjV1FHZGlRNy1XczR4TTg%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Business Wire</span>
+      </div>
+      <h2>Insurity’s Dorado Release Accelerates Insurance Product Innovation, Regulatory Change, and AI-Powered Risk Int</h2>
+      <p>Insurity’s Dorado Release Accelerates Insurance Product Innovation, Regulatory Change, and AI-Powered Risk Intelligence Business Wire</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurity’s Dorado Release Accelerates Insurance Product Innovation, Regulatory Change, and AI-Powered Risk Intelligence Business Wire</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMigwJBVV95cUxNTXJPT1VXMlpJQXU3THpNcGpIckFscmUtdkc4aTZOUmhraGlEeGZWYTRSeHI2aHJBQTVnbzVSNGZ4UU9RSnZXNFk1SUE5MmpEeVlReUFIcXQzdkFDOWVNNFUxMTVJQThPNWpiVFRLa0NkZnNxUlVQNmU3YXlleWplVV9TdzdKRGI4OUF0UHhsMTAwMUtacHMwVDVTY2pKcFhCejFhTlpTa2l6YWxmcjR6cnJabGUzZlNTbDBNTGwyaEFmQU1QS2dNZHQ1WnM4Q1dkcF9nQUFhZlBRNmlKN0N5dXpXTUpvelFUemNORzFFS3laLWJndXBiY19zRTBqYXJrcUo4?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurity%E2%80%99s%20Dorado%20Release%20Accelerates%20Insurance%20Product%20Innovation%2C%20Regulatory%20Change%2C%20and%20AI-Powered%20Risk%20Int%22%0ABusiness%20Wire%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMigwJBVV95cUxNTXJPT1VXMlpJQXU3THpNcGpIckFscmUtdkc4aTZOUmhraGlEeGZWYTRSeHI2aHJBQTVnbzVSNGZ4UU9RSnZXNFk1SUE5MmpEeVlReUFIcXQzdkFDOWVNNFUxMTVJQThPNWpiVFRLa0NkZnNxUlVQNmU3YXlleWplVV9TdzdKRGI4OUF0UHhsMTAwMUtacHMwVDVTY2pKcFhCejFhTlpTa2l6YWxmcjR6cnJabGUzZlNTbDBNTGwyaEFmQU1QS2dNZHQ1WnM4Q1dkcF9nQUFhZlBRNmlKN0N5dXpXTUpvelFUemNORzFFS3laLWJndXBiY19zRTBqYXJrcUo4%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Insurtech CoverGo raises $6 mn in Series B1 funding to expand AI insurance platform - Beinsure <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBZT0JYbTluYkVTVVV6S09JWGlkX1FRWUhRekIxQ3pTd3pVZDh4TFY2R2dWc3Ftd3p0Y3pQaFNJSHhmZlBGazY4aTNNMVJUY29HM0xLb1ZyWi1RNTJ1WTRBLU1jd3F6TDZ5Y0E?oc=5" rel="noopener">[Beinsure]</a></div>
+      <div class="line">Barclays Turns to Insurers to Hedge Billions of Data Center Debt <a href="https://www.insurancejournal.com/news/international/2026/10/29/890719.htm" rel="noopener">[Insurance Journal (International)]</a></div>
+      <div class="line">PolicyMe launches AI copilot to speed up complex underwriting - FinTech Global <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPSUZfcG44eWxwZV8teWRDWWd1Y3Q3TVpHbVZhQWdHLWJ1UVN2QjdiYXphOHNPU3NwOE5YRW5kdEhzZ2VDTGdISVJqOENnTEY1aXk3Y1F2QXRkT0xFZlc2TXpyY1VwdDdLdEZraE9PQ3ktaTdpRmhtMUl2YXRPSUhCT0Rmc3Y2SEVsdEI3ODY5bG1nNlVsN0FTTEJzSV8?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Bdeo deploys Vonage API to speed up AI claims - FinTech Global <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNRk55YVlURVh4bnJ1TDBZdUxNcEhyVHpjM2dvTDJGZUhCTXdNaXE0U0FLYTAxck1vQlU0VTRxUHkzOHl6NmZscUVndU55cUhEc2c1TFVwakNqNFZKLXFGYk0tQkNjR2VlYldkdU5ibE45RmZ4U0Y1Z0VpWnZKYjRXem9FcThIVWs?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Verisk brings insurance intelligence to more AI platforms - FinTech Global <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxORHZsdEpoazhxNGJtYk8xc3Z5T2d1alo5eFBYeDhvWV80SGFUMHZxQzBaWDFVVGRiUnRXN2l0R2pSSXRtelA0eTFVeVpUUWRjc21fNExtaE9FRHNNRjJ5WEc4VHU3UTZXUjZXSmRkOUJVVkFYSzViZmZMek9WNVBVc2VqVEdpN29kbVgtUC0ydnJiWWpudlFr?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Cyberattacks that cause physical damage can fall between policies, broker warns <a href="https://www.insurancebusinessmag.com/ca/ib-talk/cyberattacks-that-cause-physical-damage-can-fall-between-policies-broker-warns-595506.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">AI labs in progressives’ sights if Democrats win House - Politico <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNTUE0NExidkxSWnh5VDI0RFdKWFEwZDBEZG9MVGJ3ZUVNSUhTYVZaS0NFWjVVQ1RjSDd6TXljQW9EVHI2QnZLWWpndWRmeXMyYkhOTDkyc1psVXhhOTRSMkdqLTVya1NvU1lfaWx2aUdhQ2pJeHoxazYtNjRWbUswMktlekRsTE8wMW40TFhkNkxMQVU2dWpNV1dtMA?oc=5" rel="noopener">[Politico]</a></div>
+      <div class="line">Wall Street Veteran Ed Yardeni Says AI Boom Still Intact Despite Alphabet's $9 Billion Wipeout - BigGo Finance <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBvMHlxVVRyNV8wLXVlWkY5R1dvdXVEZEFSSGJhMnpIc1FuTl9MaXFXU2k4RFhEeUJnaFNSblJUT2ljN1dIUkNCNmxBdkI5SEprZW0tMHZacVpZeDJCVlpBcFJTT2lmckxkdmdady13aUpZQVFqOVE?oc=5" rel="noopener">[BigGo Finance]</a></div>
+      <div class="line">CoverGo raises $6m Series B1 to scale AI insurance platform - FinTech Global <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPR3BfbnZBM3VKR0x4aVVETkRjOVBTc2JkY0NnbnN2NGZKSmZDWHd2d25BV1p2bnVPLTQ3R00xMnZHU2xTZV9ORU9oblZnTTJ6T3k1bHhiaVNGQTU4YlBaTllDZHYxOUFIT2lYcWxUa2FYdnd2Q0dVb0tFWW44RjhfWGhYQ2JmQzctUHdJV0NkMjhTUS1yRGpJaw?oc=5" rel="noopener">[FinTech Global]</a></div>
+      <div class="line">Travelers introduces AI-powered quoting tool for workers compensation - TipRanks <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbFVZZnBqbG1fNmJIc3QxRmNvRWlqN0pLSl9LeklxY2VQaS1UZ252ODlPaUNSRzFzMW9VSVlOeFlELTJBSzBHTnRHQy1jbU1qNTZLdUhMSGM5dWw2OVFPZlVjWjNHbDE2eUhZTUpDV2dGWDdxYkNaaGF0R1FHWnFmTjI3UlMyaDFOcnJIVHRsV1NXcnJ4QmxTeGNSZFpfZmdDUmlJeFI4MjI5Y2oyNmZ4UnpHT1hlODdUemNN?oc=5" rel="noopener">[TipRanks]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
