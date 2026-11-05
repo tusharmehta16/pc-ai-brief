@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thursday, 05 November 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Thursday, 05 November 2026</h1>
+      <div class="meta">34 sources scanned · 31 qualified · 6 movers · generated 13:40 EST</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">HDI Seguros and insureMO bring generative AI agents to insurance product engineering</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Kalepa Raises $75M to Put AI Agents to Work Across Underwriting, Pricing, and Portfolio Management in the Insu</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Oxbow Partners report finds AI could improve underwriting and pricing through claims data - Reinsurance News</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Lemonade posts record gross profit of $118.1m in Q3’26 as growth accelerates</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI-Powered Insurance Startup Kalepa Valued at $470M in New Funding Round</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI is closing the data gap in credit and trade finance underwriting, report finds - Insurance Business</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>HDI Seguros and insureMO bring generative AI agents to insurance product engineering</h2>
+      <p>HDI Seguros and insureMO are applying generative AI agents to insurance product engineering, following a migration of more than 11 million records in less than nine months. The release describes the move as the next phas</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>HDI Seguros and insureMO are applying generative AI agents to insurance product engineering, following a migration of more than 11 million records in less than nine months. The release describes the move as the next phase of the companies’ strategic partnership. In less than nine months, HDI integrated the life insurance portfolio it acquired from […] The post HDI Seguros and insureMO bring generative AI agents to insurance product engineering appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/news/hdi-seguros-and-insuremo-bring-generative-ai-agents-to-insurance-product-engineering/7296" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22HDI%20Seguros%20and%20insureMO%20bring%20generative%20AI%20agents%20to%20insurance%20product%20engineering%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fnews%2Fhdi-seguros-and-insuremo-bring-generative-ai-agents-to-insurance-product-engineering%2F7296%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">AlleyWatch</span>
+      </div>
+      <h2>Kalepa Raises $75M to Put AI Agents to Work Across Underwriting, Pricing, and Portfolio Management in the Insu</h2>
+      <p>Kalepa Raises $75M to Put AI Agents to Work Across Underwriting, Pricing, and Portfolio Management in the Insurance Industry AlleyWatch</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Kalepa Raises $75M to Put AI Agents to Work Across Underwriting, Pricing, and Portfolio Management in the Insurance Industry AlleyWatch</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxQQkNPVnA1bERCT29kbW1tNVhDQzdHNXVYSmNfNTRENDVpSlVkVVFvb2ZkRkpFQ2I4SzhnbXBSeUhwLU5yUk1maWxxX3F1V2RjaXV4M3VOWEp4aVZGTTJ0bkVDVkcxMktyZ0hJVXM2Qy1waXRGWUFjZ3liNGF0MmlnMDYzNkpYZzgyZHpWNTdTY0wweU9LMlhOTVoxRGxTcmxCYWE5Q2Rxdkh6SGFwVk5hbFBNYlNyNmNaMWtxeUdqQ3VCSEMwOTYwSzQyZFZLZWNmWEt5bHhJMERSRnZnN0dUWnV5VFUzdWpv?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Kalepa%20Raises%20%2475M%20to%20Put%20AI%20Agents%20to%20Work%20Across%20Underwriting%2C%20Pricing%2C%20and%20Portfolio%20Management%20in%20the%20Insu%22%0AAlleyWatch%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMi6AFBVV95cUxQQkNPVnA1bERCT29kbW1tNVhDQzdHNXVYSmNfNTRENDVpSlVkVVFvb2ZkRkpFQ2I4SzhnbXBSeUhwLU5yUk1maWxxX3F1V2RjaXV4M3VOWEp4aVZGTTJ0bkVDVkcxMktyZ0hJVXM2Qy1waXRGWUFjZ3liNGF0MmlnMDYzNkpYZzgyZHpWNTdTY0wweU9LMlhOTVoxRGxTcmxCYWE5Q2Rxdkh6SGFwVk5hbFBNYlNyNmNaMWtxeUdqQ3VCSEMwOTYwSzQyZFZLZWNmWEt5bHhJMERSRnZnN0dUWnV5VFUzdWpv%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Oxbow Partners report finds AI could improve underwriting and pricing through claims data - Reinsurance News</h2>
+      <p>Oxbow Partners report finds AI could improve underwriting and pricing through claims data Reinsurance News</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Oxbow Partners report finds AI could improve underwriting and pricing through claims data Reinsurance News</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRUM4cGRpU0oxNHptRkQxTl8yN3Zsa1BQMm82bUNVV2pReVFYeEJUVFJzd1RpS2tRMVpLQ3pRLTM4dWk2SVRCT0VncmJzcElIVXdYTUJWOE02cGJUMHlEclZEc09GVHNDSVRLM1hRX2dsc2tUbGJvNlhhNnplNFlzQmNjaXhqNDNydzFRNjBoYXM0S29OdGY5UVdEU3p4emlqWE1pSEhMdXBoWUxHNWMwWjgzM1ROUGl5blY0?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Oxbow%20Partners%20report%20finds%20AI%20could%20improve%20underwriting%20and%20pricing%20through%20claims%20data%20-%20Reinsurance%20News%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiuwFBVV95cUxQRUM4cGRpU0oxNHptRkQxTl8yN3Zsa1BQMm82bUNVV2pReVFYeEJUVFJzd1RpS2tRMVpLQ3pRLTM4dWk2SVRCT0VncmJzcElIVXdYTUJWOE02cGJUMHlEclZEc09GVHNDSVRLM1hRX2dsc2tUbGJvNlhhNnplNFlzQmNjaXhqNDNydzFRNjBoYXM0S29OdGY5UVdEU3p4emlqWE1pSEhMdXBoWUxHNWMwWjgzM1ROUGl5blY0%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Lemonade posts record gross profit of $118.1m in Q3’26 as growth accelerates</h2>
+      <p>AI-driven insurance company Lemonade has reported a record quarterly gross profit of $118.1 million for Q3 2026, up 48% from $79.9 million a year earlier. The insurtech said the result reflected a 73% jump in revenue to </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AI-driven insurance company Lemonade has reported a record quarterly gross profit of $118.1 million for Q3 2026, up 48% from $79.9 million a year earlier. The insurtech said the result reflected a 73% jump in revenue to $336.1 million, helped by growth in gross earned premium and a higher premium retention rate following reduced quota […] The post Lemonade posts record gross profit of $118.1m in Q3’26 as growth accelerates appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/lemonade-posts-record-gross-profit-of-118-1m-in-q326-as-growth-accelerates" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Lemonade%20posts%20record%20gross%20profit%20of%20%24118.1m%20in%20Q3%E2%80%9926%20as%20growth%20accelerates%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Flemonade-posts-record-gross-profit-of-118-1m-in-q326-as-growth-accelerates%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>AI-Powered Insurance Startup Kalepa Valued at $470M in New Funding Round</h2>
+      <p>Insurance startup Kalepa on Oct. 5 said it raised $75 million at a $470 million valuation, as investors bet that AI solutions can speed up the slow, data-heavy work of pricing risk and writing policies. Growth equity fir</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurance startup Kalepa on Oct. 5 said it raised $75 million at a $470 million valuation, as investors bet that AI solutions can speed up the slow, data-heavy work of pricing risk and writing policies. Growth equity firm Updata Partners …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/11/05/891679.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI-Powered%20Insurance%20Startup%20Kalepa%20Valued%20at%20%24470M%20in%20New%20Funding%20Round%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F11%2F05%2F891679.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business</span>
+      </div>
+      <h2>AI is closing the data gap in credit and trade finance underwriting, report finds - Insurance Business</h2>
+      <p>AI is closing the data gap in credit and trade finance underwriting, report finds Insurance Business</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AI is closing the data gap in credit and trade finance underwriting, report finds Insurance Business</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxPakxfZVNtdE5GSXliQ0JwM1pLV2hLS3A4dnd4M21HS0JRYlhVSUQ3Y3NOdEs0NHNXRmJJUnpyeEFWZUp2RmU5RkJHVmJSMVJlZTMwVll2bVF1aE5ycl9QNlNkVzBSVjVJSm9FQi12WVBRelEtZnJ1Vkl1S0hrcnpzeXRRdlVnSHIwNUs4cWoyYWNkZTJBdVhJWjcwdHdkWERvSVFOSnhjNjVKSzRZNXJ5TGhiS09waTZxcmJTMHBKOUJ0UmlKVHdiVE1qOHlndl9HUl9LSHZMUVR0eE9pM2NRWUI2SWFzMk8yUWdBTmpqSU1Bdw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20is%20closing%20the%20data%20gap%20in%20credit%20and%20trade%20finance%20underwriting%2C%20report%20finds%20-%20Insurance%20Business%22%0AInsurance%20Business%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMi8gFBVV95cUxPakxfZVNtdE5GSXliQ0JwM1pLV2hLS3A4dnd4M21HS0JRYlhVSUQ3Y3NOdEs0NHNXRmJJUnpyeEFWZUp2RmU5RkJHVmJSMVJlZTMwVll2bVF1aE5ycl9QNlNkVzBSVjVJSm9FQi12WVBRelEtZnJ1Vkl1S0hrcnpzeXRRdlVnSHIwNUs4cWoyYWNkZTJBdVhJWjcwdHdkWERvSVFOSnhjNjVKSzRZNXJ5TGhiS09waTZxcmJTMHBKOUJ0UmlKVHdiVE1qOHlndl9HUl9LSHZMUVR0eE9pM2NRWUI2SWFzMk8yUWdBTmpqSU1Bdw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Insurtech Kalepa raises $75 mn in Series B at $470 mn valuation to expand insurance AI platform - Beinsure <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5ySjNJWEZBQ3dISEwzSjFIQU9kT1pYN00zUG5XOGs1VnV3YXhXWEpkMGhDa2tKRWRoRzlfOGFwcTFLZFBFSGNUcDJMd3dHOE1yMjhlQk1aT1FlV0R6c0NPN0IySjFLTzNBX3RhZlZ3NW11bnJIbjhmb1I2czl4Qmc?oc=5" rel="noopener">[Beinsure]</a></div>
+      <div class="line">From green screens to AI: 30 years of change in claims - Insurance Post <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNV0FLLUJkMjIxUGpVSkt5SWo0bk5ObkRhTEV2T2l1b2NBOE1DNFMzMEZldmQ5dmRXNWVuWG55b3JOeF93S2tQdkNwVkdOcTF4N0FmWlNIX29sdklhc0ppSkRYRnJ3Nlpxc3FPUEpWc3dGM3BQcU5sb2hjZHlRc0RpWDN4VC1WUjN0U1pxTmZCd0dwOXpDV0FGb2JFLVJjZw?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">iOS 27.3 gives iPhones agentic AI powers, but Apple is keeping guardrails intact | Business News - Hindustan Times <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVHhqd2tadWplTm1Eay14ZnZadWQ2ZEJpeVFBRjUyV0Q0V2JpUFNjMHJKMFNNT1g2U01NYW1ndWJrMkEyUFo0eWxRSlo1TUhIdFk3aFJ6YUFrTmpmb2R4emxMR09wUFVmZG1xQUFmWGt6NWpFM2JyRmRvUGtPTml0OUxONy1EcTFLck92SFZsdlFNbTlrd3dOdTQ5UU4zd2NQRU91ZTl6V3F3aFNkWUVjRm5vbE54ZU53RndLQ3hSS3p5QmdCN1ZSQTdiblM2ZDRIdl9kX29pc9IB3AFBVV95cUxQUko5cmZabXJyeENraXduZ2Q2em54X0F0eVhKM2daRVIxQU45SmwyUWZ5cC0tcFVtR29wM1NDbWRmM0RkVE4xZnBSRlpENHpMTy02REtkVEZBYy1ySnFVZHVPOWw4UW5MblZ1aEF2NzVQYkJRUzFXaDZyejFkTVBJc3h5UmVBeUVDTGFXZTYwamF4QVNmQXJDZG44M3NvUE5lcjhOYmVPRDlEOVBnS2pMSHZsdFg4OVdYVU1JRi1VRkJtbTgtYl9neHlfakhMYUdnTWZNVEs5Z2w4NWI0?oc=5" rel="noopener">[Hindustan Times]</a></div>
+      <div class="line">Kalepa Raised $75 Million To Bring AI Into Insurance Underwriting - Finimize <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPTjJzUkJFVndZYl9OMWo0dUc1ZXQ5SG10RHF4Z1BHSmtXVjdnRFg1VV8zSFh6WTFLZl9zSjNsRVFaeW5La1ZzWTRYZGRRMV9lellhY3ZyTkJEbjlPdnJHWVlicmxkTm5xSGdVZmlkUENvTDRmak95OF9KX0Y1bVJsZ1lKZnBCeTFLS3QyRDBjMVBieExsa1lrLQ?oc=5" rel="noopener">[Finimize]</a></div>
+      <div class="line">Reinsurers warned of portfolio losses from shared AI technology - Business Insurance <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQdzlMZ204SkxiOWxNaE51SzVPcWtjb1RIbndMSF9oUW1uamVVSXQ1NzJJMjQzS01fanZGd21Md0ZDbFdoMng4THVDeFltZGJtcVZfU01uall4eWRET28wT2RjeVo2WGNnYVlCMzRHZjF0M3JydDNWUVd2QVNsWVVJeUJBNFN4RVFZdTFjT2FEZlkwNlpmYXVFTjhRMmFjZms?oc=5" rel="noopener">[Business Insurance]</a></div>
+      <div class="line">Lazarus AI raises $43 mn with backing from QBE and State Farm Ventures - Beinsure <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNbUR1X2ZlU2V1a244YmVHZk9qbDZqSkplblVrNU5QU0dSczdZMGJhWHhpOXpWd1pPQjB3UVp3VWNvTG5kMktfMllYZmlMQWtqZHZfOXNjUVRLbHZ3bkNpcHdZMFFaTGRfQUNzMlM5WTFPNEtxdFhJUE8tTzNTNHdCeHhjVTRadjJqdDdQWERCWGN4azFkS1dpaTZYaw?oc=5" rel="noopener">[Beinsure]</a></div>
+      <div class="line">Travelers AI tool lets agents skip workers comp data entry - Digital Insurance <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPTE02bnRKaHdxQUt3ay1ncDVkX2NHWEtwOWhNNVFuMVlXREtYLThfNzlITGpOR1A0cjJSRmlha0RnWkJpekRtU002dXNIVk00NWNVNnJmRzlnRlBpemhFU0ZTc1BDLXRrRkF1OGx5QjUxOVRmcWtrcWE0NVNZQWRiX2IxVGlSOWNjaXdiTzRqTQ?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">Insurity Challenges the P&C Insurance Industry to Rethink Who Owns AI as Core Platforms Race to Acquire It - Business Wire <a href="https://news.google.com/rss/articles/CBMi9AFBVV95cUxQeG5fb0Ffdml5UEN6LWM0OEdjRTZUeGhwU2xnUnJpbk5PUVBQZFZkYVlNX01SdnhFSllFZFJ6QzROQms3OVBRdXdzc05FUWFCVkxYczhvTEdSc1pnTWNpRGhWNi10MUJXZkRHOTZVQXRoQTdBdjdEcmxBamM4anpFRUNtNjNXWW1wUnZ0YVl2QUkzYXFhNV9DbHkwekQ1NEgxX3kybjRmanpoMUhhQ1dmcWNmMHFmZ1htTUtwUlBpR05kcVF6UXJ0T2VRZThMdm1lTGZqWnJ1R3RwNVMxLUI0ZEZxMzg5TDduUGhhYU9QXzVOaDVo?oc=5" rel="noopener">[Business Wire]</a></div>
+      <div class="line">Expedia Says Travelers Plan With AI Agents but Book Direct - PYMNTS.com <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQOXJCeG5QWVlJNGREWVJLVnhSdFV1cG01SUhHSnBZOGFua2dydHpxUktNbXlIZlN3dlg0ZTlmdzl1ZjZQc2htdDBtUUY5bmdfbzItWFJvNk8tWE9jbzZFT3dYZktPa0FLcUlXRnFUS0FyT3dlcHRsNDhOT0Jmdl9ibU92ZThnREt1aDhONERwX3lTaFVUdHk3c1otbGk?oc=5" rel="noopener">[PYMNTS.com]</a></div>
+      <div class="line">Kalepa raises $75m to expand AI underwriting platform - Finextra Research <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPRHRoWWZXVTIwRXJqN2F4dWRYamJQSmoxemVUdGYxTlBQQWt2X3R4WllHQVc2cTFxR3ltS1VncU1SajAwMmd0VE5mOFBLM3JkWmI0WUZxTXp5elBoMUZjSGdJWGRINm10TU1Id1ZLUXBDWUNCclAtSm1iZlJnQlF3dlBkakFEVnVMNVFGSzRScXRoYmU1UnREZ1lmTQ?oc=5" rel="noopener">[Finextra Research]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
