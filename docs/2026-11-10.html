@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 10 November 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 10 November 2026</h1>
+      <div class="meta">34 sources scanned · 23 qualified · 6 movers · generated 13:37 EST</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurtech Ancep raises $8.5 mn to expand AI agents for commercial insurance brokers - Beinsure</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">InsurGrid launches AI-powered Policy Change Monitoring for P&C agencies</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">ZestyAI’s water risk model Z-WATER™ now approved in 22 states</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Ancep raises $8.5 million</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Google releases Gemini 4 Carbon with agent ‘swarm’ feature</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Cowbell launches standalone AI liability insurance for businesses deploying AI agents - Beinsure</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Beinsure</span>
+      </div>
+      <h2>Insurtech Ancep raises $8.5 mn to expand AI agents for commercial insurance brokers - Beinsure</h2>
+      <p>Insurtech Ancep raises $8.5 mn to expand AI agents for commercial insurance brokers Beinsure</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Insurtech Ancep raises $8.5 mn to expand AI agents for commercial insurance brokers Beinsure</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOdnM3eU4ta1ctSERCVXVzT2p4YjU0WFpkWTJWSXNKaHFBLVFSN3VwMXZfREdmdHlnNXdQSTNMc2pFZHlKeGFCeVo3T2haVDBBd0J6aDMxVVBmWTVfNUx4d0hFbHh5eG5uVkhKLXhYb0dVcE94elRfci1WeEJ3TGQ0Xw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurtech%20Ancep%20raises%20%248.5%20mn%20to%20expand%20AI%20agents%20for%20commercial%20insurance%20brokers%20-%20Beinsure%22%0ABeinsure%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMigAFBVV95cUxOdnM3eU4ta1ctSERCVXVzT2p4YjU0WFpkWTJWSXNKaHFBLVFSN3VwMXZfREdmdHlnNXdQSTNMc2pFZHlKeGFCeVo3T2haVDBBd0J6aDMxVVBmWTVfNUx4d0hFbHh5eG5uVkhKLXhYb0dVcE94elRfci1WeEJ3TGQ0Xw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>InsurGrid launches AI-powered Policy Change Monitoring for P&C agencies</h2>
+      <p>InsurGrid has launched Policy Change Monitoring, an AI-powered service that refreshes connected P&C client policies every 15 days and alerts agencies to cancellations, non-renewals, and coverage changes. The post InsurGr</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>InsurGrid has launched Policy Change Monitoring, an AI-powered service that refreshes connected P&C client policies every 15 days and alerts agencies to cancellations, non-renewals, and coverage changes. The post InsurGrid launches AI-powered Policy Change Monitoring for P&C agencies appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/news/insurgrid-launches-ai-powered-policy-change-monitoring-for-pc-agencies/7327" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22InsurGrid%20launches%20AI-powered%20Policy%20Change%20Monitoring%20for%20P%26C%20agencies%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fnews%2Finsurgrid-launches-ai-powered-policy-change-monitoring-for-pc-agencies%2F7327%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>ZestyAI’s water risk model Z-WATER™ now approved in 22 states</h2>
+      <p>ZestyAI, a provider of AI-driven insurance risk analytics, has announced that regulators in Minnesota and Maryland have approved Z-WATER™, its AI-powered non-weather water risk model, for use in carrier rate and rule fil</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>ZestyAI, a provider of AI-driven insurance risk analytics, has announced that regulators in Minnesota and Maryland have approved Z-WATER™, its AI-powered non-weather water risk model, for use in carrier rate and rule filings. ZestyAI’s Z-WATER™ is now accepted for rating and underwriting in 22 states. Non-weather water has become the fourth-costliest peril in homeowners insurance, […] The post ZestyAI’s water risk model Z-WATER™ now approved in 22 states appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/zestyais-water-risk-model-z-water-now-approved-in-22-states" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22ZestyAI%E2%80%99s%20water%20risk%20model%20Z-WATER%E2%84%A2%20now%20approved%20in%2022%20states%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Fzestyais-water-risk-model-z-water-now-approved-in-22-states%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Ancep raises $8.5 million</h2>
+      <p>Ancept builds AI agents that support commercial insurance brokers. The post Ancep raises $8.5 million appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Ancept builds AI agents that support commercial insurance brokers. The post Ancep raises $8.5 million appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/ancep-raises-8-5-million" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Ancep%20raises%20%248.5%20million%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fancep-raises-8-5-million%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">The Verge AI</span>
+      </div>
+      <h2>Google releases Gemini 4 Carbon with agent ‘swarm’ feature</h2>
+      <p>Google is rolling out its latest AI model, Gemini 4 Carbon, to the general public after releasing it to a select group of "cybersecurity defenders" two weeks ago. Google claims Carbon is its "strongest model" yet, and ca</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Google is rolling out its latest AI model, Gemini 4 Carbon, to the general public after releasing it to a select group of "cybersecurity defenders" two weeks ago. Google claims Carbon is its "strongest model" yet, and capable of competing with the very best systems from Anthropic and OpenAI. Google says Gemini 4 Carbon "pushes […]</div>
+      <div class="links">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Google%20releases%20Gemini%204%20Carbon%20with%20agent%20%E2%80%98swarm%E2%80%99%20feature%22%0AThe%20Verge%20AI%20%7C%20https%3A%2F%2Fwww.theverge.com%2Fai-artificial-intelligence%2F1030787%2Fgoogle-gemini-4-carbon-public-rollout%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Beinsure</span>
+      </div>
+      <h2>Cowbell launches standalone AI liability insurance for businesses deploying AI agents - Beinsure</h2>
+      <p>Cowbell launches standalone AI liability insurance for businesses deploying AI agents Beinsure</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Cowbell launches standalone AI liability insurance for businesses deploying AI agents Beinsure</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPUlk2Zkh3cEVnQThFMmhJZTZIaHo4aS1FYVljT2JYSkVZX3V6Y1RHNWdremVtVUMzUnk0VXZPbWEyeVYwSU1wMXRHeFc1S05yd3ZOU3VGLUc1VTJuZ0pERE5RVWxQUXlGTy1kT3ZZdjhNUG9uM1BoWnEtRzBJN3QwVlJQSQ?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Cowbell%20launches%20standalone%20AI%20liability%20insurance%20for%20businesses%20deploying%20AI%20agents%20-%20Beinsure%22%0ABeinsure%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMigwFBVV95cUxPUlk2Zkh3cEVnQThFMmhJZTZIaHo4aS1FYVljT2JYSkVZX3V6Y1RHNWdremVtVUMzUnk0VXZPbWEyeVYwSU1wMXRHeFc1S05yd3ZOU3VGLUc1VTJuZ0pERE5RVWxQUXlGTy1kT3ZZdjhNUG9uM1BoWnEtRzBJN3QwVlJQSQ%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Cowbell launches standalone AI agent liability policy for SMEs - Insurance Business <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOWmJ3cmp3OVlsbm9xRWFNaldhOENMTEV6Q3NKaUU2Y0FLWlY5Z0NKVzltSVVYYXhsSjJINWVLMmpYdW1uY21xM3RIbDFubnFGT0YyMXJfTVhfbGN0NElFUFh3U09YaTlIeVB6Y1Q2NU14TlN5TElKdUFKWC03WDcyWDhqcl9TbW1fLTN2dWY0Um1BaEszcGJyNjVySXRFWDBPMEZ5LUNOam01WGFNZndRMnV6Z3pxbnRqSmxoMDd5b01IRWNWMjBjY0p3?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">How AI is testing insurance cover and claims handling - Insurance Post <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNOFAxZnJkLWFfRmpOWE5tUkZxc1Rkb1R2YWRnN2c4YUF2d3lieFZISzg2anBnQU5vVHdZV04xbHl0Y0RtS19GaFV5NzhrZm15S1ltM3VZSHZmWGNVaW9tMzVoV2R1RVgxeHljVTM1NDF4SU1NUk42NFBTZTVSRm5FcUJwUDQweDNGbm55TzVQcEdZWVg2Vk5hZHFlMzd1NEZDUy1nU1pn?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">How to prevent AI from amplifying adjusters’ inconsistencies - Digital Insurance <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNS2dLV3NaVTNyNGVyT1lFSjZTYXZaV1ptUTVyT1dJRlVoSVdrN2dwcmtkclNxczBHZ05GMjRRYURfNGhTWDBSNmdLRE04TWVTWlp6Smktd1pKUFlkYjA5Z2xLY1JiN3FwNFBaak8wTkFxTlZybDJjOUZ0M21JYjdWRFAyYjlGVnAzUEJsNVdBVEk?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">Chubb Limited stock gets claims and AI leadership overhaul - ad-hoc-news.de <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQb1lnQ2NnTENNQzNUUGwzX01FU2E2Rzh1bXlHNFI2MHBoZGxlYzRWWjFoSk5GUmhtM215RFB1eWk4WWloVllPMC0wRXQ5bFVOS2hHSGlQRHR3OTM0eTBPTm5RbDRwbDMyc1g4dnNHemxmOGljVWpmNkdZaXRjN0lJSmo2R05zOEV0VTZ3VDgzMEJ3UnJqeENJWE9sR05wM2dyRk50UE1MLTZhRTUzZlRTN3hNSlRLRG5UdHN4OWlB?oc=5" rel="noopener">[ad-hoc-news.de]</a></div>
+      <div class="line">Cyber premiums are falling as AI drives risk higher, BOXX exec warns <a href="https://www.insurancebusinessmag.com/ca/news/cyber/cyber-premiums-are-falling-as-ai-drives-risk-higher-boxx-exec-warns-596716.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">AI wants to please you, and that’s a problem for claims, Allianz exec warns <a href="https://www.insurancebusinessmag.com/ca/news/claims/ai-wants-to-please-you-and-thats-a-problem-for-claims-allianz-exec-warns-596541.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">VIPR’s Templar says regulated AI will help cut industry lags - Insurance Post <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaC1PYkp1WUYwZFVLS20yRFl2M2dmR1dPdHlRalQ2TXNuR3FCUWNPZ2dDcWZRamRlVmJhLXBoX0dwZi1HQVdiTmE2UmRia2lncU5TR3AwWjJ6Y21rU0wtVXZSdVM1SHBxMVc2bDR6d0E2WmZudU5nbnR3czJwT21tTE5Sb1hTZ0hVcnY5QlRyOFFDSEhaejVpU2dhNUVqcjJTVUhNWXZhUlVDa1k?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">InsurTech's AI Reckoning: Who's Winning the 2026 Race - FinanceX Magazine <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNYU5zNllWeG53UFpGMlhjc0w1U1VNQ2d4WEZ0R0dYQms4dmJ4NWExYVB0VnVEempSR1FxM0xBSWxHZHQzWndOLVA4UjRlaFZTOWR3VEVoYXdoOU50SGc2TVBQajJoQVNkRzZYM3pKRlY0ZnF1YkRKaHFleVNtOU51WEJVTmhVcnoxV3kwY3ZkUk9YLUItY0ZkU2MweWgtUlJfTU1lLXZINE8zR3I0amc?oc=5" rel="noopener">[FinanceX Magazine]</a></div>
+      <div class="line">Sunlife Asia brings Google Workspace with Gemini to advisers in five markets <a href="https://www.insurtechinsights.com/news/sunlife-asia-brings-google-workspace-with-gemini-to-advisers-in-five-markets/7333" rel="noopener">[Insurtech Insights]</a></div>
+      <div class="line">Business travelers hesitant to let AI handle client bookings - PhocusWire <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQeGdIUzFzcWlDMWhna3BRTkJJV3pReFEzdFJnVzBHM3ZWb3pFTFRZMnFXZmdxMVM5ODI2RjVqRjVyT0wydDJJZ3pUdGhGcjROYjBuOEpvaDFBWHhYbUs4alVJQmpwMFh1dkFXSWNXOW1sRmlFMzBvMi1JcFVvRHlROEZwRXUtODNsbU1tMzVkMVBoY0pHM0V5QzdQcEEwVkd5SWc?oc=5" rel="noopener">[PhocusWire]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
