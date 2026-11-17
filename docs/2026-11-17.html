@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuesday, 17 November 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Tuesday, 17 November 2026</h1>
+      <div class="meta">34 sources scanned · 27 qualified · 6 movers · generated 14:45 EST</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Slice brings its MGA into brokers’ own AI assistants with new MCP integration</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI Advances Coincide With Sharp Rise in Cyber Incidents, Marsh Data Shows</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI claims handling: Are insurers listening to customers? - Insurance Post</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Transamerica expands relationship with AWS</span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Moving at Machine Speed – Key Takeaways from the Zywave Horizon: Cyber Risk New York Conference</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI budget overruns leave Canadian brokers caught in the middle</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Slice brings its MGA into brokers’ own AI assistants with new MCP integration</h2>
+      <p>Slice Insurance Technologies has put its AI integration into production, letting selected agents, brokers and wholesalers work with its MGA from AI assistants such as ChatGPT and Claude. The post Slice brings its MGA int</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Slice Insurance Technologies has put its AI integration into production, letting selected agents, brokers and wholesalers work with its MGA from AI assistants such as ChatGPT and Claude. The post Slice brings its MGA into brokers’ own AI assistants with new MCP integration appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/news/slice-brings-its-mga-into-brokers-own-ai-assistants-with-new-mcp-integration/7473" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Slice%20brings%20its%20MGA%20into%20brokers%E2%80%99%20own%20AI%20assistants%20with%20new%20MCP%20integration%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fnews%2Fslice-brings-its-mga-into-brokers-own-ai-assistants-with-new-mcp-integration%2F7473%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Journal (National)</span>
+      </div>
+      <h2>AI Advances Coincide With Sharp Rise in Cyber Incidents, Marsh Data Shows</h2>
+      <p>Artificial intelligence is accelerating the pace and scale of cyberattacks, leading to more incidents reported by businesses and creating new challenges for companies and their insurers, data from insurance broker Marsh </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Artificial intelligence is accelerating the pace and scale of cyberattacks, leading to more incidents reported by businesses and creating new challenges for companies and their insurers, data from insurance broker Marsh showed. “The signs that the attackers are using AI …</div>
+      <div class="links">
+        <a href="https://www.insurancejournal.com/news/national/2026/11/17/892881.htm" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20Advances%20Coincide%20With%20Sharp%20Rise%20in%20Cyber%20Incidents%2C%20Marsh%20Data%20Shows%22%0AInsurance%20Journal%20%28National%29%20%7C%20https%3A%2F%2Fwww.insurancejournal.com%2Fnews%2Fnational%2F2026%2F11%2F17%2F892881.htm%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Post</span>
+      </div>
+      <h2>AI claims handling: Are insurers listening to customers? - Insurance Post</h2>
+      <p>AI claims handling: Are insurers listening to customers? Insurance Post</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AI claims handling: Are insurers listening to customers? Insurance Post</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPa3FLWFVvTE1SWDM0SUtCdTE5dE5NaGxKVmdfZUxRNXh3OV9IVVNCdFQ3N1hLTVpsN3RmWnp3cDVkN0FEZ01jUVVTVjM2TzZMZ1pqRWRZcUVpblY5YlZBWS1xX0pRX2M4eEJwam02R2ZIUUU5U0JrQ1U3aWlKOU1aSXNwdFQ4RlBwUUlfSmZoRnpOYmhZSTVkUUlOOHRPT1U?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20claims%20handling%3A%20Are%20insurers%20listening%20to%20customers%3F%20-%20Insurance%20Post%22%0AInsurance%20Post%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMinwFBVV95cUxPa3FLWFVvTE1SWDM0SUtCdTE5dE5NaGxKVmdfZUxRNXh3OV9IVVNCdFQ3N1hLTVpsN3RmWnp3cDVkN0FEZ01jUVVTVjM2TzZMZ1pqRWRZcUVpblY5YlZBWS1xX0pRX2M4eEJwam02R2ZIUUU5U0JrQ1U3aWlKOU1aSXNwdFQ4RlBwUUlfSmZoRnpOYmhZSTVkUUlOOHRPT1U%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Transamerica expands relationship with AWS</h2>
+      <p>Transamerica is rolling out AI-enabled capabilities across several areas of the business. The post Transamerica expands relationship with AWS appeared first on Coverager - Insurance news and insights .</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Transamerica is rolling out AI-enabled capabilities across several areas of the business. The post Transamerica expands relationship with AWS appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/transamerica-expands-relationship-with-aws" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Transamerica%20expands%20relationship%20with%20AWS%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Ftransamerica-expands-relationship-with-aws%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Coverager</span>
+      </div>
+      <h2>Moving at Machine Speed – Key Takeaways from the Zywave Horizon: Cyber Risk New York Conference</h2>
+      <p>AI-driven cyber threats, rising claims and shifting market dynamics dominated discussions at Zywave Horizon: Cyber Risk New York. The post Moving at Machine Speed – Key Takeaways from the Zywave Horizon: Cyber Risk New Y</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>AI-driven cyber threats, rising claims and shifting market dynamics dominated discussions at Zywave Horizon: Cyber Risk New York. The post Moving at Machine Speed – Key Takeaways from the Zywave Horizon: Cyber Risk New York Conference appeared first on Coverager - Insurance news and insights .</div>
+      <div class="links">
+        <a href="https://coverager.com/moving-at-machine-speed-key-takeaways-from-the-zywave-horizon-cyber-risk-new-york-conference" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Moving%20at%20Machine%20Speed%20%E2%80%93%20Key%20Takeaways%20from%20the%20Zywave%20Horizon%3A%20Cyber%20Risk%20New%20York%20Conference%22%0ACoverager%20%7C%20https%3A%2F%2Fcoverager.com%2Fmoving-at-machine-speed-key-takeaways-from-the-zywave-horizon-cyber-risk-new-york-conference%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>AI budget overruns leave Canadian brokers caught in the middle</h2>
+      <p>As carriers overshoot AI forecasts, brokers face tighter underwriting scrutiny and rising client risk</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>As carriers overshoot AI forecasts, brokers face tighter underwriting scrutiny and rising client risk</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/technology/ai-budget-overruns-leave-canadian-brokers-caught-in-the-middle-597692.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20budget%20overruns%20leave%20Canadian%20brokers%20caught%20in%20the%20middle%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Ftechnology%2Fai-budget-overruns-leave-canadian-brokers-caught-in-the-middle-597692.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Pricing models to stay in AI review: NAIC rejects industry bid - Digital Insurance <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNMHpOdlBRd1BIVVVzVXY5Ymk0cXM3SGJVSnlyaWs3bjk1R0MtcTRnQVdCdXFEcnFnc0RKQUotSWd3R044ZG1wSXk5dnVTN2xVYmVBcGZ5SEtKRVBjU0xraGI5YXBiTEp3aWhKeDBMRDFUaUNHa0RSTXpmbnQwRVBlSU5TenpoZXVrTzRBN2cyLWFIZXc?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">AI lets scammers turn one data breach into thousands of targets, Aviva expert says - Insurance Business <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPeTVKTHRmY0NZY25oTlo0eE4tcHRLRklZZXZ5ODNGLTloWldWVlFDUjNYUFFyWHE5WVk3aVZlYjAzd3psWFYtV2VuV2ZlQ1h2WmMyeXZoRFczVkRvbjhHSkZYdlpxdy1SYnQ4MHpsMXN5ZW56OTVCbTlvOXRUNEpza1g5eHVCcXlFdHZ6MGpZMVBnYV9nV3VCUFFVRi1Bak1lWVU4UWhqcE1GNTFob3VuN2YybWU1VlBkeDBweHVmMkg3dWNiOEx5d2t3RHhmVURmblNOSmQyVkV6LV95?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Amwins rolls out Claude to ~8,000 employees <a href="https://coverager.com/amwins-rolls-out-claude-to-8000-employees" rel="noopener">[Coverager]</a></div>
+      <div class="line">AI-driven data centre expansion reshaping both sides of insurers’ balance sheets: Morningstar DBRS <a href="https://www.reinsurancene.ws/ai-driven-data-centre-expansion-reshaping-both-sides-of-insurers-balance-sheets-morningstar-dbrs" rel="noopener">[Reinsurance News]</a></div>
+      <div class="line">Voyage Labs raises $12 million <a href="https://coverager.com/voyage-labs-raises-12-million" rel="noopener">[Coverager]</a></div>
+      <div class="line">UK insurtech Aurora lands IA Capital backing to rebuild on AI - Dealroom <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOUlBkTVFkV1NQZFFBRGFROWUwaThBeTkxR1NpcFFHYzNETXA1eUJWN3Z5OV9fQUdhMVVnWDB0QzNWcEl6cnpfQUJIcGJzNWhLaUxXODNwTlZSWTE4Qm9BYXpnbnRsSUhPOXlzbVYzaHVpVzliWVRwRU1WTzdnVFlZVTVWS1hKVWlkZkxyVHN6RGJ6eEItcU5CNV9qZw?oc=5" rel="noopener">[Dealroom]</a></div>
+      <div class="line">Profitable French insurtech Previsia raises €3.8M seed to scale AI risk prevention - Dealroom <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxONGREUEM1NHJhd0s2eWJWZ2VoTmFYVjlHNjlXLXZtMWR1aFRzRl9kcHJuVWJHaHNLOG9jQlM4Wkx3SUU2VWZLaDZRUXBmOW5HS1pabGZKeUZfZlpRTXl5SGpoMDN1NGhwNUVLQ0hHMks4Q29aSjZOUUdsVWgwMzRpRXA1MGRqZDcwQW9vVmFJd0xSTEwzbkl0enc1OURxbndPRzVSaGpnQVl5Y2tOeHp5bGI0cmlVZw?oc=5" rel="noopener">[Dealroom]</a></div>
+      <div class="line">Artificial Intelligence and the New Colonialism in Latin America - LA Progressive <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNY2RuN3IzUjFvRDhzT1haUl9sN1JDVHNYeWhGeHYyOXl1LVBaaWFuSUhaSUxzM1poamQxSm1NMURSYkt2alhLMEphUVdHWmFKY0xmdzNpZlZEa0tXTFlQYmduNFFjLUF2U1RRcXVvYkFibDlEX29xUm9MaVdxOHd4UjFuQQ?oc=5" rel="noopener">[LA Progressive]</a></div>
+      <div class="line">Cytora’s Fish says AI governance is holding back carriers - Insurance Post <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0pDMnR0NmFKUzI4WUFaZlZNQlFVQnFONkp5TUpGWWVNeWZPVE5XVTEyUG5KNHlxT0RTb2Zid1o3Vm9QNVhoOVA5ZlFsWnFReGZBR1RuNGRIc2tIQkxkS1dGc1NnSkVZX2pEdWJCb3ctRlJXZGQwbGxDc3BaLUM2WWJMcTBobFJjVXJIWnZTcWFib0xoZGpEOVBtTE5rNmtXUGJoMGpEYw?oc=5" rel="noopener">[Insurance Post]</a></div>
+      <div class="line">Study Examines Travelers’ Willingness to Let AI Book and Pay - Hotel News Resource <a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE1zVXR6eW45TzQ4UHUwWFpyTy1lNmltUGJWZGlxTW04QUhGNTN5bmdsdGNZT0k5MERPUE9LM3FiUVV1R3FDWmh4MzA2X3NmLS1oQUU4TGpPdE5VOWhMRDNxV2VB?oc=5" rel="noopener">[Hotel News Resource]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
