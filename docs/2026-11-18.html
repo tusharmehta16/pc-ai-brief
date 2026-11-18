@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wednesday, 18 November 2026 · AI &amp; P&amp;C Insurance Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A26; --muted:#5B6B77; --rule:#DDE2E0; --wash:#F1F3F2;
+    --marine:#1B4A6B; --ochre:#9A6B12; --oxblood:#6E2436;
+    --display:"Newsreader",Georgia,serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--wash);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:760px;margin:0 auto;background:#fff;border-left:1px solid var(--rule);
+         border-right:1px solid var(--rule);min-height:100vh}
+  .pad{padding:0 40px}
+  @media(max-width:640px){.pad{padding:0 20px}body{font-size:16px}}
+  header{padding:40px 0 18px;border-bottom:3px double var(--ink);margin-bottom:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+           text-transform:uppercase;color:var(--marine)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,6vw,44px);
+     line-height:1.08;margin:10px 0 8px;letter-spacing:-0.01em}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .verdict{font-family:var(--display);font-size:clamp(20px,3.4vw,25px);line-height:1.45;
+           padding:28px 0;border-bottom:1px solid var(--rule)}
+  .verdict .label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                  text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+
+  /* the ladder: every mover indexed by segment and severity before you read on */
+  .ladder{padding:22px 0;border-bottom:1px solid var(--rule)}
+  .ladder a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:inherit;
+            padding:7px 0;border-bottom:1px dotted var(--rule)}
+  .ladder a:last-child{border-bottom:none}
+  .ladder a:hover .lt{border-bottom:1px solid var(--ochre)}
+  .lseg{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;
+        color:var(--marine);width:104px;flex:none}
+  .lt{font-size:15px}
+  .meter{display:inline-flex;gap:3px;flex:none;transform:translateY(-1px)}
+  .meter i{width:8px;height:8px;background:#E3E6E4;display:block}
+  .meter i.on{background:var(--ochre)}
+
+  article{padding:34px 0;border-bottom:1px solid var(--rule)}
+  article h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,4vw,30px);
+             line-height:1.2;margin:10px 0 14px;letter-spacing:-0.01em}
+  .tag{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;
+       letter-spacing:1.2px;text-transform:uppercase;color:var(--marine)}
+  .tag .src{color:var(--muted);letter-spacing:0.4px;text-transform:none}
+  .sowhat{border-left:3px solid var(--marine);padding:4px 0 4px 16px;margin:18px 0;
+          color:var(--marine)}
+  .sowhat b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;margin-bottom:3px}
+  .deeper{background:#FBFCFB;border:1px solid var(--rule);padding:20px;margin:18px 0}
+  .deeper b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;
+            text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .next{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .links{margin-top:16px;font-family:var(--mono);font-size:12px}
+  .links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ochre);
+           margin-right:18px}
+  .links a:hover{background:#FBF4E6}
+  section.block{padding:30px 0;border-bottom:1px solid var(--rule)}
+  section.block > b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;
+                    text-transform:uppercase;margin-bottom:14px}
+  .reg > b{color:var(--oxblood)} .rad > b{color:var(--muted)}
+  .line{font-size:15px;padding:6px 0}
+  .line a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none}
+  .line a:hover{color:var(--ink)}
+  .close{background:var(--ink);color:#fff;padding:34px 40px;margin-top:0}
+  .close b{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;
+           color:#8FA9BC;display:block;margin-bottom:10px}
+  .close p{font-family:var(--display);font-size:22px;line-height:1.4;margin:0}
+  footer{padding:26px 0 50px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+  footer a{color:var(--marine)}
+  a:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="pad">
+    <header>
+      <div class="eyebrow">AI &amp; P&amp;C Insurance · Daily Brief</div>
+      <h1>Wednesday, 18 November 2026</h1>
+      <div class="meta">34 sources scanned · 30 qualified · 6 movers · generated 14:21 EST</div>
+    </header>
+
+    <div class="verdict"><span class="label">The verdict</span>Automated analysis was unavailable for this run, so this is the ranked source list without commentary.</div>
+
+    <nav class="ladder" aria-label="Today's movers">
+      <a href="#item-1">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Aurora eyes growth with IA Capital investment</span>
+      </a>
+      <a href="#item-2">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Columbia Insurance signs five-year partnership for Kalepa’s underwriting AI</span>
+      </a>
+      <a href="#item-3">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Structural forces are driving a more interconnected world for insurers: Swiss Re</span>
+      </a>
+      <a href="#item-4">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">The Intersection of Autonomous AI Agents, Enterprise Liability, and Insurance Underwriting: By Rupert Fallows </span>
+      </a>
+      <a href="#item-5">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">AI adoption could reshape insurer credit ratings as KBRA warns of growing risks</span>
+      </a>
+      <a href="#item-6">
+        <span class="lseg">Unclassified</span>
+        <span class="meter" aria-label="severity 3 of 5">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i>        </span>
+        <span class="lt">Insurers will exclude AI before they cover it, CHES SVP says</span>
+      </a>
+    </nav>
+
+    <article id="item-1">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Aurora eyes growth with IA Capital investment</h2>
+      <p>Aurora, the managing general agent (MGA) and algorithmic underwriting-as-a-service business, has secured investment from IA Capital Group to drive its next phase of growth, led by Co-founder and Chief Executive Officer (</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Aurora, the managing general agent (MGA) and algorithmic underwriting-as-a-service business, has secured investment from IA Capital Group to drive its next phase of growth, led by Co-founder and Chief Executive Officer (CEO), Bijal Patel. Aurora, through its AI-native, algorithmic platform, aims to enable specialty and complex commercial lines underwriters to develop, underwrite, and deliver insurance […] The post Aurora eyes growth with IA Capital investment appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/aurora-eyes-growth-with-ia-capital-investment" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Aurora%20eyes%20growth%20with%20IA%20Capital%20investment%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Faurora-eyes-growth-with-ia-capital-investment%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-2">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurtech Insights</span>
+      </div>
+      <h2>Columbia Insurance signs five-year partnership for Kalepa’s underwriting AI</h2>
+      <p>Columbia Insurance has selected Kalepa's Professional Grade AI platform for its underwriting operations under a five-year partnership. The post Columbia Insurance signs five-year partnership for Kalepa’s underwriting AI </p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Columbia Insurance has selected Kalepa's Professional Grade AI platform for its underwriting operations under a five-year partnership. The post Columbia Insurance signs five-year partnership for Kalepa’s underwriting AI appeared first on Insurtech Insights .</div>
+      <div class="links">
+        <a href="https://www.insurtechinsights.com/news/columbia-insurance-signs-five-year-partnership-for-kalepas-underwriting-ai/7509" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Columbia%20Insurance%20signs%20five-year%20partnership%20for%20Kalepa%E2%80%99s%20underwriting%20AI%22%0AInsurtech%20Insights%20%7C%20https%3A%2F%2Fwww.insurtechinsights.com%2Fnews%2Fcolumbia-insurance-signs-five-year-partnership-for-kalepas-underwriting-ai%2F7509%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-3">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>Structural forces are driving a more interconnected world for insurers: Swiss Re</h2>
+      <p>Four structural forces: a capital expenditure boom, geopolitical fragmentation, climate, and demographic shifts, are reshaping global risk accumulation and creating interconnected physical and digital vulnerabilities for</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Four structural forces: a capital expenditure boom, geopolitical fragmentation, climate, and demographic shifts, are reshaping global risk accumulation and creating interconnected physical and digital vulnerabilities for insurers heading into 2027-2028, Swiss Re’s latest sigma report, Searching for resilience – Global Economic and Insurance Market Outlook 2027–2028, revealed. While rapid investments in artificial intelligence and energy […] The post Structural forces are driving a more interconnected world for insurers: Swiss Re appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/structural-forces-are-driving-a-more-interconnected-world-for-insurers-swiss-re" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Structural%20forces%20are%20driving%20a%20more%20interconnected%20world%20for%20insurers%3A%20Swiss%20Re%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Fstructural-forces-are-driving-a-more-interconnected-world-for-insurers-swiss-re%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-4">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Finextra Research</span>
+      </div>
+      <h2>The Intersection of Autonomous AI Agents, Enterprise Liability, and Insurance Underwriting: By Rupert Fallows </h2>
+      <p>The Intersection of Autonomous AI Agents, Enterprise Liability, and Insurance Underwriting: By Rupert Fallows Finextra Research</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>The Intersection of Autonomous AI Agents, Enterprise Liability, and Insurance Underwriting: By Rupert Fallows Finextra Research</div>
+      <div class="links">
+        <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNSW8wRlRlLUVpdHd5RWU1UDAyVkNLaExrdmJIYy1hNmtQVEV1MWJLWFYwaXZSdEJVcGdDQ3RSc0tvUF9hQUNOSURUa0ZCa3FFTmcxbUY4YUZBTi1lVkJfRTRvQ2FBMjBjYzhua2stZ2VqWnZRN2VCTE53VWNzX3VORjBOR21XdVhFYU1yX1ZadWJ1T29ldEY0NlBXaDVUOHE1T3I5OHhERWJaZEhsbjVGU3QzdmprY3pzUk5yQlJscGFwZGtwRHF2TEpUYw?oc=5" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22The%20Intersection%20of%20Autonomous%20AI%20Agents%2C%20Enterprise%20Liability%2C%20and%20Insurance%20Underwriting%3A%20By%20Rupert%20Fallows%20%22%0AFinextra%20Research%20%7C%20https%3A%2F%2Fnews.google.com%2Frss%2Farticles%2FCBMiywFBVV95cUxNSW8wRlRlLUVpdHd5RWU1UDAyVkNLaExrdmJIYy1hNmtQVEV1MWJLWFYwaXZSdEJVcGdDQ3RSc0tvUF9hQUNOSURUa0ZCa3FFTmcxbUY4YUZBTi1lVkJfRTRvQ2FBMjBjYzhua2stZ2VqWnZRN2VCTE53VWNzX3VORjBOR21XdVhFYU1yX1ZadWJ1T29ldEY0NlBXaDVUOHE1T3I5OHhERWJaZEhsbjVGU3QzdmprY3pzUk5yQlJscGFwZGtwRHF2TEpUYw%3Foc%3D5%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-5">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Reinsurance News</span>
+      </div>
+      <h2>AI adoption could reshape insurer credit ratings as KBRA warns of growing risks</h2>
+      <p>Artificial intelligence could influence the financial strength and creditworthiness of insurance companies, although the benefits will depend on how successfully the technology is implemented and managed, according to ne</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Artificial intelligence could influence the financial strength and creditworthiness of insurance companies, although the benefits will depend on how successfully the technology is implemented and managed, according to new research from KBRA, the credit rating agency. In its report, Beyond the AI Hype: What It Means for Insurer Credit, KBRA examines the implications of AI […] The post AI adoption could reshape insurer credit ratings as KBRA warns of growing risks appeared first on ReinsuranceNe.ws .</div>
+      <div class="links">
+        <a href="https://www.reinsurancene.ws/ai-adoption-could-reshape-insurer-credit-ratings-as-kbra-warns-of-growing-risks" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22AI%20adoption%20could%20reshape%20insurer%20credit%20ratings%20as%20KBRA%20warns%20of%20growing%20risks%22%0AReinsurance%20News%20%7C%20https%3A%2F%2Fwww.reinsurancene.ws%2Fai-adoption-could-reshape-insurer-credit-ratings-as-kbra-warns-of-growing-risks%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+    <article id="item-6">
+      <div class="tag">
+        <span>Unclassified</span>
+        <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+        <span class="src">Insurance Business Canada</span>
+      </div>
+      <h2>Insurers will exclude AI before they cover it, CHES SVP says</h2>
+      <p>Virginie Boucher expects flat cyber pricing in 2027, except in healthcare, government and aviation, where claims are frequent and costly</p>
+      <div class="sowhat"><b>So what</b>Not assessed on this run.</div>
+      <div class="deeper"><b>Deeper</b>Virginie Boucher expects flat cyber pricing in 2027, except in healthcare, government and aviation, where claims are frequent and costly</div>
+      <div class="links">
+        <a href="https://www.insurancebusinessmag.com/ca/news/cyber/insurers-will-exclude-ai-before-they-cover-it-ches-svp-says-597724.aspx" rel="noopener">Read the source</a>
+        <a href="https://claude.ai/new?q=This%20came%20up%20in%20my%20daily%20AI%20and%20P%26C%20insurance%20brief%3A%0A%0A%22Insurers%20will%20exclude%20AI%20before%20they%20cover%20it%2C%20CHES%20SVP%20says%22%0AInsurance%20Business%20Canada%20%7C%20https%3A%2F%2Fwww.insurancebusinessmag.com%2Fca%2Fnews%2Fcyber%2Finsurers-will-exclude-ai-before-they-cover-it-ches-svp-says-597724.aspx%0A%0AGive%20me%20the%20full%20picture.%20What%20actually%20happened%2C%20what%20it%20changes%20for%20a%20global%20property%20and%20casualty%20carrier%20across%20underwriting%2C%20claims%20and%20distribution%2C%20who%20is%20exposed%2C%20what%20is%20still%20unproven%2C%20and%20the%20two%20questions%20I%20should%20put%20to%20my%20own%20team%20about%20it%20this%20week.%20Search%20for%20the%20latest%20if%20you%20can." rel="noopener">Ask Claude about this</a>
+      </div>
+    </article>
+
+
+    <section class="block rad"><b>On the radar</b>
+      <div class="line">Alpine Specialty Launches AI-Powered Underwriting Platform, Raises $3 Million - citybiz <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQWjQ4QzBlak9GWk5SWFVjSk51ZHp4V01od2NubUNJTjVRdmhjNGZ3b3RzWUZkUW9GbHc0WDAxX0JBdnY1ZXVaWnVTMjJSbF9sV0pUUy1UbkQ2Vzc1YXVBVlNkVFNNWHVvd1MwRU1GZVI1SldDcjdYYXdlQW5EaHRFOFZYMmZ2RlgyaGZCbEI2TnNJZXlobG1MeW9mbi1zMW9tSXFuaWJDNGtYZm04X0xDcFhsbHk?oc=5" rel="noopener">[citybiz]</a></div>
+      <div class="line">Gradient AI launches Sentinel to improve group health insurance underwriting - Beinsure <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LU2VpdmdpU29JRTlRNGJUNzl1cDIzbDRiUjNLN0FwUC1PT28wUlptQWd5dGhuR3FxS0VFUmxydk1qYXFjUTJMUFUyY3h1VzItTnVvTFJkS1AzQUM2MDFNQ1ZmTEtnTHc?oc=5" rel="noopener">[Beinsure]</a></div>
+      <div class="line">AI ROI requires a plan beyond automation, experts tell insurers - Digital Insurance <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ0t3Nm9pTU9BQ3pRNGZmRUNpeXpUVUdoenUxV1Q4ZzctaXNqano3SFE2MkNVXzFNQTNTSDQ3cDBBdWdfcUh1bnU5b2xIdXV6b0VYd29Fa2FsRzcxd3NfUEpMdU9PX0dOQzhwd0tCQXpYVU45TERLeUpEVzk5NEpEMkdsdWlXdDgzQUd5c1V3XzY1Smp5?oc=5" rel="noopener">[Digital Insurance]</a></div>
+      <div class="line">On Stage at CIAB: My Take on the Future of the Broker Operating System <a href="https://coverager.com/on-stage-at-ciab-my-take-on-the-future-of-the-broker-operating-system" rel="noopener">[Coverager]</a></div>
+      <div class="line">Transamerica expands AWS relationship to scale AI across the enterprise <a href="https://www.insurtechinsights.com/news/transamerica-expands-aws-relationship-to-scale-ai-across-the-enterprise/7515" rel="noopener">[Insurtech Insights]</a></div>
+      <div class="line">Quickway picks Sapiens for AI-driven insurance platform - IT Brief Asia <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPbkZjczlqRi1LZHJoWU5uYS04a2lpMTEzTTRLaEQzZi04bkxPa0NLUVYwZ1MyYjdKM05ZSTNhU3NlUWRJa1dFNEN4TFA2Vk1iUWxNRjZHUUNOeUNQN2ItckVzVjljZi1YQzNXQlN6SGl4ZjB0UnhSemM4WUI1REdyUGVVRmQtcmF5T0E?oc=5" rel="noopener">[IT Brief Asia]</a></div>
+      <div class="line">Generali raises AI target as group expects to beat all plan targets - Insurance Business <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPN01NMl9DdW9qeG9ETXg3RDBuN3FEbHlrbTlob0MyTmlwTXRtNWFrZjlveUgzdUNRRFdpcEh0TXVCTGtIaVZ5UXhtUXpFXy1lanFUaFF1WWlsdUdRWWFWNElqSnZTTWl6TlgyNTg2Wl9sbTk2c2o5WXNSek5weE1ocHlLSTNTSlI3NkdtNTExNHgyTi1xUkQxS1hPZ3IwVC1RN1lCR1p6empZcTNWUkVJcEFqMjdlWjB2U0g4Wi1JR2FxeGtxQWpUM0lqZ3Z4ZGNJbTctNQ?oc=5" rel="noopener">[Insurance Business]</a></div>
+      <div class="line">Aditya Birla Health CEO on using AI to move insurance beyond claims - Livemint <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQNUNMOHl0anZCX0Z2VlNhWHRtazNST2JPX0plMXBfbzZmaXF6WHlUSmIxQm94c2t1TXV3azFtN3FnTjcxOWtDcHVIN2Fxd284Nm55NnJWcjI3VDNKcDJSd2FJV2VCaXA3Q1VkT3hBb1IzM2NyV3k3dmZTNHJNWmR0NHhiS1poVGFmQjhpMUFTMEpDZmFoSnpKQ0dXejEwUy1ISjVMdDhOTEpleUhKanU2ZjhWd2VXanB3RjlKdzZyVjJELS1pWHR0SFQ5bGI?oc=5" rel="noopener">[Livemint]</a></div>
+      <div class="line">Teams, trust and clients take centre stage at 2026 IB Canada Awards <a href="https://www.insurancebusinessmag.com/ca/news/breaking-news/teams-trust-and-clients-take-centre-stage-at-2026-ib-canada-awards-597908.aspx" rel="noopener">[Insurance Business Canada]</a></div>
+      <div class="line">Alpine Specialty Launches With $3 Million To Build AI-Assisted Underwriting Platform - Pulse 2.0 <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQOFVFYmM2dTE5OThRemQzT3E2Z0xoOENpdmtHX2VNZUNZb0dzbWZMdzIwM3VZMnl3RkhpSTMtWWNGQmVuSzc3SHozVkZPRW5QNzU0dXhQeTZITE5raTg1b2ZKS0tuQ0ZRUGVsN1BDSUw5X2c2Z0ZiQjM3WXcyNjhZdU1PVHpIUW5qYzJsdGdmNzVsUkNoMTdCdEtWcUNXd0hOU2JTeTNn?oc=5" rel="noopener">[Pulse 2.0]</a></div>
+    </section>
+  </div>
+
+
+  <div class="pad"><footer>
+    <a href="./index.html">All editions</a><br>
+    Assembled from public RSS and news feeds, ranked by keyword scoring, written by Claude.
+    Every link points to the original publisher. Verify before you quote any figure in a deck.
+  </footer></div>
+</div>
+</body>
+</html>
